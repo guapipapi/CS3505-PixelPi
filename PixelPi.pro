@@ -10,9 +10,11 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
+    pixel.cpp \
     pixelpi.cpp
 
 HEADERS += \
+    pixel.h \
     pixelpi.h
 
 FORMS += \
