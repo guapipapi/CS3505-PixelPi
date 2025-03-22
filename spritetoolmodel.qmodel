@@ -625,63 +625,63 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{43a80c2f-c353-4e20-9ee3-e72f35f430a1}</uid>
+                    <uid>{0eb8dbd6-9bc7-4ae6-9c7f-ff13e8ce5632}</uid>
                     <type>1</type>
                     <declaration>-width : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ac7a7247-2744-461f-831f-8ec09f5d16a0}</uid>
+                    <uid>{c827a114-6a69-4084-aa1d-c7482b3cbaeb}</uid>
                     <type>1</type>
                     <declaration>-height : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{08f568a5-2677-477b-a03e-9cde36a5ebae}</uid>
+                    <uid>{b0d9add6-c9bf-4b9c-b8db-066c6014d9e9}</uid>
                     <type>1</type>
                     <declaration>-timeline : Timeline</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6785b469-8c8e-4cd4-85d7-39110039abe5}</uid>
+                    <uid>{fb711006-e783-49d5-a6d6-851191ac5adf}</uid>
                     <type>2</type>
                     <declaration>SaveToJson()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c4016154-364b-4b6d-8f17-f00e73be0227}</uid>
+                    <uid>{8533d22a-8088-441e-bb92-03c707e08d55}</uid>
                     <type>2</type>
                     <declaration>LoadFromJson()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6e48ac5b-35b0-4c99-a7c4-74ee17c55baa}</uid>
+                    <uid>{d49c50fc-2638-4a8f-bf27-78c03372710d}</uid>
                     <type>1</type>
                     <declaration>-projectName : string</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c4c4c0e6-2906-4953-ac47-afa2878027ca}</uid>
+                    <uid>{c0d8f0cb-97f0-4519-98fe-9e41f6af327a}</uid>
                     <type>2</type>
                     <declaration>ExportToPNG()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6623ab93-c402-4e02-b089-1da990a48128}</uid>
+                    <uid>{05a6d3b1-f3d4-4452-9e61-35f719f2c166}</uid>
                     <type>1</type>
                     <declaration>-sprites : [Sprite]</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{12f0427e-51df-4d39-8ad6-189233314546}</uid>
+                    <uid>{1baf4749-88e8-4318-8cf7-4720d0868a84}</uid>
                     <type>1</type>
                     <declaration>currentSprite : int</declaration>
                    </MClassMember>
@@ -890,28 +890,28 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{b9985438-bfaa-4e8f-8fc3-37cb55f7c43a}</uid>
+                    <uid>{c1071fa7-9ffe-4e99-974d-27902d1f6de8}</uid>
                     <type>1</type>
                     <declaration>Pixels</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{221f8ceb-9fe0-471b-b43f-91a750b27c28}</uid>
+                    <uid>{6ab55c75-07c6-41ae-a13c-631448bc5903}</uid>
                     <type>2</type>
                     <declaration>addPixel(Pixel pixel)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{892ea56a-08be-4253-9dca-4c8f9efe5411}</uid>
+                    <uid>{8912d52a-b74a-4918-ab8d-c9d8ceaea1af}</uid>
                     <type>1</type>
                     <declaration>spriteUpdated() &lt;&lt;Signal&gt;&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a3a3f8bb-7905-4090-917a-a339432ab0ef}</uid>
+                    <uid>{c641dc47-a42d-40e8-922b-313ed45f59e3}</uid>
                     <type>2</type>
                     <declaration>getPixel()</declaration>
                    </MClassMember>
@@ -1055,7 +1055,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{4c633108-c36a-4dba-811b-65128fb42a53}</uid>
+                    <uid>{640ad85e-54c8-487f-9c93-f4a75698f617}</uid>
                     <type>1</type>
                     <declaration>-radius : int</declaration>
                    </MClassMember>
@@ -1087,28 +1087,28 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{d4bfa2c2-b01a-4a19-af46-a4ebf5924984}</uid>
+                    <uid>{f12e5c1d-e8ba-4cc9-ae86-2a216df11557}</uid>
                     <type>1</type>
                     <declaration>string projectName</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{24726956-2935-43eb-9dfc-2f4d8b9eca72}</uid>
+                    <uid>{a14b5a4e-936f-49ef-b6a9-f3b61c95babf}</uid>
                     <type>2</type>
                     <declaration>SaveToJson()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{66442817-d0f6-4583-88f5-e243fad533d3}</uid>
+                    <uid>{5f4cfa94-67d1-4f22-9038-3ecefb084cdf}</uid>
                     <type>2</type>
                     <declaration>LoadFromJson()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{11939757-6749-47d8-8b62-ec3ebfec3714}</uid>
+                    <uid>{46ec8c65-1b49-4e4d-b022-da9fed802b4f}</uid>
                     <type>1</type>
                     <declaration>-projectName</declaration>
                    </MClassMember>
@@ -1630,123 +1630,6 @@
            </item>
            <item>
             <handle>
-             <uid>{258466cb-47a2-4da4-a6cc-2a10429064be}</uid>
-             <target>
-              <instance type="MClass">
-               <MClass>
-                <base-MObject>
-                 <MObject>
-                  <base-MElement>
-                   <MElement>
-                    <uid>{258466cb-47a2-4da4-a6cc-2a10429064be}</uid>
-                    <stereotypes>
-                     <qlist>
-                      <item>control</item>
-                     </qlist>
-                    </stereotypes>
-                   </MElement>
-                  </base-MElement>
-                  <name>New Control</name>
-                 </MObject>
-                </base-MObject>
-               </MClass>
-              </instance>
-             </target>
-            </handle>
-           </item>
-           <item>
-            <handle>
-             <uid>{cbbde902-e147-4099-b710-e59635d218fd}</uid>
-             <target>
-              <instance type="MItem">
-               <MItem>
-                <base-MObject>
-                 <MObject>
-                  <base-MElement>
-                   <MElement>
-                    <uid>{cbbde902-e147-4099-b710-e59635d218fd}</uid>
-                   </MElement>
-                  </base-MElement>
-                  <name>Me :D</name>
-                 </MObject>
-                </base-MObject>
-                <variety-editable>false</variety-editable>
-                <variety>actor</variety>
-               </MItem>
-              </instance>
-             </target>
-            </handle>
-           </item>
-           <item>
-            <handle>
-             <uid>{d29f85e9-3cb9-4fb0-9519-2e434eb5c1ff}</uid>
-             <target>
-              <instance type="MItem">
-               <MItem>
-                <base-MObject>
-                 <MObject>
-                  <base-MElement>
-                   <MElement>
-                    <uid>{d29f85e9-3cb9-4fb0-9519-2e434eb5c1ff}</uid>
-                   </MElement>
-                  </base-MElement>
-                  <name>Radiohead</name>
-                 </MObject>
-                </base-MObject>
-                <variety-editable>false</variety-editable>
-                <variety>cd</variety>
-               </MItem>
-              </instance>
-             </target>
-            </handle>
-           </item>
-           <item>
-            <handle>
-             <uid>{8b80878a-4f6f-424c-abf9-658ceb060f5d}</uid>
-             <target>
-              <instance type="MItem">
-               <MItem>
-                <base-MObject>
-                 <MObject>
-                  <base-MElement>
-                   <MElement>
-                    <uid>{8b80878a-4f6f-424c-abf9-658ceb060f5d}</uid>
-                   </MElement>
-                  </base-MElement>
-                  <name>Iphone 25</name>
-                 </MObject>
-                </base-MObject>
-                <variety-editable>false</variety-editable>
-                <variety>mobile</variety>
-               </MItem>
-              </instance>
-             </target>
-            </handle>
-           </item>
-           <item>
-            <handle>
-             <uid>{b12c648d-6c84-45a0-be79-7a56884440f7}</uid>
-             <target>
-              <instance type="MItem">
-               <MItem>
-                <base-MObject>
-                 <MObject>
-                  <base-MElement>
-                   <MElement>
-                    <uid>{b12c648d-6c84-45a0-be79-7a56884440f7}</uid>
-                   </MElement>
-                  </base-MElement>
-                 </MObject>
-                </base-MObject>
-                <variety-editable>false</variety-editable>
-                <variety>verticalbar</variety>
-               </MItem>
-              </instance>
-             </target>
-            </handle>
-           </item>
-           <item>
-            <handle>
              <uid>{8bfca0a5-4f02-4a71-ba0a-61db5fcdd146}</uid>
              <target>
               <instance type="MComponent">
@@ -1797,26 +1680,6 @@
                  </MObject>
                 </base-MObject>
                </MComponent>
-              </instance>
-             </target>
-            </handle>
-           </item>
-           <item>
-            <handle>
-             <uid>{271e3353-223b-4c44-92b5-809e37f325e6}</uid>
-             <target>
-              <instance type="MItem">
-               <MItem>
-                <base-MObject>
-                 <MObject>
-                  <base-MElement>
-                   <MElement>
-                    <uid>{271e3353-223b-4c44-92b5-809e37f325e6}</uid>
-                   </MElement>
-                  </base-MElement>
-                 </MObject>
-                </base-MObject>
-               </MItem>
               </instance>
              </target>
             </handle>
