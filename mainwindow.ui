@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PixelPi</class>
- <widget class="QMainWindow" name="PixelPi">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,20 +11,33 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>PixelPi</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QToolButton" name="toolButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>10</y>
       <width>23</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>...</string>
+     <string>File</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>150</y>
+      <width>271</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Main Screen</string>
     </property>
    </widget>
   </widget>
