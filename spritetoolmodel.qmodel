@@ -50,7 +50,7 @@
                          <object>{f4e57eca-0a10-49af-b4b3-8c43f8283c7f}</object>
                          <name>Spritesheet</name>
                          <pos>x:35;y:-640</pos>
-                         <rect>x:-60;y:-110;w:120;h:220</rect>
+                         <rect>x:-65;y:-110;w:130;h:220</rect>
                          <visual-role>0</visual-role>
                          <visual-role2>5</visual-role2>
                         </DObject>
@@ -93,7 +93,7 @@
                          <object>{ede5e24b-120f-41b5-b44b-836b0f55c856}</object>
                          <name>Sprite</name>
                          <pos>x:-5;y:-375</pos>
-                         <rect>x:-80;y:-70;w:160;h:140</rect>
+                         <rect>x:-85;y:-70;w:170;h:140</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -114,7 +114,7 @@
                          <object>{9a7504c0-b4ab-4110-bb1e-38838f3af55b}</object>
                          <name>Canvas</name>
                          <pos>x:860;y:-490</pos>
-                         <rect>x:-70;y:-70;w:140;h:140</rect>
+                         <rect>x:-75;y:-70;w:150;h:140</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -135,7 +135,7 @@
                          <object>{96d26f5b-4e8d-45ed-86ad-bfbbe387a6b0}</object>
                          <name>Palette</name>
                          <pos>x:210;y:-455</pos>
-                         <rect>x:-75;y:-95;w:150;h:190</rect>
+                         <rect>x:-80;y:-95;w:160;h:190</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -177,7 +177,7 @@
                          <object>{affe6858-940b-401a-ba32-43662191abe2}</object>
                          <name>PNGHandler</name>
                          <pos>x:200;y:-705</pos>
-                         <rect>x:-45;y:-45;w:90;h:90</rect>
+                         <rect>x:-50;y:-45;w:100;h:90</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -714,72 +714,82 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{366ef46f-11e3-47c3-bbe8-fd15e4de672c}</uid>
+                    <uid>{068a4d9a-9d4a-406d-ada1-5902409b2d91}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-width : int</declaration>
+                    <declaration>width : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a264228b-fd1c-4183-80d9-a91f723957dc}</uid>
+                    <uid>{60f732c8-7b96-4bc4-964e-491dc2f07940}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-height : int</declaration>
+                    <declaration>height : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d3e35028-7cd2-4875-8d12-463c4ae8405d}</uid>
+                    <uid>{9660f5bd-64c0-4268-a5b8-1aae327d505a}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-timeline : Timeline</declaration>
+                    <declaration>timeline : Timeline</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{840d0f85-3754-4efc-ba26-c5fe49c13bfb}</uid>
+                    <uid>{1cfafa94-3ce4-42b9-acb8-a79770aaffdf}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>sprites : [Sprite]</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{63a6566d-f659-42ae-9ac6-9b6e88397648}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>currentSprite : int</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{d6cfad38-a959-4d08-8d7f-f646caadf3a3}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>projectName : string</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{8f3ca0d7-15c5-45ec-89d7-abee390103f2}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+saveToJson()</declaration>
+                    <declaration>saveToJson()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4ea8ae73-11e1-4e10-b581-c03a89ab7ff2}</uid>
+                    <uid>{f66c85e3-01cc-4279-b32c-922db420702f}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+loadFromJson()</declaration>
+                    <declaration>loadFromJson()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6d1e044f-b6b4-457c-93a6-3c0b4d34af2f}</uid>
-                    <type>1</type>
-                    <declaration>-projectName : string</declaration>
-                   </MClassMember>
-                  </item>
-                  <item>
-                   <MClassMember>
-                    <uid>{987e98e4-36b2-4543-afac-07ce964835c7}</uid>
+                    <uid>{8e1d45e1-7533-4f59-836b-48c609d66673}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+exportToPNG()</declaration>
+                    <declaration>exportToPNG()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b172f832-fe94-4fac-8830-5cb1a621674b}</uid>
-                    <type>1</type>
-                    <declaration>-sprites : [Sprite]</declaration>
-                   </MClassMember>
-                  </item>
-                  <item>
-                   <MClassMember>
-                    <uid>{67a908d1-eba4-4942-b2b7-d86fcecb6321}</uid>
-                    <type>1</type>
-                    <declaration>-currentSprite : int</declaration>
-                   </MClassMember>
-                  </item>
-                  <item>
-                   <MClassMember>
-                    <uid>{7f4ecdcd-8c9e-4549-927a-c60637c66658}</uid>
+                    <uid>{b2c1a65e-af48-4fc0-a63e-d66f6a2e5cb1}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+getCurrentSprite()</declaration>
+                    <declaration>getCurrentSprite()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -809,37 +819,42 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{1bb27def-fdf9-4dad-948d-ba61326e92a1}</uid>
+                    <uid>{ec6214fd-c430-44fe-801c-6105a2c06150}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-r : unsigned char</declaration>
+                    <declaration>r : unsigned char</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{678b10c9-2ae4-45e1-a8e7-92a1f1f43847}</uid>
+                    <uid>{17eb6069-f653-4c9d-825d-0d68714e229f}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-g : unsigned char</declaration>
+                    <declaration>g : unsigned char</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{8d70b2ed-7ab6-4ddf-9f61-52922e2c7b8b}</uid>
+                    <uid>{06b17fc2-22b3-40ef-b3de-38c4cd26ed2e}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-b : unsigned char</declaration>
+                    <declaration>b : unsigned char</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{95534415-ea64-432a-ae47-e6e41b18c2c6}</uid>
+                    <uid>{197ec9aa-8c94-493b-979e-e901187ee1a2}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-a : unsigned char</declaration>
+                    <declaration>a : unsigned char</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{983de8f5-87f6-4f86-a644-57dd4c07bcd2}</uid>
+                    <uid>{f1ab693a-0e7a-4a6f-946f-3cc7f4817c82}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+getRGBA()</declaration>
+                    <declaration>getRGBA()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1013,37 +1028,42 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{0a348606-da9d-4288-a6bf-e26a53a6b9b0}</uid>
+                    <uid>{befb9814-c743-4f87-a774-606c928eb382}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-pixels : Pixel[]</declaration>
+                    <declaration>pixels : Pixel[]</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5a571946-2029-409b-a7f2-2b20972608f8}</uid>
+                    <uid>{7f3e615a-224f-4672-ad4b-7bc4589f0dec}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+addPixel(Pixel pixel)</declaration>
+                    <declaration>addPixel(Pixel pixel)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f00c3ae1-18d9-4915-b8c3-4498e26262e4}</uid>
+                    <uid>{035b2db5-4d46-4546-b4a0-a6dc8a095ca1}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+removePixel()</declaration>
+                    <declaration>removePixel()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{954fcd0d-ea04-45ac-9837-6a16dfde2af3}</uid>
+                    <uid>{87ac8b82-016f-4f8e-b4f6-0df0a82fd7ab}</uid>
+                    <visibility>1</visibility>
                     <type>1</type>
                     <declaration>spriteUpdated() &lt;&lt;Signal&gt;&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{bd480b81-3740-4919-a4d4-9fee9e33dbf2}</uid>
+                    <uid>{337f2b8b-0eca-4efb-bab9-9db515b8924d}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+getPixel(x : int, y : int)</declaration>
+                    <declaration>getPixel(x : int, y : int)</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1103,37 +1123,42 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{75ea2b90-81ef-4436-82ea-16eced6c1b97}</uid>
+                    <uid>{b23afcdf-4ae8-41ad-8c66-bb36a532c8f0}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
                     <declaration>drawCanvas(Sprite sprite)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c26dfa4f-fe61-467e-9619-6f39646b6301}</uid>
+                    <uid>{2dc478a9-c4e9-4852-869e-48d710335f1a}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
                     <declaration>zoomTo(x : int, y : int)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2e444418-c782-41a8-a6ec-83b73cfad2e9}</uid>
+                    <uid>{1615c0d1-c647-4da0-8f93-badf3b5da9eb}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-zoomLevel : int</declaration>
+                    <declaration>zoomLevel : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{701602f9-3c32-4297-92a9-2959c06b555c}</uid>
+                    <uid>{8ccc3adb-ba66-4800-ba90-57c6558b8bfe}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-zoomX : int</declaration>
+                    <declaration>zoomX : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a157142b-850b-49e6-a880-d652d43afb9b}</uid>
+                    <uid>{3cbe94a0-b795-430f-82f2-471c5537a63b}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-zoomY : int</declaration>
+                    <declaration>zoomY : int</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1362,58 +1387,66 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{4f7bc116-e501-4dfe-8e68-ae615ef907c4}</uid>
+                    <uid>{0b97a565-8388-4dbb-9f74-5a59c922ef3d}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-currentColor : Pixel</declaration>
+                    <declaration>currentColor : Pixel</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b822e7b9-84e9-4dc4-8b84-d9f629cf1e55}</uid>
+                    <uid>{8c710721-275e-4def-ae59-4cb2e01620e0}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-secondaryColor : Pixel</declaration>
+                    <declaration>secondaryColor : Pixel</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{75f1e799-3179-4771-8883-74d3662ae866}</uid>
+                    <uid>{716cd4c9-7463-4dcb-a8b7-dde0d737af13}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-colors : Pixel[]</declaration>
+                    <declaration>colors : Pixel[]</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{477ea1db-47a1-462f-8938-c35158127eb9}</uid>
+                    <uid>{3bdd2772-81e8-4c87-a718-1efecf592db6}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+setNewCurrentColor()</declaration>
+                    <declaration>setNewCurrentColor()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d28cd99b-c918-4cb1-9c76-3f97af51ffc3}</uid>
+                    <uid>{507fcd9e-f4d6-4182-bb56-165ba76db22f}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+switchToSecondaryColor()</declaration>
+                    <declaration>switchToSecondaryColor()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{473bd9ea-5544-4744-96bb-eeee5d85090f}</uid>
+                    <uid>{aee25a52-4cd8-4c71-a32f-0492882886e7}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+getColors()</declaration>
+                    <declaration>getColors()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{7c87c4c1-c267-437e-bac4-1891f652d390}</uid>
+                    <uid>{fcc9ff08-4c87-4758-b4b8-d445c9599eb2}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+addColor()</declaration>
+                    <declaration>addColor()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3c1e4128-0902-4627-954d-8a0d7cdf053e}</uid>
+                    <uid>{4fe0e42c-d0ce-4d42-9bc1-90c2aa695500}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+removeColor()</declaration>
+                    <declaration>removeColor()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1526,72 +1559,82 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{cffc5027-6ba4-48af-a601-c44df68db65a}</uid>
+                    <uid>{6e79987d-2889-41dc-9307-9e74e4fd35be}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+paintedAt(x: int, y: int)</declaration>
+                    <declaration>paintedAt(x: int, y: int)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2079dcd6-ddc4-436d-a47a-b126615f4c0b}</uid>
+                    <uid>{3c152e77-8827-44d5-aad4-5c4b54b775b8}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+spriteUpdated()</declaration>
+                    <declaration>spriteUpdated()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{da4f7dfd-6a66-4e28-a49d-574f1bdbdc93}</uid>
+                    <uid>{c883cd18-3466-4781-9efc-1e27283afbf9}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+eyeDropper(x: int, y: int)</declaration>
+                    <declaration>eyeDropper(x: int, y: int)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{677e13d0-9dad-403a-a6ea-2dcfb97d50ec}</uid>
+                    <uid>{538ed10d-521e-47dc-8fce-7c2630cf0497}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+zoomed()</declaration>
+                    <declaration>zoomed()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{efe5f0ee-8d12-4b24-9f3a-26fd6a0ad454}</uid>
+                    <uid>{1304f944-9a79-4529-99cd-d0588863f415}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-selectedTool : int</declaration>
+                    <declaration>selectedTool : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{59c3db40-db88-440c-8cf0-d9ad68e8e9c5}</uid>
+                    <uid>{809f771f-0147-40c8-b319-6e0ca57ce389}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-isDrawing : bool</declaration>
+                    <declaration>isDrawing : bool</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{fee36cb3-e00f-4622-bf8d-8201008ed28c}</uid>
+                    <uid>{38bc9483-164e-4f64-aee5-378eaa3e1081}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-currentFrame : int</declaration>
+                    <declaration>currentFrame : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{1db2bd1b-5b5a-4097-873c-6c0e6c3d0b5a}</uid>
+                    <uid>{ad762213-689c-4f27-807b-ad94786982d9}</uid>
+                    <visibility>3</visibility>
                     <type>2</type>
-                    <declaration>+switchFrame(frameIndex: int)</declaration>
+                    <declaration>switchFrame(frameIndex: int)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4ff02966-78d0-45bc-aedc-58a66f775837}</uid>
+                    <uid>{30d117f9-2dfa-44df-897c-1e34070468ba}</uid>
+                    <visibility>3</visibility>
                     <type>2</type>
-                    <declaration>+toggleDrawing(active: bool)</declaration>
+                    <declaration>toggleDrawing(active: bool)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{7b42e435-3a53-472c-a28b-63680d2428b9}</uid>
+                    <uid>{80c2828b-ee5c-42ab-b200-9766cfcf61c8}</uid>
+                    <visibility>3</visibility>
                     <type>2</type>
-                    <declaration>+setTool(tool: int)</declaration>
+                    <declaration>setTool(tool: int)</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1735,14 +1778,16 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{75618bda-5fd3-47e5-adda-a435ce76403b}</uid>
+                    <uid>{da6f4f64-0f33-4953-b184-a4ffb7ea38a6}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
                     <declaration>DrawToPNG()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{35cb7763-60fd-42bb-bcef-98719597b3cb}</uid>
+                    <uid>{dbada9c5-93ab-4beb-acbe-05bc9a421087}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
                     <declaration>WriteToFile()</declaration>
                    </MClassMember>
@@ -1838,44 +1883,50 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{42286f05-7ec4-4945-b4d3-85db0ee5b17d}</uid>
+                    <uid>{a6dfe6bc-7e3f-45ad-8181-b2c19b92dfe8}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-framesPerSecond: int</declaration>
+                    <declaration>framesPerSecond: int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c51046a1-8ada-431c-b7b3-483aac1f2b4f}</uid>
+                    <uid>{4481d0ac-4545-4ed7-aab4-631caf562689}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+play()</declaration>
+                    <declaration>play()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{963157a9-1814-4b3a-913b-a5a8efa60bf7}</uid>
+                    <uid>{ae0ce9f6-b8d1-423d-a1cb-25e8b3bba49d}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+changeFPS()</declaration>
+                    <declaration>changeFPS()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cb911660-56ee-4148-be4e-92660fae996f}</uid>
+                    <uid>{a7394ad3-b57e-4109-ab69-fc47ec3c6346}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+deleteSprite()</declaration>
+                    <declaration>deleteSprite()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5859ba8c-7c5d-479e-be77-87b9712a6419}</uid>
+                    <uid>{b763a709-cc1f-40e7-9c36-836cf92154f8}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+addSprite()</declaration>
+                    <declaration>addSprite()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4422f6d4-9b76-49cf-a53c-97dfc2c07106}</uid>
+                    <uid>{6e5271d2-dbef-4ecd-aa48-f1797cb9f5b6}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+switchSprite()</declaration>
+                    <declaration>switchSprite()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2017,30 +2068,34 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{2578f77e-632d-4d27-9fcf-7a8cf2ff4396}</uid>
+                    <uid>{d94e5498-137c-429a-953a-4e1c6cc1fc3e}</uid>
+                    <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>-radius : int</declaration>
+                    <declaration>radius : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{97ec8d8b-f698-4b59-a57e-28ace79d4053}</uid>
+                    <uid>{d5e8a56d-813d-4733-bfc7-5933f3a33bdd}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+getRadius()</declaration>
+                    <declaration>getRadius()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ed2f4b69-c37a-41c9-b821-7fcac4163c0b}</uid>
+                    <uid>{3801e879-1d12-4197-bf1e-a89521cff686}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+increaseRadius()</declaration>
+                    <declaration>increaseRadius()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{1f4691df-49cf-4477-bd1c-84b46f8ea2cd}</uid>
+                    <uid>{4ad494ea-5fc4-476f-bc12-fcbd0b061f89}</uid>
+                    <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>+decreaseRadius()</declaration>
+                    <declaration>decreaseRadius()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
