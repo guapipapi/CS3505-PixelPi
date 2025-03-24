@@ -50,7 +50,7 @@
                          <object>{f4e57eca-0a10-49af-b4b3-8c43f8283c7f}</object>
                          <name>Spritesheet</name>
                          <pos>x:35;y:-640</pos>
-                         <rect>x:-65;y:-110;w:130;h:220</rect>
+                         <rect>x:-60;y:-110;w:120;h:220</rect>
                          <visual-role>0</visual-role>
                          <visual-role2>5</visual-role2>
                         </DObject>
@@ -70,8 +70,8 @@
                           </DElement>
                          </base-DElement>
                          <object>{a3be1595-a780-4259-aade-80a2ab06c3c4}</object>
-                         <name>Pixel Class</name>
-                         <pos>x:25;y:-160</pos>
+                         <name>Pixel</name>
+                         <pos>x:25;y:-130</pos>
                          <rect>x:-55;y:-70;w:110;h:140</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -91,9 +91,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{ede5e24b-120f-41b5-b44b-836b0f55c856}</object>
-                         <name>Sprite Class</name>
+                         <name>Sprite</name>
                          <pos>x:-5;y:-375</pos>
-                         <rect>x:-85;y:-70;w:170;h:140</rect>
+                         <rect>x:-80;y:-70;w:160;h:140</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -113,8 +113,8 @@
                          </base-DElement>
                          <object>{9a7504c0-b4ab-4110-bb1e-38838f3af55b}</object>
                          <name>Canvas</name>
-                         <pos>x:830;y:-490</pos>
-                         <rect>x:-75;y:-70;w:150;h:140</rect>
+                         <pos>x:860;y:-490</pos>
+                         <rect>x:-70;y:-70;w:140;h:140</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -135,7 +135,7 @@
                          <object>{96d26f5b-4e8d-45ed-86ad-bfbbe387a6b0}</object>
                          <name>Palette</name>
                          <pos>x:210;y:-455</pos>
-                         <rect>x:-80;y:-95;w:160;h:190</rect>
+                         <rect>x:-75;y:-95;w:150;h:190</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -156,7 +156,7 @@
                          <object>{88a19e90-de64-424d-8fd3-009415d15201}</object>
                          <name>Controller</name>
                          <pos>x:545;y:-495</pos>
-                         <rect>x:-90;y:-110;w:180;h:220</rect>
+                         <rect>x:-85;y:-110;w:170;h:220</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -418,7 +418,7 @@
                          <object>{38ca7a91-e1a7-45a6-a3bf-a5ec3e33a48d}</object>
                          <name>Round Brush</name>
                          <pos>x:335;y:-120</pos>
-                         <rect>x:-45;y:-20;w:90;h:40</rect>
+                         <rect>x:-40;y:-20;w:80;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -604,7 +604,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1742831543824</last-modified>
+                  <last-modified>1742837158443</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -714,70 +714,70 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{22e63fff-18c9-4866-85a3-3881fe77bcf8}</uid>
+                    <uid>{366ef46f-11e3-47c3-bbe8-fd15e4de672c}</uid>
                     <type>1</type>
                     <declaration>-width : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0fc2dc96-e6ef-4d30-a04c-c3fb4327835a}</uid>
+                    <uid>{a264228b-fd1c-4183-80d9-a91f723957dc}</uid>
                     <type>1</type>
                     <declaration>-height : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{48e628bd-abbe-4d0a-9729-53b21448c75d}</uid>
+                    <uid>{d3e35028-7cd2-4875-8d12-463c4ae8405d}</uid>
                     <type>1</type>
                     <declaration>-timeline : Timeline</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{879e11c0-dac2-4d7f-a95f-b2a3e0ef2194}</uid>
+                    <uid>{840d0f85-3754-4efc-ba26-c5fe49c13bfb}</uid>
                     <type>2</type>
-                    <declaration>+SaveToJson()</declaration>
+                    <declaration>+saveToJson()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d835f5e0-36af-4e02-ae55-80c72f98b25a}</uid>
+                    <uid>{4ea8ae73-11e1-4e10-b581-c03a89ab7ff2}</uid>
                     <type>2</type>
-                    <declaration>+LoadFromJson()</declaration>
+                    <declaration>+loadFromJson()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{df7e6d50-a76b-4733-9354-17f72f889d15}</uid>
+                    <uid>{6d1e044f-b6b4-457c-93a6-3c0b4d34af2f}</uid>
                     <type>1</type>
                     <declaration>-projectName : string</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{399f1de5-1629-41e6-8f85-087e3f9954b6}</uid>
+                    <uid>{987e98e4-36b2-4543-afac-07ce964835c7}</uid>
                     <type>2</type>
-                    <declaration>+ExportToPNG()</declaration>
+                    <declaration>+exportToPNG()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{06ad3800-16bc-4717-af13-d64cff5aa9b4}</uid>
+                    <uid>{b172f832-fe94-4fac-8830-5cb1a621674b}</uid>
                     <type>1</type>
                     <declaration>-sprites : [Sprite]</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4d6a3266-0ac2-4d38-ae99-3db23ea9fb8f}</uid>
+                    <uid>{67a908d1-eba4-4942-b2b7-d86fcecb6321}</uid>
                     <type>1</type>
                     <declaration>-currentSprite : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{71f11777-1f77-4e08-bd6b-99512aff9c22}</uid>
+                    <uid>{7f4ecdcd-8c9e-4549-927a-c60637c66658}</uid>
                     <type>2</type>
                     <declaration>+getCurrentSprite()</declaration>
                    </MClassMember>
@@ -802,42 +802,42 @@
                     <uid>{a3be1595-a780-4259-aade-80a2ab06c3c4}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>Pixel Class</name>
+                  <name>Pixel</name>
                  </MObject>
                 </base-MObject>
                 <members>
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{41dce8a9-8456-4f23-8ac8-3178d56e4c17}</uid>
+                    <uid>{1bb27def-fdf9-4dad-948d-ba61326e92a1}</uid>
                     <type>1</type>
                     <declaration>-r : unsigned char</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2d60f978-3122-42c3-80af-22c30d0367d6}</uid>
+                    <uid>{678b10c9-2ae4-45e1-a8e7-92a1f1f43847}</uid>
                     <type>1</type>
                     <declaration>-g : unsigned char</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4ba76355-6e07-4e1f-adb5-3ae86cb5489e}</uid>
+                    <uid>{8d70b2ed-7ab6-4ddf-9f61-52922e2c7b8b}</uid>
                     <type>1</type>
                     <declaration>-b : unsigned char</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{1109858c-23c3-4bed-9d7d-2a3afc0dc9ca}</uid>
+                    <uid>{95534415-ea64-432a-ae47-e6e41b18c2c6}</uid>
                     <type>1</type>
                     <declaration>-a : unsigned char</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{7357864a-6051-423b-a1a2-ca0880dde011}</uid>
+                    <uid>{983de8f5-87f6-4f86-a644-57dd4c07bcd2}</uid>
                     <type>2</type>
                     <declaration>+getRGBA()</declaration>
                    </MClassMember>
@@ -862,7 +862,7 @@
                     <uid>{ede5e24b-120f-41b5-b44b-836b0f55c856}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>Sprite Class</name>
+                  <name>Sprite</name>
                   <relations>
                    <handles>
                     <handles>
@@ -1013,35 +1013,35 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{4ba36cb7-a908-4d0c-a5d2-ccdc30131dee}</uid>
+                    <uid>{0a348606-da9d-4288-a6bf-e26a53a6b9b0}</uid>
                     <type>1</type>
-                    <declaration>Pixels : Pixels[]</declaration>
+                    <declaration>-pixels : Pixel[]</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b1590e68-12e0-4f0b-8ecf-26824d6fc541}</uid>
+                    <uid>{5a571946-2029-409b-a7f2-2b20972608f8}</uid>
                     <type>2</type>
                     <declaration>+addPixel(Pixel pixel)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{89bad3c5-6d7b-4d9a-85d6-d15de4471529}</uid>
+                    <uid>{f00c3ae1-18d9-4915-b8c3-4498e26262e4}</uid>
                     <type>2</type>
                     <declaration>+removePixel()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{efdac8ec-7ba1-4184-a47c-5e376461ab66}</uid>
+                    <uid>{954fcd0d-ea04-45ac-9837-6a16dfde2af3}</uid>
                     <type>1</type>
                     <declaration>spriteUpdated() &lt;&lt;Signal&gt;&gt;</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{7cbb246e-108b-401d-ad68-a48c74ee62dc}</uid>
+                    <uid>{bd480b81-3740-4919-a4d4-9fee9e33dbf2}</uid>
                     <type>2</type>
                     <declaration>+getPixel(x : int, y : int)</declaration>
                    </MClassMember>
@@ -1103,35 +1103,35 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{1b341ffd-42b3-4b47-b087-0a5d82c69411}</uid>
+                    <uid>{75ea2b90-81ef-4436-82ea-16eced6c1b97}</uid>
                     <type>2</type>
-                    <declaration>DrawCanvas(Sprite sprite)</declaration>
+                    <declaration>drawCanvas(Sprite sprite)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a67cc9c5-069a-4367-b5fa-1a7036ad3e8e}</uid>
+                    <uid>{c26dfa4f-fe61-467e-9619-6f39646b6301}</uid>
                     <type>2</type>
-                    <declaration>ZoomTo(x : int, y : int)</declaration>
+                    <declaration>zoomTo(x : int, y : int)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b43bb73c-76ff-46e1-b6d0-5ae0253998b8}</uid>
+                    <uid>{2e444418-c782-41a8-a6ec-83b73cfad2e9}</uid>
                     <type>1</type>
                     <declaration>-zoomLevel : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{24be819e-7f4c-4325-80d9-a697b7fa38ea}</uid>
+                    <uid>{701602f9-3c32-4297-92a9-2959c06b555c}</uid>
                     <type>1</type>
                     <declaration>-zoomX : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{8f24e42e-d947-47bc-8440-7ef287233735}</uid>
+                    <uid>{a157142b-850b-49e6-a880-d652d43afb9b}</uid>
                     <type>1</type>
                     <declaration>-zoomY : int</declaration>
                    </MClassMember>
@@ -1362,58 +1362,58 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{88821b7f-f3e3-4287-b8d9-cc76a6b1cb9f}</uid>
+                    <uid>{4f7bc116-e501-4dfe-8e68-ae615ef907c4}</uid>
                     <type>1</type>
                     <declaration>-currentColor : Pixel</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cdabb425-6d2c-4158-8548-a05ed01c47bb}</uid>
+                    <uid>{b822e7b9-84e9-4dc4-8b84-d9f629cf1e55}</uid>
                     <type>1</type>
                     <declaration>-secondaryColor : Pixel</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{96f040cb-5df5-4780-8f3c-c4572c6a36ae}</uid>
+                    <uid>{75f1e799-3179-4771-8883-74d3662ae866}</uid>
                     <type>1</type>
                     <declaration>-colors : Pixel[]</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f9ca9b7a-384f-4f2b-8684-15dd701d2988}</uid>
+                    <uid>{477ea1db-47a1-462f-8938-c35158127eb9}</uid>
                     <type>2</type>
-                    <declaration>+SetNewCurrentColor()</declaration>
+                    <declaration>+setNewCurrentColor()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{911ce089-4082-404d-82c2-e20c6c432bd4}</uid>
+                    <uid>{d28cd99b-c918-4cb1-9c76-3f97af51ffc3}</uid>
                     <type>2</type>
-                    <declaration>+SwitchToSecondaryColor()</declaration>
+                    <declaration>+switchToSecondaryColor()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cde54162-8dcd-456e-b3d4-e604a5e03e12}</uid>
+                    <uid>{473bd9ea-5544-4744-96bb-eeee5d85090f}</uid>
                     <type>2</type>
-                    <declaration>+GetColors()</declaration>
+                    <declaration>+getColors()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2078bba6-f511-40e6-9cdb-50e146fe76a8}</uid>
+                    <uid>{7c87c4c1-c267-437e-bac4-1891f652d390}</uid>
                     <type>2</type>
-                    <declaration>+AddColor()</declaration>
+                    <declaration>+addColor()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5ba8cbdc-8bbe-4c14-bdf8-3cf8d92c23e7}</uid>
+                    <uid>{3c1e4128-0902-4627-954d-8a0d7cdf053e}</uid>
                     <type>2</type>
-                    <declaration>+RemoveColor()</declaration>
+                    <declaration>+removeColor()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -1526,70 +1526,70 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{49956929-73bb-491d-878e-a10870535e60}</uid>
+                    <uid>{cffc5027-6ba4-48af-a601-c44df68db65a}</uid>
                     <type>2</type>
-                    <declaration>+PaintedAt(x: int, y: int)</declaration>
+                    <declaration>+paintedAt(x: int, y: int)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{51a2d6f4-e109-43bd-b521-ad8a30877a78}</uid>
+                    <uid>{2079dcd6-ddc4-436d-a47a-b126615f4c0b}</uid>
                     <type>2</type>
-                    <declaration>+SpriteUpdated()</declaration>
+                    <declaration>+spriteUpdated()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a5b3ccad-28cf-4018-9eed-f661a9d633e1}</uid>
+                    <uid>{da4f7dfd-6a66-4e28-a49d-574f1bdbdc93}</uid>
                     <type>2</type>
-                    <declaration>+EyeDropper(x: int, y: int)</declaration>
+                    <declaration>+eyeDropper(x: int, y: int)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2476bf4d-fe0b-41ad-9df9-4615c5d4763b}</uid>
+                    <uid>{677e13d0-9dad-403a-a6ea-2dcfb97d50ec}</uid>
                     <type>2</type>
-                    <declaration>+Zoomed()</declaration>
+                    <declaration>+zoomed()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{55310957-1fd4-4435-87de-b8434df5919a}</uid>
+                    <uid>{efe5f0ee-8d12-4b24-9f3a-26fd6a0ad454}</uid>
                     <type>1</type>
                     <declaration>-selectedTool : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{52e5b29b-5092-40fb-bef7-40899f3d21dc}</uid>
+                    <uid>{59c3db40-db88-440c-8cf0-d9ad68e8e9c5}</uid>
                     <type>1</type>
                     <declaration>-isDrawing : bool</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e5de020e-6ad6-4ec7-a897-0fd3042ad727}</uid>
+                    <uid>{fee36cb3-e00f-4622-bf8d-8201008ed28c}</uid>
                     <type>1</type>
                     <declaration>-currentFrame : int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d1619bbf-8a73-48d5-a137-b81cd4acb4e7}</uid>
+                    <uid>{1db2bd1b-5b5a-4097-873c-6c0e6c3d0b5a}</uid>
                     <type>2</type>
-                    <declaration>+SwitchFrame(frameIndex: int)</declaration>
+                    <declaration>+switchFrame(frameIndex: int)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3391b2a5-9c95-441b-8237-2d067da12cea}</uid>
+                    <uid>{4ff02966-78d0-45bc-aedc-58a66f775837}</uid>
                     <type>2</type>
                     <declaration>+toggleDrawing(active: bool)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6ddfc276-cbe7-4407-a5f3-9edaae890635}</uid>
+                    <uid>{7b42e435-3a53-472c-a28b-63680d2428b9}</uid>
                     <type>2</type>
                     <declaration>+setTool(tool: int)</declaration>
                    </MClassMember>
@@ -1838,44 +1838,44 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{9cad8c16-7132-4de4-a12a-9e200c09b5cc}</uid>
+                    <uid>{42286f05-7ec4-4945-b4d3-85db0ee5b17d}</uid>
                     <type>1</type>
                     <declaration>-framesPerSecond: int</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d19dd377-d8e4-4785-ba16-5345d55615ed}</uid>
+                    <uid>{c51046a1-8ada-431c-b7b3-483aac1f2b4f}</uid>
                     <type>2</type>
                     <declaration>+play()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2e0c8b89-e379-4b8c-9e5f-d2d824218af1}</uid>
+                    <uid>{963157a9-1814-4b3a-913b-a5a8efa60bf7}</uid>
                     <type>2</type>
                     <declaration>+changeFPS()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{806702ca-7db3-43d4-86b1-a14ba6d66bda}</uid>
+                    <uid>{cb911660-56ee-4148-be4e-92660fae996f}</uid>
                     <type>2</type>
                     <declaration>+deleteSprite()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{dac890e7-cd88-47e3-8523-9488968b771f}</uid>
+                    <uid>{5859ba8c-7c5d-479e-be77-87b9712a6419}</uid>
                     <type>2</type>
                     <declaration>+addSprite()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0f97f475-d819-44bc-9bdc-492d079e01cf}</uid>
+                    <uid>{4422f6d4-9b76-49cf-a53c-97dfc2c07106}</uid>
                     <type>2</type>
-                    <declaration>+SwitchSprite()</declaration>
+                    <declaration>+switchSprite()</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
