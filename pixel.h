@@ -1,6 +1,8 @@
 #ifndef PIXEL_H
 #define PIXEL_H
 
+#include <QVector4D>
+
 class Pixel {
 
     private:
@@ -16,6 +18,7 @@ class Pixel {
         unsigned char getGreenValue();
         unsigned char getBlueValue();
         unsigned char getAlphaValue();
+        QVector4D getRGBA();
 };
 
 #endif // PIXEL_H

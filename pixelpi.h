@@ -14,6 +14,10 @@ class PixelPi : public QMainWindow
 {
     Q_OBJECT
 
+public slots:
+    void DrawCanvas();
+    void ZoomTo(int x, int y, int magnitude);
+
 private slots:
     void on_FileButton_clicked();
 
@@ -24,6 +28,11 @@ public:
 private:
     Ui::PixelPi *ui;
     FileDialog fileDialog;
+
+    int zoomLevel;
+    int zoomX;
+    int zoomY;
+
 
 };
 #endif // PIXELPI_H
