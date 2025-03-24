@@ -8,11 +8,11 @@ class Timeline : public QObject
     Q_OBJECT
 public:
     explicit Timeline(QObject *parent = nullptr);
-    void PlayAnimation();
-    void ChangeFPS(int newFPS);
-    void DeleteSprite(int spriteID);
-    void AddSprite();
-    void SwitchSprite();
+    void playAnimation();
+    void changeFPS(int newFPS);
+    void deleteSprite(int spriteID);
+    void addSprite();
+    void switchSprite();
 
 
 private:

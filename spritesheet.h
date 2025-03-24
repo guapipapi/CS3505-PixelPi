@@ -13,13 +13,13 @@ class Spritesheet : public QObject
 public:
     explicit Spritesheet(QObject *parent = nullptr);
     // Returns true if operation was a success
-    bool SaveToJson();
+    bool saveToJson();
     // Returns true if operation was a success
-    bool LoadJson();
+    bool loadJson();
     // You know
-    bool ExportToPNG();
+    bool exportToPNG();
     // Returns the current sprite
-    Sprite GetCurrentSprite();
+    Sprite getCurrentSprite();
 private:
     int width;
     int height;

@@ -8,15 +8,15 @@ class Controller : public QObject
     Q_OBJECT
 public:
     explicit Controller(QObject *parent = nullptr);
-    void EyeDropper(int x, int y);
-    void Zoomed();
-    void SwitchSprite(int spriteID);
+    void eyeDropper(int x, int y);
+    void zoomed();
+    void switchSprite(int spriteID);
     void setTool(int newTool);
 
 
 public slots:
-    void PaintedAt(int x, int y);
-    void SpriteUpdated();
+    void paintedAt(int x, int y);
+    void spriteUpdated();
 private:
     int selectedTool;
     bool isDrawing;

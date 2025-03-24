@@ -10,11 +10,11 @@ class Palette : public QObject
     Q_OBJECT
 public:
     explicit Palette(QObject *parent = nullptr);
-    void SetNewCurrentColor();
-    void SwitchToSecondaryColor();
-    std::vector<Pixel> GetColors();
-    void AddColor(Pixel newColor);
-    void RemoveColor(Pixel colorToRemove);
+    void setNewCurrentColor();
+    void switchToSecondaryColor();
+    std::vector<Pixel> getColors();
+    void addColor(Pixel newColor);
+    void removeColor(Pixel colorToRemove);
 
 private:
     Pixel currentColor;

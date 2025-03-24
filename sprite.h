@@ -9,11 +9,11 @@ class Sprite
 public:
     Sprite();
 
-    void AddPixel(Pixel newPixel);
-    void RemovePixelAt(int x, int y);
-    void GetPixelAt(int x, int y);
+    void addPixel(Pixel newPixel);
+    void removePixelAt(int x, int y);
+    void getPixelAt(int x, int y);
 signals:
-    void SpriteUpdated();
+    void spriteUpdated();
 private:
 
 };

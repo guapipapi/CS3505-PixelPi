@@ -8,9 +8,9 @@ class Brush : public QObject
     Q_OBJECT
 public:
     explicit Brush(QObject *parent = nullptr);
-    int GetRadius();
-    void IncreaseRadius();
-    void DecreaseRadius();
+    int getRadius();
+    void increaseRadius();
+    void decreaseRadius();
 private:
     int radius;
 
