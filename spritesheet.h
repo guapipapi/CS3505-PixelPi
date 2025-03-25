@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <timeline.h>
-#include <sprite.h>>
+#include <sprite.h>
 #include <vector>
 #include <string>
 

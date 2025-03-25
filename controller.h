@@ -15,11 +15,11 @@ public:
 
 
 public slots:
-    void paintedAt(int x, int y);
-    void spriteUpdated();
+    // void paintedAt(int x, int y);
+    // void spriteUpdated();
 private:
     int selectedTool;
-    bool isDrawing;
+    bool isDrawing = false;
     int currentFrame;
 
     void toggleDrawing(bool active);

@@ -72,7 +72,7 @@
                          <object>{a3be1595-a780-4259-aade-80a2ab06c3c4}</object>
                          <name>Pixel</name>
                          <pos>x:25;y:-130</pos>
-                         <rect>x:-55;y:-70;w:110;h:140</rect>
+                         <rect>x:-60;y:-70;w:120;h:140</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -93,7 +93,7 @@
                          <object>{ede5e24b-120f-41b5-b44b-836b0f55c856}</object>
                          <name>Sprite</name>
                          <pos>x:-5;y:-375</pos>
-                         <rect>x:-85;y:-70;w:170;h:140</rect>
+                         <rect>x:-90;y:-70;w:180;h:140</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -114,7 +114,7 @@
                          <object>{9a7504c0-b4ab-4110-bb1e-38838f3af55b}</object>
                          <name>Canvas</name>
                          <pos>x:860;y:-490</pos>
-                         <rect>x:-75;y:-70;w:150;h:140</rect>
+                         <rect>x:-80;y:-70;w:160;h:140</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -198,7 +198,7 @@
                          <object>{5d0dd1f0-1746-4ce6-bc73-ccadc9bac5d0}</object>
                          <name>Timeline</name>
                          <pos>x:-120;y:-630</pos>
-                         <rect>x:-65;y:-80;w:130;h:160</rect>
+                         <rect>x:-70;y:-80;w:140;h:160</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -358,7 +358,7 @@
                          <object>{0c9076c4-e6cc-47f4-85e6-c56b8902e6b4}</object>
                          <name>Brush</name>
                          <pos>x:210;y:-220</pos>
-                         <rect>x:-55;y:-65;w:110;h:130</rect>
+                         <rect>x:-60;y:-65;w:120;h:130</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -418,7 +418,7 @@
                          <object>{38ca7a91-e1a7-45a6-a3bf-a5ec3e33a48d}</object>
                          <name>Round Brush</name>
                          <pos>x:335;y:-120</pos>
-                         <rect>x:-40;y:-20;w:80;h:40</rect>
+                         <rect>x:-45;y:-20;w:90;h:40</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -604,7 +604,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1742837158443</last-modified>
+                  <last-modified>1742868633624</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -1387,7 +1387,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{0b97a565-8388-4dbb-9f74-5a59c922ef3d}</uid>
+                    <uid>{853adc06-9ffc-4be6-b7f6-228473415180}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>currentColor : Pixel</declaration>
@@ -1395,7 +1395,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{8c710721-275e-4def-ae59-4cb2e01620e0}</uid>
+                    <uid>{a34f6cc4-07cc-45c7-9249-c80d48aeb3d7}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>secondaryColor : Pixel</declaration>
@@ -1403,7 +1403,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{716cd4c9-7463-4dcb-a8b7-dde0d737af13}</uid>
+                    <uid>{2ae3a0f5-8469-4fbf-a7ed-8ed5d7025eb5}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>colors : Pixel[]</declaration>
@@ -1411,7 +1411,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3bdd2772-81e8-4c87-a718-1efecf592db6}</uid>
+                    <uid>{d586abd0-5d88-4c67-90ca-4cc0af687d54}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>setNewCurrentColor()</declaration>
@@ -1419,7 +1419,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{507fcd9e-f4d6-4182-bb56-165ba76db22f}</uid>
+                    <uid>{5330ad94-5334-4c3a-ae60-c90f396c391c}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>switchToSecondaryColor()</declaration>
@@ -1427,7 +1427,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{aee25a52-4cd8-4c71-a32f-0492882886e7}</uid>
+                    <uid>{bd93f9d4-be06-49e0-b52b-e6d64599f6fc}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>getColors()</declaration>
@@ -1435,7 +1435,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{fcc9ff08-4c87-4758-b4b8-d445c9599eb2}</uid>
+                    <uid>{2f83dfe7-8e2a-4b25-8c1d-3ecc3ec8cad9}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>addColor()</declaration>
@@ -1443,7 +1443,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4fe0e42c-d0ce-4d42-9bc1-90c2aa695500}</uid>
+                    <uid>{55f28dd7-ee20-4642-8a28-3cde54897982}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>removeColor()</declaration>

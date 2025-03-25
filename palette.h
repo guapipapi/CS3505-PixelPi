@@ -17,9 +17,9 @@ public:
     void removeColor(Pixel colorToRemove);
 
 private:
-    Pixel currentColor;
-    Pixel secondaryColor;
-    std::vector<Pixel> colors;
+    // Pixel currentColor;
+    // Pixel secondaryColor;
+    // std::vector<Pixel> colors;
 
 signals:
 };
