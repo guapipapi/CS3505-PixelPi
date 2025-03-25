@@ -1,31 +1,5 @@
 #include "spritesheet.h"
 
-/*
-public:
-    explicit Spritesheet(QObject *parent = nullptr);
-    // Returns true if operation was a success
-    bool saveToJson();
-    // Returns true if operation was a success
-    bool loadJson();
-    // You know
-    bool exportToPNG();
-    // Returns the current sprite
-    Sprite getCurrentSprite();
-private:
-    int width;
-    int height;
-    std::string projectName;
-
-    int currentFrame;
-
-
-    Timeline timeline;
-    std::vector<Sprite> sprites;
- *
- *
-*/
-
-
 Spritesheet::Spritesheet(QObject *parent)
     : QObject{parent}
 {}
