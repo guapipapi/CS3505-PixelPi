@@ -14,6 +14,7 @@ class Pixel {
     public:
 
         Pixel(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha);
+
         unsigned char getRedValue();
         unsigned char getGreenValue();
         unsigned char getBlueValue();

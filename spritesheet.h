@@ -31,9 +31,6 @@ private:
     Timeline timeline;
     std::vector<Sprite> sprites;
 
-
-
-
 signals:
 };
 

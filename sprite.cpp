@@ -4,12 +4,13 @@
 
 Sprite::Sprite() { }
 
-void Sprite::addPixel(int x, int y, Pixel pixel) {
-    backing[std::pair<int, int>(x, y)] = pixel;
+void Sprite::addPixel(int x, int y, Pixel& newPixel) {
+    backing.insert({{x, y}, newPixel});
 }
 
-Pixel Sprite::getPixelAt(int x, int y) {
-    return backing[std::pair(x, y)];
+Pixel* Sprite::getPixelAt(int x, int y) {
+    auto it = backing.find({x, y});
+    return (it != backing.end()) ? &it->second : nullptr;
 }
 
 void Sprite::removePixelAt(int x, int y) {

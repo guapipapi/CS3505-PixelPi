@@ -2,7 +2,7 @@
 #define PIXELPI_H
 
 #include <QMainWindow>
-#include <fileDialog.h>.h>
+#include <fileDialog.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
