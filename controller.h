@@ -19,7 +19,7 @@ public slots:
     // void spriteUpdated();
 private:
     int selectedTool;
-    bool isDrawing;
+    bool isDrawing = false;
     int currentFrame;
 
     void toggleDrawing(bool active);

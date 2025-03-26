@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <fileDialog.h>
-#include <QPainter>
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class PixelPi;
