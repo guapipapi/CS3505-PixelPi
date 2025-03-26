@@ -24,6 +24,7 @@ HEADERS += \
     brush.h \
     controller.h \
     fileDialog.h \
+    paintWidget.h \
     palette.h \
     pixel.h \
     pixelpi.h \

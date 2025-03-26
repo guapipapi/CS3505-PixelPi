@@ -2,8 +2,8 @@
 #define PIXELPI_H
 
 #include <QMainWindow>
-#include <fileDialog.h>.h>
-
+#include <fileDialog.h>
+#include <QPainter>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class PixelPi;
@@ -15,11 +15,12 @@ class PixelPi : public QMainWindow
     Q_OBJECT
 
 public slots:
-    void drawCanvas();
-    void zoomTo(int x, int y, int magnitude);
+    // void drawCanvas();
+    // void zoomTo(int x, int y, int magnitude);
 
 private slots:
-    void on_FileButton_clicked();
+    // void on_FileButton_clicked();
+
 
 public:
     PixelPi(QWidget *parent = nullptr);
@@ -28,6 +29,7 @@ public:
 private:
     Ui::PixelPi *ui;
     FileDialog fileDialog;
+
 
     int zoomLevel;
     int zoomX;

@@ -12,14 +12,14 @@ public:
     explicit Palette(QObject *parent = nullptr);
     void setNewCurrentColor();
     void switchToSecondaryColor();
-    std::vector<Pixel> getColors();
+    // std::vector<Pixel> getColors();
     void addColor(Pixel newColor);
     void removeColor(Pixel colorToRemove);
 
 private:
-    Pixel currentColor;
-    Pixel secondaryColor;
-    std::vector<Pixel> colors;
+    // Pixel currentColor;
+    // Pixel secondaryColor;
+    // std::vector<Pixel> colors;
 
 signals:
 };

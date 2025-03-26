@@ -15,8 +15,8 @@ public:
 
 
 public slots:
-    void paintedAt(int x, int y);
-    void spriteUpdated();
+    // void paintedAt(int x, int y);
+    // void spriteUpdated();
 private:
     int selectedTool;
     bool isDrawing;

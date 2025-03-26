@@ -27,7 +27,7 @@
      <string>File</string>
     </property>
    </widget>
-   <widget class="QWidget" name="paintWidget" native="true">
+   <widget class="paintWidget" name="paintWidget" native="true">
     <property name="geometry">
      <rect>
       <x>49</x>
@@ -96,12 +96,12 @@
      <string>Play</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>680</x>
       <y>10</y>
-      <width>108</width>
+      <width>116</width>
       <height>79</height>
      </rect>
     </property>
@@ -141,6 +141,14 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>paintWidget</class>
+   <extends>QWidget</extends>
+   <header>paintWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
  <slots>
