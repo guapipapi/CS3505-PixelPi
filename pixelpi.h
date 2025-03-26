@@ -35,6 +35,10 @@ private:
     int zoomX;
     int zoomY;
 
+    void increaseZoom();
+    void dragZoom(int newX, int newY);
+    void resetZoom();
+
 
 };
 #endif // PIXELPI_H
