@@ -27,7 +27,7 @@
      <string>File</string>
     </property>
    </widget>
-   <widget class="paintWidget" name="paintWidget" native="true">
+   <widget class="PaintWidget" name="paintWidget" native="true">
     <property name="geometry">
      <rect>
       <x>49</x>
@@ -128,12 +128,12 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>720</x>
       <y>520</y>
-      <width>66</width>
+      <width>67</width>
       <height>27</height>
      </rect>
     </property>
@@ -165,7 +165,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>paintWidget</class>
+   <class>PaintWidget</class>
    <extends>QWidget</extends>
    <header>paintWidget.h</header>
    <container>1</container>
