@@ -3,13 +3,19 @@
 
 #include <QWidget>
 #include <QPainter>
+#include <QMouseEvent>
+#include "sprite.h"
+#include "pixel.h"
 
 class PaintWidget : public QWidget
 {
     Q_OBJECT
-
 public:
-    explicit PaintWidget(QWidget *parent = nullptr) : QWidget(parent) {}
+    explicit PaintWidget(QWidget *parent, Sprite sprite);
+    void setSprite(Sprite sprite) ;
+
+private:
+    Sprite sprite;
 
 protected:
     void paintEvent(QPaintEvent *) override {
@@ -18,8 +24,22 @@ protected:
         pen.setWidth(10);
         painter.setPen(pen);
 
-        QRect rect(10, 20, 80, 60);
-        painter.drawEllipse(rect);
+        for(int x = 0; x < sprite.width; x++) {
+            for(int y = 0; y < sprite.height; y++) {
+                if(sprite.getPixelAt(x, y) != nullptr) {
+                    QRect rect(x, y, 2, 2);
+                    painter.drawRect(rect);
+                }
+            }
+        }
+    }
+
+    void mousePressEvent(QMouseEvent *event) override {
+        if(event->button() == Qt::LeftButton) {
+            Pixel newPixel(0, 0, 0, 0);
+            sprite.addPixel(event->pos().x(), event->pos().y(), newPixel);
+            update();
+        }
     }
 };
 

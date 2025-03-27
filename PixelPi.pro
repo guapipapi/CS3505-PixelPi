@@ -13,6 +13,7 @@ SOURCES += \
     controller.cpp \
     fileDialog.cpp \
     main.cpp \
+    paintWidget.cpp \
     palette.cpp \
     pixel.cpp \
     pixelpi.cpp \
