@@ -2,6 +2,7 @@
 #define BRUSH_H
 
 #include <QObject>
+#include "sprite.h"
 
 class Brush : public QObject
 {
@@ -9,8 +10,8 @@ class Brush : public QObject
 public:
     explicit Brush(QObject *parent = nullptr);
     int getRadius();
-    void increaseRadius();
-    void decreaseRadius();
+    void setRadius(int radius);
+    void paintPixel(int x, int y, Pixel& pixel, Sprite& sprite);
 private:
     int radius;
 
