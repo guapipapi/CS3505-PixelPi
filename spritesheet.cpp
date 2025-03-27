@@ -1,21 +1,73 @@
+#include <QCoreApplication>
+#include <QJsonDocument>
+#include <QFile>
+
 #include "spritesheet.h"
 
 Spritesheet::Spritesheet(QObject *parent)
     : QObject{parent}
 {}
 
-bool Spritesheet::saveToJson() {
+bool Spritesheet::saveToJson(QString& filePath) {
 
-    //JSON code needed here xdd
+    QJsonDocument jsonDoc(toJson());
+    QByteArray jsonData = jsonDoc.toJson(QJsonDocument::Indented);
+
+    //Add actual filename to the path
+    filePath += (projectName + ".spf");
+
+    QFile file(filePath);
+
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(jsonData);
+        file.close();
+
+        return true;
+    }
 
     return false;
 }
 
-bool Spritesheet::loadJson() {
+bool Spritesheet::loadJson(QString& filePath) {
 
-    //JSON code needed here xdd
+    //Check the file at the specified path
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        return false;
+    }
 
-    return false;
+    QByteArray jsonData = file.readAll();
+    file.close();
+
+    //Check if the format of the file is correct
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData);
+    if (jsonDoc.isNull() || !jsonDoc.isObject()) {
+        return false;
+    }
+
+    QJsonObject jsonObj = jsonDoc.object();
+
+    //Extract sprite sheet details
+    projectName = jsonObj["projectName"].toString().toStdString();
+    width = jsonObj["width"].toInt();
+    height = jsonObj["height"].toInt();
+    currentFrame = jsonObj["currentFrame"].toInt();
+
+    //Extract sprite data
+    sprites.clear();
+    QJsonArray spriteArray = jsonObj["sprites"].toArray();
+
+    //Reconstruct each sprite and put it into sprite vector
+    for (const QJsonValue& spriteValue : spriteArray) {
+        if (!spriteValue.isObject()) continue;
+        QJsonObject spriteObj = spriteValue.toObject();
+
+        Sprite sprite;
+        sprite.fromJson(spriteObj);
+        sprites.push_back(sprite);
+    }
+
+    return true;
 }
 
 bool Spritesheet::exportToPNG() {
