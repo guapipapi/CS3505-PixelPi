@@ -3,6 +3,6 @@
 
 PaintWidget::PaintWidget(QWidget *parent) : QWidget{parent} {}
 
-void PaintWidget::setSprite(Sprite newSprite) {
-    sprite = &newSprite;
+void PaintWidget::setSprite(Sprite *newSprite) {
+    this->sprite = newSprite;
 }

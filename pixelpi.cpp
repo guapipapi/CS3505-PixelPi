@@ -2,13 +2,18 @@
 #include "ui_pixelpi.h"
 #include <iostream>
 #include <QPainter>
-#include "paintWidget.h"  // Include your new class
-
+#include "paintWidget.h"
+#include "spritesheet.h"
+#include "sprite.h"
 PixelPi::PixelPi(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::PixelPi)
 {
     ui->setupUi(this);
+
+    // THIS WILL BE MOVED TO MAIN.CPP here for testing purposes
+    Sprite* newSprite = new Sprite(256,256);
+    ui->paintWidget->setSprite(newSprite);
 
 }
 

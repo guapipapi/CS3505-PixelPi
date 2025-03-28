@@ -12,20 +12,20 @@ class PaintWidget : public QWidget
     Q_OBJECT
 public:
     explicit PaintWidget(QWidget *parent);
-    void setSprite(Sprite newSprite);
+    void setSprite(Sprite *newSprite);
 
 private:
     Sprite* sprite = nullptr;
 
 protected:
     void paintEvent(QPaintEvent *) override {
+        if (sprite == nullptr)
+            return;
+
         QPainter painter(this);
         QPen pen(Qt::blue);
         pen.setWidth(10);
         painter.setPen(pen);
-
-        if (sprite == nullptr)
-            return;
 
         for(int x = 0; x < sprite->width; x++) {
             for(int y = 0; y < sprite->height; y++) {
