@@ -22,6 +22,9 @@ public:
     // Returns the current sprite
     Sprite& getCurrentSprite();
 
+    // Creates a new project
+    void newProject(int newWidth, int newHeight);
+
     //Convert sprite sheet to JSON
     QJsonObject toJson() const {
         QJsonObject jsonObj;

@@ -11,11 +11,11 @@ class PaintWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit PaintWidget(QWidget *parent, Sprite sprite);
-    void setSprite(Sprite sprite) ;
+    explicit PaintWidget(QWidget *parent);
+    void setSprite(Sprite newSprite);
 
 private:
-    Sprite sprite;
+    Sprite* sprite = nullptr;
 
 protected:
     void paintEvent(QPaintEvent *) override {
@@ -24,9 +24,12 @@ protected:
         pen.setWidth(10);
         painter.setPen(pen);
 
-        for(int x = 0; x < sprite.width; x++) {
-            for(int y = 0; y < sprite.height; y++) {
-                if(sprite.getPixelAt(x, y) != nullptr) {
+        if (sprite == nullptr)
+            return;
+
+        for(int x = 0; x < sprite->width; x++) {
+            for(int y = 0; y < sprite->height; y++) {
+                if(sprite->getPixelAt(x, y) != nullptr) {
                     QRect rect(x, y, 2, 2);
                     painter.drawRect(rect);
                 }
@@ -35,9 +38,9 @@ protected:
     }
 
     void mousePressEvent(QMouseEvent *event) override {
-        if(event->button() == Qt::LeftButton) {
+        if(event->button() == Qt::LeftButton && sprite != nullptr) {
             Pixel newPixel(0, 0, 0, 0);
-            sprite.addPixel(event->pos().x(), event->pos().y(), newPixel);
+            sprite->addPixel(event->pos().x(), event->pos().y(), newPixel);
             update();
         }
     }

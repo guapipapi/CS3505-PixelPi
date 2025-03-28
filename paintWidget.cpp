@@ -1,8 +1,8 @@
 #include "paintWidget.h"
 #include <QWidget>
 
-PaintWidget::PaintWidget(QWidget *parent, Sprite sprite) : QWidget{parent}, sprite{sprite} {}
+PaintWidget::PaintWidget(QWidget *parent) : QWidget{parent} {}
 
-void PaintWidget::setSprite(Sprite sprite) {
-    this-> sprite = sprite;
+void PaintWidget::setSprite(Sprite newSprite) {
+    sprite = &newSprite;
 }
