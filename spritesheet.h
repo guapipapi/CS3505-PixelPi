@@ -20,7 +20,7 @@ public:
     // You know
     bool exportToPNG();
     // Returns the current sprite
-    Sprite getCurrentSprite();
+    Sprite& getCurrentSprite();
 
     //Convert sprite sheet to JSON
     QJsonObject toJson() const {

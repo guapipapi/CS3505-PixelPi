@@ -77,6 +77,6 @@ bool Spritesheet::exportToPNG() {
     return false;
 }
 
-Sprite Spritesheet::getCurrentSprite() {
+Sprite& Spritesheet::getCurrentSprite() {
     return sprites[currentFrame];
 }
