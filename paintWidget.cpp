@@ -54,6 +54,7 @@ void PaintWidget::mousePressEvent(QMouseEvent *event) {
     //Only allow drawing pixels if the canvas isn't being dragged!
     if (!wheelDragging) {
 
+        //If the left button is being pressed draw a pixel
         if(event->button() == Qt::LeftButton) {
             //pixelSize = this->width()/sprite->width;
             int xCoord = (event->pos().x() - offsetX) / pixelSize;
@@ -71,10 +72,12 @@ void PaintWidget::mousePressEvent(QMouseEvent *event) {
                     }
                 }
             }
+
+        //If the middle button is being pressed start to drag the canvas
         } else if (event->button() == Qt::MiddleButton) {
-            wheelDragging = true;
+            wheelDragging = true; //Set dragging to true!
             mouseDragPos = event->pos(); //Store the starting position of the drag
-            setCursor(Qt::ClosedHandCursor); //Change cursor to indicate dragging
+            setCursor(Qt::ClosedHandCursor); //Change cursor to the drag symbol
         }
 
         update();
@@ -137,8 +140,8 @@ void PaintWidget::mouseReleaseEvent(QMouseEvent *event) {
 
     //Set dragging to false if the middle button was released
     if (event->button() == Qt::MiddleButton) {
-        wheelDragging = false;
-        setCursor(Qt::ArrowCursor); // Reset cursor
+        wheelDragging = false; //Set dragging to false!
+        setCursor(Qt::ArrowCursor); //Reset cursor
     }
 }
 
