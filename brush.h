@@ -11,7 +11,7 @@ public:
     explicit Brush(QObject *parent = nullptr);
     int getRadius();
     void setRadius(int radius);
-    void paintPixel(int x, int y, Pixel& pixel, Sprite& sprite);
+    virtual void paintPixel(int x, int y, Pixel& pixel, Sprite& sprite);
 private:
     int radius;
 

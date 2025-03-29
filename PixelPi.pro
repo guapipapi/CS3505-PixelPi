@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     brush.cpp \
     controller.cpp \
+    eraser.cpp \
     fileDialog.cpp \
     main.cpp \
     newcolordialog.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 HEADERS += \
     brush.h \
     controller.h \
+    eraser.h \
     fileDialog.h \
     newcolordialog.h \
     newfiledialog.h \

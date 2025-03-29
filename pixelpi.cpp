@@ -5,6 +5,8 @@
 #include "paintWidget.h"
 #include "spritesheet.h"
 #include "sprite.h"
+#include "brush.h"
+#include "pixel.h"
 PixelPi::PixelPi(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::PixelPi)
@@ -13,7 +15,12 @@ PixelPi::PixelPi(QWidget *parent)
 
     // THIS WILL BE MOVED TO MAIN.CPP here for testing purposes
     Sprite* newSprite = new Sprite(32,32);
+    Brush* brush = new Brush(ui->paintWidget);
+    brush->setRadius(2);
+    Pixel* pixel = new Pixel(255, 0, 0, 255);
     ui->paintWidget->setSprite(newSprite);
+    ui->paintWidget->setBrush(brush);
+    ui->paintWidget->setPixel(pixel);
 
 }
 
