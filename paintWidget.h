@@ -29,11 +29,15 @@ private:
     int offsetX = 0;
     int offsetY = 0;
 
+    bool wheelDragging = false;
+    QPoint mouseDragPos;
+
 protected:
     void paintEvent(QPaintEvent *) override;
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
 };
 
