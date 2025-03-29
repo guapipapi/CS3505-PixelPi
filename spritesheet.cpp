@@ -70,6 +70,19 @@ bool Spritesheet::loadJson(QString& filePath) {
     return true;
 }
 
+void Spritesheet::newProject(int newWidth, int newHeight)
+{
+    sprites.clear();
+
+    Sprite* newSprite = new Sprite(newWidth, newHeight);
+
+
+    //will be changed to following
+    sprites.push_back(*newSprite); //timeline.addSprite();
+
+    currentFrame = 0;
+}
+
 bool Spritesheet::exportToPNG() {
 
     //PNG library needed here l0l

@@ -13,6 +13,7 @@ class PaintWidget : public QWidget
 public:
     explicit PaintWidget(QWidget *parent);
     void setSprite(Sprite *newSprite);
+    void clearSprite();
 
 private:
     Sprite* sprite = nullptr;

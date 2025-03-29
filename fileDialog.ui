@@ -17,12 +17,19 @@
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>70</y>
-     <width>84</width>
-     <height>116</height>
+     <y>30</y>
+     <width>86</width>
+     <height>146</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="newButton">
+      <property name="text">
+       <string>New File</string>
+      </property>
+     </widget>
+    </item>
     <item>
      <widget class="QPushButton" name="saveAsButton">
       <property name="text">

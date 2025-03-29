@@ -13,6 +13,8 @@ SOURCES += \
     controller.cpp \
     fileDialog.cpp \
     main.cpp \
+    newcolordialog.cpp \
+    newfiledialog.cpp \
     paintWidget.cpp \
     palette.cpp \
     pixel.cpp \
@@ -25,6 +27,8 @@ HEADERS += \
     brush.h \
     controller.h \
     fileDialog.h \
+    newcolordialog.h \
+    newfiledialog.h \
     paintWidget.h \
     palette.h \
     pixel.h \
@@ -35,6 +39,8 @@ HEADERS += \
 
 FORMS += \
     fileDialog.ui \
+    newcolordialog.ui \
+    newfiledialog.ui \
     pixelpi.ui
 
 # Default rules for deployment.
