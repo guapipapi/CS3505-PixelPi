@@ -12,9 +12,6 @@ class Spritesheet : public QObject
 {
     Q_OBJECT
 public:
-    // WILL BE PRIVATE
-    std::vector<Sprite> sprites;
-
     explicit Spritesheet(QObject *parent = nullptr);
     // Returns true if operation was a success
     bool saveToJson(QString& filePath);
@@ -56,7 +53,7 @@ private:
 
     Timeline timeline;
 
-
+    std::vector<Sprite> sprites;
 signals:
 };
 
