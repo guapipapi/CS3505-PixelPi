@@ -1,6 +1,7 @@
 #include <QCoreApplication>
 #include <QJsonDocument>
 #include <QFile>
+#include <iostream>
 
 #include "spritesheet.h"
 
@@ -81,6 +82,9 @@ void Spritesheet::newProject(int newWidth, int newHeight)
     sprites.push_back(*newSprite); //timeline.addSprite();
 
     currentFrame = 0;
+
+    // emits the new sprite
+    emit currentSpriteUpdated(&sprites[currentFrame]);
 }
 
 bool Spritesheet::exportToPNG() {

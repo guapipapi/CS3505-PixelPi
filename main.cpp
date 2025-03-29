@@ -10,10 +10,15 @@ int main(int argc, char *argv[])
     PixelPi w;
     w.show();
 
+    // initialize default project
     Spritesheet spritesheet;
 
-    // initialize default project
-    spritesheet.newProject(256,256);
+    // Connects spritesheet to paintWidget
+    QObject::connect(&spritesheet, &Spritesheet::currentSpriteUpdated, &w, &PixelPi::updateSpriteWidget);
+
+    // Initializes default project as 32 by 32 sprite
+    spritesheet.newProject(32,32);
+
 
     return a.exec();
 }

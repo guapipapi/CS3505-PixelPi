@@ -171,6 +171,32 @@
      </item>
     </layout>
    </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>10</y>
+      <width>82</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="fileNameLabel">
+       <property name="text">
+        <string>Unsaved</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="dimensionsLabel">
+       <property name="text">
+        <string>32x32</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -178,7 +204,7 @@
      <x>0</x>
      <y>0</y>
      <width>791</width>
-     <height>19</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

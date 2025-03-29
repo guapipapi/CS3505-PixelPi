@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <fileDialog.h>
+#include <sprite.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,9 +18,9 @@ class PixelPi : public QMainWindow
 public slots:
     // void drawCanvas();
     // void zoomTo(int x, int y, int magnitude);
+    void updateSpriteWidget(Sprite *newSprite);
 
 private slots:
-    // void on_FileButton_clicked();
 
 
 public:

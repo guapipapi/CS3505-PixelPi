@@ -55,6 +55,7 @@ private:
 
     std::vector<Sprite> sprites;
 signals:
+    void currentSpriteUpdated(Sprite* currentSprite);
 };
 
 #endif // SPRITESHEET_H

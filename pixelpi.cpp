@@ -1,12 +1,11 @@
 #include "pixelpi.h"
 #include "ui_pixelpi.h"
-#include <iostream>
 #include <QPainter>
 #include "paintWidget.h"
-#include "spritesheet.h"
-#include "sprite.h"
 #include "brush.h"
 #include "pixel.h"
+#include "sprite.h"
+
 PixelPi::PixelPi(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::PixelPi)
@@ -14,14 +13,11 @@ PixelPi::PixelPi(QWidget *parent)
     ui->setupUi(this);
 
     // THIS WILL BE MOVED TO MAIN.CPP here for testing purposes
-    Sprite* newSprite = new Sprite(32,32);
     Brush* brush = new Brush(ui->paintWidget);
     brush->setRadius(2);
     Pixel* pixel = new Pixel(255, 0, 0, 255);
-    ui->paintWidget->setSprite(newSprite);
     ui->paintWidget->setBrush(brush);
     ui->paintWidget->setPixel(pixel);
-
 }
 
 PixelPi::~PixelPi()
@@ -50,6 +46,10 @@ void PixelPi::resetZoom() {
     //LOGIC SHOULD BE ADDED TO THE PAINT WIDGET THAT GETS THE CENTRE OF THE CANVAS!!
 }
 
+void PixelPi::updateSpriteWidget(Sprite *newSprite)
+{
+    ui->paintWidget->setSprite(newSprite);
+}
 
 
 
