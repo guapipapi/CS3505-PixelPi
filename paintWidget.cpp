@@ -53,8 +53,8 @@ void PaintWidget::mousePressEvent(QMouseEvent *event) {
 
     if(event->button() == Qt::LeftButton) {
         //pixelSize = this->width()/sprite->width;
-        int xCoord = event->pos().x()/pixelSize;
-        int yCoord = event->pos().y()/pixelSize;
+        int xCoord = (event->pos().x() - offsetX) / pixelSize;
+        int yCoord = (event->pos().y() - offsetY) / pixelSize;
 
         int r = brush->getRadius();
         for(int x = -r/2; x <= r/2; x++) {
@@ -78,8 +78,8 @@ void PaintWidget::mouseMoveEvent(QMouseEvent *event) {
 
     if (event->buttons() & Qt::LeftButton) {
         //pixelSize = this->width() / sprite->width;
-        int xCoord = event->pos().x() / pixelSize;
-        int yCoord = event->pos().y() / pixelSize;
+        int xCoord = (event->pos().x() - offsetX) / pixelSize;
+        int yCoord = (event->pos().y() - offsetY) / pixelSize;
 
         int radius = brush->getRadius();
         int halfRadius = radius / 2;
@@ -89,6 +89,7 @@ void PaintWidget::mouseMoveEvent(QMouseEvent *event) {
                 int px = xCoord + dx;
                 int py = yCoord + dy;
 
+                // bounds check
                 if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
                     sprite->addPixel(px, py, *pixel);
                 }
