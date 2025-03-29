@@ -23,10 +23,17 @@ private:
     Pixel* pixel = nullptr;
     Brush* brush = nullptr;
 
+    double zoom = 1;
+
+    int pixelSize = 0;
+    int offsetX = 0;
+    int offsetY = 0;
+
 protected:
     void paintEvent(QPaintEvent *) override;
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
+    void wheelEvent(QWheelEvent *event) override;
 
 };
 

@@ -29,16 +29,5 @@ public:
 private:
     Ui::PixelPi *ui;
     FileDialog fileDialog;
-
-
-    int zoomLevel;
-    int zoomX;
-    int zoomY;
-
-    void increaseZoom();
-    void dragZoom(int newX, int newY);
-    void resetZoom();
-
-
 };
 #endif // PIXELPI_H
