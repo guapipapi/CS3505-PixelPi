@@ -12,7 +12,7 @@ PixelPi::PixelPi(QWidget *parent)
     ui->setupUi(this);
 
     // THIS WILL BE MOVED TO MAIN.CPP here for testing purposes
-    Sprite* newSprite = new Sprite(256,256);
+    Sprite* newSprite = new Sprite(128,128);
     ui->paintWidget->setSprite(newSprite);
 
 }
