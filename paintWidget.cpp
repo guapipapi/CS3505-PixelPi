@@ -2,6 +2,7 @@
 #include "brush.h"
 #include "pixel.h"
 #include <QWidget>
+#include <QWheelEvent>
 
 PaintWidget::PaintWidget(QWidget *parent) : QWidget{parent} {
     // Allow for dragging
@@ -22,6 +23,7 @@ void PaintWidget::setPixel(Pixel *pixel) {
 
 
 void PaintWidget::paintEvent(QPaintEvent *){
+
     if (sprite == nullptr || brush == nullptr || pixel == nullptr)
         return;
 
@@ -29,7 +31,8 @@ void PaintWidget::paintEvent(QPaintEvent *){
     // No outline
     painter.setPen(Qt::NoPen);
 
-    int pixelSize = this->width()/sprite->width;
+    pixelSize = qMax(1, (this->width() / sprite->width) * (int)zoom);
+    painter.translate(offsetX, offsetY);
 
     for(int x = 0; x < sprite->width; x++) {
         for(int y = 0; y < sprite->height; y++) {
@@ -48,47 +51,156 @@ void PaintWidget::mousePressEvent(QMouseEvent *event) {
     if (sprite == nullptr || brush == nullptr || pixel == nullptr)
         return;
 
-    if(event->button() == Qt::LeftButton) {
-        int pixelSize = this->width()/sprite->width;
-        int xCoord = event->pos().x()/pixelSize;
-        int yCoord = event->pos().y()/pixelSize;
+    //Only allow drawing pixels if the canvas isn't being dragged!
+    if (!wheelDragging) {
 
-        int r = brush->getRadius();
-        for(int x = -r/2; x <= r/2; x++) {
-            for(int y = -r/2; y <= r/2; y++) {
-                int px = xCoord + x;
-                int py = yCoord + y;
+        //If the left button is being pressed draw a pixel
+        if(event->button() == Qt::LeftButton) {
+            //pixelSize = this->width()/sprite->width;
+            int xCoord = (event->pos().x() - offsetX) / pixelSize;
+            int yCoord = (event->pos().y() - offsetY) / pixelSize;
 
-                // Bounds check
-                if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-                    sprite->addPixel(px, py, *pixel);
+            int r = brush->getRadius();
+            for(int x = -r/2; x <= r/2; x++) {
+                for(int y = -r/2; y <= r/2; y++) {
+                    int px = xCoord + x;
+                    int py = yCoord + y;
+
+                    // Bounds check
+                    if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
+                        sprite->addPixel(px, py, *pixel);
+                    }
                 }
             }
+
+        //If the middle button is being pressed start to drag the canvas
+        } else if (event->button() == Qt::MiddleButton) {
+            wheelDragging = true; //Set dragging to true!
+            mouseDragPos = event->pos(); //Store the starting position of the drag
+            setCursor(Qt::ClosedHandCursor); //Change cursor to the drag symbol
         }
+
+        update();
     }
-    update();
 }
 
 void PaintWidget::mouseMoveEvent(QMouseEvent *event) {
     if (sprite == nullptr || brush == nullptr || pixel == nullptr)
         return;
 
-    if (event->buttons() & Qt::LeftButton) {
-        int pixelSize = this->width() / sprite->width;
-        int xCoord = event->pos().x() / pixelSize;
-        int yCoord = event->pos().y() / pixelSize;
+    //If the middle button is being pressed then drag the canvas around
+    if (wheelDragging) {
 
-        int radius = brush->getRadius();
-        int halfRadius = radius / 2;
+        //Calculate the distance between the original and current mouse postion
+        QPoint distance = event->pos() - mouseDragPos;
 
-        for (int dx = -halfRadius; dx <= halfRadius; dx++) {
-            for (int dy = -halfRadius; dy <= halfRadius; dy++) {
-                int px = xCoord + dx;
-                int py = yCoord + dy;
+        //Apply the distance to the current canvas offset
+        offsetX += distance.x();
+        offsetY += distance.y();
 
-                if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-                    sprite->addPixel(px, py, *pixel);
+        //Determine the boundries of the canvas
+        int canvasWidth = pixelSize * sprite->width;
+        int canvasHeight = pixelSize * sprite->height;
+
+        //Make sure the offset stays inside the boundries of the canvas
+        offsetX = qMin(0, qMax(offsetX, this->width() - canvasWidth));
+        offsetY = qMin(0, qMax(offsetY, this->height() - canvasHeight));
+
+        //Update the original mouse dragged position
+        mouseDragPos = event->pos();
+
+    } else {
+
+        if (event->buttons() & Qt::LeftButton) {
+            //pixelSize = this->width() / sprite->width;
+            int xCoord = (event->pos().x() - offsetX) / pixelSize;
+            int yCoord = (event->pos().y() - offsetY) / pixelSize;
+
+            int radius = brush->getRadius();
+            int halfRadius = radius / 2;
+
+            for (int dx = -halfRadius; dx <= halfRadius; dx++) {
+                for (int dy = -halfRadius; dy <= halfRadius; dy++) {
+                    int px = xCoord + dx;
+                    int py = yCoord + dy;
+
+                    // bounds check
+                    if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
+                        sprite->addPixel(px, py, *pixel);
+                    }
                 }
+            }
+        }
+    }
+
+    update();
+}
+
+void PaintWidget::mouseReleaseEvent(QMouseEvent *event) {
+
+    //Set dragging to false if the middle button was released
+    if (event->button() == Qt::MiddleButton) {
+        wheelDragging = false; //Set dragging to false!
+        setCursor(Qt::ArrowCursor); //Reset cursor
+    }
+}
+
+void PaintWidget::wheelEvent(QWheelEvent *event) {
+
+    if (sprite == nullptr)
+        return;
+
+    //Only allow zooming in if the canvas isn't being dragged around!
+    if (!wheelDragging) {
+
+        //Get the mouse position and angle of the scrolling
+        QPointF mousePos = event->position();
+        int delta = event->angleDelta().y();
+
+        int prevPixelSize = pixelSize;
+
+        //Apply zoom
+        if (delta >= 0) {
+            if (zoom < 3) {
+                zoom *= 1.5;
+            } else {
+                zoom *= 1.1;
+            }
+        } else {
+            zoom = 1;  //Reset zoom
+        }
+
+        //Calculate the new pixel size after zooming
+        pixelSize = qMax(1.0, (this->width() / sprite->width) * zoom);
+
+        //If there's no zoom set offsets to zero
+        if (zoom == 1) {
+            offsetX = 0;
+            offsetY = 0;
+
+        //Calculate how to draw the canvas based on the current zoom
+        } else {
+
+            //Adjust the offsets based on the mouse position and the new zoom level
+            offsetX += (mousePos.x() - offsetX) * (1 - (pixelSize / prevPixelSize));
+            offsetY += (mousePos.y() - offsetY) * (1 - (pixelSize / prevPixelSize));
+
+            //Make sure the offset stays inside the boundries of the canvas
+            int canvasWidth = pixelSize * sprite->width;
+            int canvasHeight = pixelSize * sprite->height;
+
+            //Check horizontal offset
+            if (offsetX > 0) {
+                offsetX = 0;
+            } else if (offsetX < (this->width() - canvasWidth)) {
+                offsetX = this->width() - canvasWidth;
+            }
+
+            //Check vertical offset
+            if (offsetY > 0) {
+                offsetY = 0;
+            } else if (offsetY < (this->height() - canvasHeight)) {
+                offsetY = this->height() - canvasHeight;
             }
         }
 

@@ -28,6 +28,7 @@ PixelPi::~PixelPi()
     delete ui;
 }
 
+
 //int zoomLevel;
 //int zoomX;
 //int zoomY;
@@ -53,9 +54,6 @@ void PixelPi::updateSpriteWidget(Sprite *newSprite)
 {
     ui->paintWidget->setSprite(newSprite);
 }
-
-
-
 
 void PixelPi::on_FileButton_clicked()
 {

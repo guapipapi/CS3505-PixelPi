@@ -31,7 +31,6 @@ public:
 private:
     Ui::PixelPi *ui;
     FileDialog fileDialog;
-    NewColorDialog newColorDialog;
 
 
 
@@ -44,6 +43,7 @@ private:
     void resetZoom();
 signals:
     void createNewFile(int width, int height);
+
 
 };
 #endif // PIXELPI_H
