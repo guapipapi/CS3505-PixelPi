@@ -24,6 +24,8 @@ public slots:
 private slots:
     void on_FileButton_clicked();
 
+    void on_brushRadiusSpinBox_valueChanged(int arg1);
+
 public:
     PixelPi(QWidget *parent = nullptr);
     ~PixelPi();
@@ -43,6 +45,8 @@ private:
     void resetZoom();
 signals:
     void createNewFile(int width, int height);
+    void mousePaintedAt(int x, int y);
+    void newBrushRadius(int newRadius);
 
 
 };

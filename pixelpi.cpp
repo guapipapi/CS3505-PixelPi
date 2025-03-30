@@ -20,7 +20,11 @@ PixelPi::PixelPi(QWidget *parent)
     ui->paintWidget->setBrush(brush);
     ui->paintWidget->setPixel(pixel);
 
+    // Connect new file signal
     QObject::connect(&fileDialog, &FileDialog::createNewFileSignal, this, &PixelPi::createNewFile);
+
+    // Connect paint event to signal
+    QObject::connect(ui->paintWidget, &PaintWidget::mouseClickedAt, this, &PixelPi::mousePaintedAt);
 }
 
 PixelPi::~PixelPi()
@@ -58,5 +62,11 @@ void PixelPi::updateSpriteWidget(Sprite *newSprite)
 void PixelPi::on_FileButton_clicked()
 {
     fileDialog.show();
+}
+
+
+void PixelPi::on_brushRadiusSpinBox_valueChanged(int newRadius)
+{
+    emit newBrushRadius(newRadius);
 }
 

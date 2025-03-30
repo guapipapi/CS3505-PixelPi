@@ -1,4 +1,5 @@
 #include "controller.h"
+#include <brush.h>
 
 Controller::Controller(QObject *parent, Spritesheet *_currentSheet)
     : QObject{parent}, selectedTool(0), currentFrame(0), currentSheet(_currentSheet)
@@ -71,4 +72,20 @@ void Controller::setTool(int newTool){
  */
 void Controller::toggleDrawing(bool active){
     isDrawing = active;
+}
+
+void Controller::paintedAt(int x, int y, Sprite* sprite, Brush* brush){
+    int r = brush->getRadius();
+
+    for(int brushX = -r/2; brushX <= r/2; brushX++) {
+        for(int brushY = -r/2; brushY <= r/2; brushY++) {
+            int px = x + brushX;
+            int py = y + brushY;
+
+            // Bounds check
+            if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
+                sprite->addPixel(px, py, *pixel);
+            }
+        }
+    }
 }
