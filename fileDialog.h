@@ -18,7 +18,6 @@ public:
 
 private slots:
     void on_newButton_clicked();
-// void createNewFile(int width, int height);
 
 private:
     Ui::FileDialog *ui;
