@@ -7,11 +7,13 @@
 PaintWidget::PaintWidget(QWidget *parent) : QWidget{parent} {
     // Allow for dragging
     setMouseTracking(true);
-    setStyleSheet("border: 5px solid red");
 }
 
 void PaintWidget::setSprite(Sprite *newSprite) {
     this->sprite = newSprite;
+    this->zoom = 1;
+    this->offsetX = 0;
+    this->offsetY = 0;
 }
 
 void PaintWidget::setBrush(Brush *brush) {
