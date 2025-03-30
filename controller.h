@@ -20,7 +20,7 @@ public:
 
 
 public slots:
-    void paintedAt(int x, int y, Sprite* sprite, Brush* brush);
+    void paintedAt(int x, int y, Brush* brush);
    // void spriteUpdated();
 
 private:

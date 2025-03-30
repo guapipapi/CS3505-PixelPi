@@ -74,7 +74,7 @@ void Controller::toggleDrawing(bool active){
     isDrawing = active;
 }
 
-void Controller::paintedAt(int x, int y, Sprite* sprite, Brush* brush){
+void Controller::paintedAt(int x, int y, Brush* brush){
     int r = brush->getRadius();
 
     for(int brushX = -r/2; brushX <= r/2; brushX++) {
@@ -83,8 +83,8 @@ void Controller::paintedAt(int x, int y, Sprite* sprite, Brush* brush){
             int py = y + brushY;
 
             // Bounds check
-            if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-                sprite->addPixel(px, py, *pixel);
+            if (px >= 0 && px < currentSheet->getCurrentSprite().width && py >= 0 && py < currentSheet->getCurrentSprite().height) {
+                currentSheet->getCurrentSprite().addPixel(px, py, *pixel);
             }
         }
     }

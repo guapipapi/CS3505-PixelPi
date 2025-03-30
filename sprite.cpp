@@ -63,3 +63,20 @@ void Sprite::fromJson(const QJsonObject& jsonObj) {
         backing[{x, y}] = pixel;
     }
 }
+
+void Sprite::paintAt(int x, int y, Pixel& newPixel)
+{
+    int r = brush->getRadius();
+
+    for(int brushX = -r/2; brushX <= r/2; brushX++) {
+        for(int brushY = -r/2; brushY <= r/2; brushY++) {
+            int px = x + brushX;
+            int py = y + brushY;
+
+            // Bounds check
+            if (px >= 0 && px < width && py >= 0 && py < height) {
+                addPixel(px, py, newPixel);
+            }
+        }
+    }
+}
