@@ -42,7 +42,7 @@
     <string>Set dimensions of new file</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>140</x>
@@ -72,13 +72,16 @@
        <number>2</number>
       </property>
       <property name="maximum">
-       <number>512</number>
+       <number>128</number>
       </property>
       <property name="singleStep">
        <number>2</number>
       </property>
+      <property name="stepType">
+       <enum>QAbstractSpinBox::StepType::AdaptiveDecimalStepType</enum>
+      </property>
       <property name="value">
-       <number>256</number>
+       <number>32</number>
       </property>
      </widget>
     </item>
@@ -88,13 +91,13 @@
        <number>2</number>
       </property>
       <property name="maximum">
-       <number>512</number>
+       <number>128</number>
       </property>
       <property name="singleStep">
        <number>2</number>
       </property>
       <property name="value">
-       <number>256</number>
+       <number>32</number>
       </property>
      </widget>
     </item>
