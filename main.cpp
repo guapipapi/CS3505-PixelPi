@@ -16,6 +16,8 @@ int main(int argc, char *argv[])
     // Connects spritesheet to paintWidget
     QObject::connect(&spritesheet, &Spritesheet::currentSpriteUpdated, &w, &PixelPi::updateSpriteWidget);
 
+    QObject::connect(&w, &PixelPi::createNewFile, &spritesheet, &Spritesheet::newProject);
+
     // Initializes default project as 32 by 32 sprite
     spritesheet.newProject(32,32);
 

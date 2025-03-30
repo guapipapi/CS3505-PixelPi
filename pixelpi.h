@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <fileDialog.h>
+#include <newcolordialog.h>
 #include <sprite.h>
 
 QT_BEGIN_NAMESPACE
@@ -21,7 +22,7 @@ public slots:
     void updateSpriteWidget(Sprite *newSprite);
 
 private slots:
-
+    void on_FileButton_clicked();
 
 public:
     PixelPi(QWidget *parent = nullptr);
@@ -30,6 +31,8 @@ public:
 private:
     Ui::PixelPi *ui;
     FileDialog fileDialog;
+    NewColorDialog newColorDialog;
+
 
 
     int zoomLevel;
@@ -39,7 +42,8 @@ private:
     void increaseZoom();
     void dragZoom(int newX, int newY);
     void resetZoom();
-
+signals:
+    void createNewFile(int width, int height);
 
 };
 #endif // PIXELPI_H

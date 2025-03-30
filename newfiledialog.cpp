@@ -12,3 +12,10 @@ NewFileDialog::~NewFileDialog()
 {
     delete ui;
 }
+
+void NewFileDialog::on_buttonBox_accepted()
+{
+    // CREATE NEW FILE
+    emit createNewFile(ui->widthSpinBox->value(), ui->heightSpinBox->value());
+}
+

@@ -5,6 +5,7 @@
 #include "brush.h"
 #include "pixel.h"
 #include "sprite.h"
+#include "fileDialog.h"
 
 PixelPi::PixelPi(QWidget *parent)
     : QMainWindow(parent)
@@ -18,6 +19,8 @@ PixelPi::PixelPi(QWidget *parent)
     Pixel* pixel = new Pixel(255, 0, 0, 255);
     ui->paintWidget->setBrush(brush);
     ui->paintWidget->setPixel(pixel);
+
+    QObject::connect(&fileDialog, &FileDialog::createNewFileSignal, this, &PixelPi::createNewFile);
 }
 
 PixelPi::~PixelPi()
@@ -52,4 +55,10 @@ void PixelPi::updateSpriteWidget(Sprite *newSprite)
 }
 
 
+
+
+void PixelPi::on_FileButton_clicked()
+{
+    fileDialog.show();
+}
 

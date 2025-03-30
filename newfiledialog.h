@@ -15,8 +15,13 @@ public:
     explicit NewFileDialog(QWidget *parent = nullptr);
     ~NewFileDialog();
 
+private slots:
+    void on_buttonBox_accepted();
+
 private:
     Ui::NewFileDialog *ui;
+signals:
+    void createNewFile(int width, int height);
 };
 
 #endif // NEWFILEDIALOG_H
