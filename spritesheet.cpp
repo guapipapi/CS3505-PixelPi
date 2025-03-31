@@ -97,3 +97,10 @@ bool Spritesheet::exportToPNG() {
 Sprite& Spritesheet::getCurrentSprite() {
     return sprites[currentFrame];
 }
+
+void Spritesheet::paintedCurrentSpriteAt(int x, int y)
+{
+    //TODO CHANGE TO PALETTE
+    Pixel newPix(0,0,0,255);
+    getCurrentSprite().paintAt(x, y, newPix);
+}

@@ -43,6 +43,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(&w, &PixelPi::newBrushRadius, &brush, &Brush::setRadius);
 
+    QObject::connect(&w, &PixelPi::mousePaintedAt, &spritesheet, &Spritesheet::paintedCurrentSpriteAt);
+
     w.showHelpPage();
 
     return a.exec();

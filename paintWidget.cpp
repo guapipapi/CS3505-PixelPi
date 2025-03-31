@@ -135,20 +135,23 @@ void PaintWidget::mouseMoveEvent(QMouseEvent *event) {
             int xCoord = (event->pos().x() - offsetX) / pixelSize;
             int yCoord = (event->pos().y() - offsetY) / pixelSize;
 
-            int radius = brush->getRadius();
-            int halfRadius = radius / 2;
+            emit mouseClickedAt(xCoord, yCoord);
 
-            for (int dx = -halfRadius; dx <= halfRadius; dx++) {
-                for (int dy = -halfRadius; dy <= halfRadius; dy++) {
-                    int px = xCoord + dx;
-                    int py = yCoord + dy;
+            //DRAWING
+            // int radius = brush->getRadius();
+            // int halfRadius = radius / 2;
 
-                    // bounds check
-                    if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-                        sprite->addPixel(px, py, *pixel);
-                    }
-                }
-            }
+            // for (int dx = -halfRadius; dx <= halfRadius; dx++) {
+            //     for (int dy = -halfRadius; dy <= halfRadius; dy++) {
+            //         int px = xCoord + dx;
+            //         int py = yCoord + dy;
+
+            //         // bounds check
+            //         if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
+            //             sprite->addPixel(px, py, *pixel);
+            //         }
+            //     }
+            // }
         }
     }
 

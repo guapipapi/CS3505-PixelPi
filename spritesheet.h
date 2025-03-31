@@ -57,7 +57,7 @@ private:
 signals:
     void currentSpriteUpdated(Sprite* currentSprite);
 public slots:
-    //void paintedCurrentSpriteAt(int x, int y);
+    void paintedCurrentSpriteAt(int x, int y);
 };
 
 #endif // SPRITESHEET_H
