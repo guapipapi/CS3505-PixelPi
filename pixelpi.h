@@ -20,8 +20,6 @@ class PixelPi : public QMainWindow
     Q_OBJECT
 
 public slots:
-    // void drawCanvas();
-    // void zoomTo(int x, int y, int magnitude);
     void updateSpriteWidget(Sprite *newSprite);
     void updateCurrentPixel(const Pixel &pixel);
 
@@ -33,6 +31,8 @@ private slots:
     void on_brushRadiusSpinBox_valueChanged(int arg1);
 
     void on_showHelpButton_clicked();
+
+    void setNewSpriteDimensions(int x, int y);
 
 public:
     PixelPi(QWidget *parent = nullptr);
