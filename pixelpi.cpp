@@ -73,6 +73,9 @@ void PixelPi::resetZoom() {
 void PixelPi::updateSpriteWidget(Sprite *newSprite)
 {
     ui->paintWidget->setSprite(newSprite);
+
+    //Also tie the sprite to the preview!
+    ui->previewWidget->setSprite(newSprite);
 }
 
 void PixelPi::updateCurrentPixel(const Pixel& pixel)
@@ -86,6 +89,9 @@ void PixelPi::updateCurrentPixel(const Pixel& pixel)
 
     // Set the new pixel to the paint widget
     ui->paintWidget->setPixel(updatedPixel);
+
+    //Update the preview as well
+    ui->previewWidget->draw();
 }
 
 void PixelPi::on_FileButton_clicked()

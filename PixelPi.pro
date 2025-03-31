@@ -20,6 +20,7 @@ SOURCES += \
     palette.cpp \
     pixel.cpp \
     pixelpi.cpp \
+    previewWidget.cpp \
     sprite.cpp \
     spritesheet.cpp \
     timeline.cpp
@@ -35,6 +36,7 @@ HEADERS += \
     palette.h \
     pixel.h \
     pixelpi.h \
+    previewWidget.h \
     sprite.h \
     spritesheet.h \
     timeline.h

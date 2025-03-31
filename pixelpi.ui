@@ -46,7 +46,7 @@
       <x>100</x>
       <y>500</y>
       <width>671</width>
-      <height>91</height>
+      <height>100</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="timelineHorizontalLayout">
@@ -91,13 +91,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="previewWidget" native="true">
+   <widget class="PreviewWidget" name="previewWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>610</x>
+      <x>640</x>
       <y>350</y>
-      <width>181</width>
-      <height>131</height>
+      <width>125</width>
+      <height>125</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -173,7 +173,7 @@
       <x>80</x>
       <y>10</y>
       <width>99</width>
-      <height>18</height>
+      <height>21</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -259,7 +259,7 @@
      <x>0</x>
      <y>0</y>
      <width>814</width>
-     <height>19</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
@@ -270,6 +270,12 @@
    <class>PaintWidget</class>
    <extends>QWidget</extends>
    <header>paintWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PreviewWidget</class>
+   <extends>QWidget</extends>
+   <header>previewWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
