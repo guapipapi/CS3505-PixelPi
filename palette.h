@@ -3,25 +3,27 @@
 
 #include <QObject>
 #include <pixel.h>
-#include <vector>
+#include "brush.h"
 
 class Palette : public QObject
 {
     Q_OBJECT
 public:
-    explicit Palette(QObject *parent = nullptr);
-    void setNewCurrentColor();
-    void switchToSecondaryColor();
-    // std::vector<Pixel> getColors();
-    void addColor(Pixel newColor);
-    void removeColor(Pixel colorToRemove);
+    explicit Palette(QObject *parent, Brush& brush);
 
 private:
-    // Pixel currentColor;
-    // Pixel secondaryColor;
-    // std::vector<Pixel> colors;
+    Pixel currentColor;
+    Pixel secondaryColor;
+    Brush& brush;
 
 signals:
+    void currentColorChanged(const Pixel& pixel);
+
+public slots:
+    void setNewCurrentColor(const Pixel& pixel);
+    void setNewSecondaryColor(const Pixel& pixel);
+    void switchToSecondaryColor();
+    const Pixel& getCurrentColor();
 };
 
 #endif // PALETTE_H

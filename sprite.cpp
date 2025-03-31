@@ -19,6 +19,8 @@ Sprite::Sprite(){
 }
 
 void Sprite::addPixel(int x, int y, Pixel& newPixel) {
+    if(getPixelAt(x, y) != nullptr)
+        removePixelAt(x, y);
     backing.insert({{x, y}, newPixel});
 }
 

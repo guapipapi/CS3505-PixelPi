@@ -38,6 +38,11 @@ class Pixel {
         unsigned char getGreenValue();
         unsigned char getBlueValue();
         unsigned char getAlphaValue();
+
+        void setRedValue(unsigned char r);
+        void setGreenValue(unsigned char g);
+        void setBlueValue(unsigned char b);
+        void setAlphaValue(unsigned char a);
         QVector4D getRGBA();
 };
 

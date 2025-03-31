@@ -198,12 +198,48 @@
      <rect>
       <x>125</x>
       <y>55</y>
-      <width>425</width>
-      <height>425</height>
+      <width>430</width>
+      <height>430</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">border: 2px solid black</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="primary_color_button">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>100</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-width:2px;
+    border-color:black;
+    border-style:inset;
+    background-color:red;
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="secondary_color_button">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>130</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    border-width:2px;
+    border-color:black;
+    border-style:inset;
+    background-color:red;
+}</string>
     </property>
    </widget>
    <zorder>widgetBorder</zorder>
@@ -214,6 +250,8 @@
    <zorder>paletteListView</zorder>
    <zorder>layoutWidget</zorder>
    <zorder>layoutWidget</zorder>
+   <zorder>secondary_color_button</zorder>
+   <zorder>primary_color_button</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -221,7 +259,7 @@
      <x>0</x>
      <y>0</y>
      <width>814</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>

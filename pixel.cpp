@@ -22,3 +22,20 @@ unsigned char Pixel::getBlueValue() {
 unsigned char Pixel::getAlphaValue() {
     return a;
 }
+
+void Pixel::setRedValue(unsigned char r) {
+    this->r = r;
+}
+
+void Pixel::setGreenValue(unsigned char g) {
+    this->g = g;
+}
+
+void Pixel::setBlueValue(unsigned char b) {
+    this->b = b;
+}
+
+void Pixel::setAlphaValue(unsigned char a) {
+    this->a = a;
+}
+

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <fileDialog.h>
+#include <QKeyEvent>
 #include <newcolordialog.h>
 #include <sprite.h>
 
@@ -20,20 +21,22 @@ public slots:
     // void drawCanvas();
     // void zoomTo(int x, int y, int magnitude);
     void updateSpriteWidget(Sprite *newSprite);
+    void updateCurrentPixel(const Pixel& pixel);
 
 private slots:
     void on_FileButton_clicked();
+    void on_primary_color_button_clicked();
+    void on_secondary_color_button_clicked();
 
 public:
     PixelPi(QWidget *parent = nullptr);
     ~PixelPi();
+    void keyPressEvent(QKeyEvent *event);
+
 
 private:
     Ui::PixelPi *ui;
     FileDialog fileDialog;
-
-
-
     int zoomLevel;
     int zoomX;
     int zoomY;
@@ -43,6 +46,9 @@ private:
     void resetZoom();
 signals:
     void createNewFile(int width, int height);
+    void changePrimaryColor(Pixel pixel);
+    void changeSecondaryColor(Pixel pixel);
+    void switchColors();
 
 
 };

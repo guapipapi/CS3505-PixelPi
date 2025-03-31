@@ -1,9 +1,6 @@
 #include "brush.h"
 
-Brush::Brush(QObject *parent)
-    : QObject{parent}
-    , radius{1}
-{}
+Brush::Brush(QObject *parent) : QObject{parent}, radius{1} {}
 
 int Brush::getRadius() {
     return radius;
