@@ -3,8 +3,9 @@
 
 #include <QMainWindow>
 #include <fileDialog.h>
-#include <QKeyEvent>
 #include <newcolordialog.h>
+#include <helpdialog.h>
+#include <QKeyEvent>
 #include <sprite.h>
 
 QT_BEGIN_NAMESPACE
@@ -31,14 +32,18 @@ private slots:
 
     void on_brushRadiusSpinBox_valueChanged(int arg1);
 
+    void on_showHelpButton_clicked();
+
 public:
     PixelPi(QWidget *parent = nullptr);
     ~PixelPi();
     void keyPressEvent(QKeyEvent *event);
+    void showHelpPage();
 
 private:
     Ui::PixelPi *ui;
     FileDialog fileDialog;
+    HelpDialog helpDialog;
     int zoomLevel;
     int zoomX;
     int zoomY;

@@ -170,7 +170,7 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>290</x>
       <y>10</y>
       <width>99</width>
       <height>18</height>
@@ -242,6 +242,19 @@
 }</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="showHelpButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>41</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Help</string>
+    </property>
+   </widget>
    <zorder>widgetBorder</zorder>
    <zorder>FileButton</zorder>
    <zorder>paintWidget</zorder>
@@ -252,6 +265,7 @@
    <zorder>layoutWidget</zorder>
    <zorder>secondary_color_button</zorder>
    <zorder>primary_color_button</zorder>
+   <zorder>showHelpButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -259,7 +273,7 @@
      <x>0</x>
      <y>0</y>
      <width>814</width>
-     <height>19</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

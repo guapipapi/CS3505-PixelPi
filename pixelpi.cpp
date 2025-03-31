@@ -180,3 +180,14 @@ void PixelPi::on_brushRadiusSpinBox_valueChanged(int newRadius)
 {
     emit newBrushRadius(newRadius);
 }
+
+void PixelPi::showHelpPage(){
+    on_showHelpButton_clicked();
+}
+
+void PixelPi::on_showHelpButton_clicked()
+{
+    helpDialog.show();
+    helpDialog.setModal(false);
+}
+

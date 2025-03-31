@@ -14,8 +14,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     PixelPi w;
-    Brush brush;
-    Palette palette;
     Controller controller;
 
     w.show();
@@ -44,6 +42,8 @@ int main(int argc, char *argv[])
     spritesheet.newProject(32, 32);
 
     QObject::connect(&w, &PixelPi::newBrushRadius, &brush, &Brush::setRadius);
+
+    w.showHelpPage();
 
     return a.exec();
 }
