@@ -38,7 +38,9 @@ protected:
     void mouseMoveEvent(QMouseEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
-
+signals:
+    void mouseClickedAt(int x, int y);
+    void erasedAt(int x, int y);
 };
 
 

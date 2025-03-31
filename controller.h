@@ -4,6 +4,8 @@
 #include <QObject>
 #include "pixel.h"
 #include "spritesheet.h"
+#include <QMouseEvent>
+#include <brush.h>
 
 class Controller : public QObject
 {
@@ -18,7 +20,7 @@ public:
 
 
 public slots:
-    // void paintedAt(int x, int y);
+    void paintedAt(int x, int y, Brush* brush);
    // void spriteUpdated();
 
 private:
@@ -29,7 +31,6 @@ private:
     void toggleDrawing(bool active);
 
     Spritesheet* currentSheet;
-
 
 signals:
     void changeColor(Pixel newColor);

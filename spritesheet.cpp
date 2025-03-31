@@ -2,12 +2,12 @@
 #include <QJsonDocument>
 #include <QFile>
 #include <iostream>
-
 #include "spritesheet.h"
 
 Spritesheet::Spritesheet(QObject *parent)
-    : QObject{parent}
-{}
+    : QObject{parent}, palette(this)
+{
+}
 
 bool Spritesheet::saveToJson(QString& filePath) {
 
@@ -96,4 +96,22 @@ bool Spritesheet::exportToPNG() {
 
 Sprite& Spritesheet::getCurrentSprite() {
     return sprites[currentFrame];
+}
+
+void Spritesheet::paintedCurrentSpriteAt(int x, int y)
+{
+    int brushRadius = palette.getBrush()->getRadius();
+    getCurrentSprite().paintAt(x, y, brushRadius, palette.getCurrentColor());
+}
+
+void Spritesheet::erasedCurrentSpriteAt(int x, int y)
+{
+    int brushRadius = palette.getBrush()->getRadius();
+    getCurrentSprite().eraseAt(x, y, brushRadius);
+}
+
+
+ Palette& Spritesheet::getPalette()
+{
+    return palette;
 }

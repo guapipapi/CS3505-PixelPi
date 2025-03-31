@@ -9,11 +9,12 @@
 #include "sprite.h"
 #include "fileDialog.h"
 
-PixelPi::PixelPi(QWidget *parent) : QMainWindow(parent), ui(new Ui::PixelPi) {
+PixelPi::PixelPi(QWidget *parent) : QMainWindow(parent), ui(new Ui::PixelPi)
+{
     ui->setupUi(this);
 
-    QColor primaryColor(255, 0, 0, 255);  // Red
-    QColor secondaryColor(0, 0, 255, 255);  // Blue
+    QColor primaryColor(255, 0, 0, 255);   // Red
+    QColor secondaryColor(0, 0, 255, 255); // Blue
 
     // Set button background colors
     QString primaryStyleSheet = QString("background-color: rgba(%1, %2, %3, %4);")
@@ -32,15 +33,23 @@ PixelPi::PixelPi(QWidget *parent) : QMainWindow(parent), ui(new Ui::PixelPi) {
     ui->secondary_color_button->setStyleSheet(secondaryStyleSheet);
 
     // THIS WILL BE MOVED TO MAIN.CPP here for testing purposes
-    Brush* brush = new Brush(ui->paintWidget);
+    Brush *brush = new Brush(ui->paintWidget);
     brush->setRadius(2);
 
-    Pixel* pixel = new Pixel(255, 0, 0, 255);
+    Pixel *pixel = new Pixel(255, 0, 0, 255);
 
     ui->paintWidget->setBrush(brush);
     ui->paintWidget->setPixel(pixel);
 
+    // Connect new file signal
     QObject::connect(&fileDialog, &FileDialog::createNewFileSignal, this, &PixelPi::createNewFile);
+    QObject::connect(&fileDialog, &FileDialog::createNewFileSignal, this, &PixelPi::setNewSpriteDimensions);
+
+    // Connect paint event to signal
+    QObject::connect(ui->paintWidget, &PaintWidget::mouseClickedAt, this, &PixelPi::mousePaintedAt);
+
+    // Connect erase event to signal
+    QObject::connect(ui->paintWidget, &PaintWidget::erasedAt, this, &PixelPi::mouseErasedAt);
 }
 
 PixelPi::~PixelPi()
@@ -48,26 +57,28 @@ PixelPi::~PixelPi()
     delete ui;
 }
 
+// int zoomLevel;
+// int zoomX;
+// int zoomY;
 
-//int zoomLevel;
-//int zoomX;
-//int zoomY;
-
-void PixelPi::increaseZoom() {
+void PixelPi::increaseZoom()
+{
     zoomLevel *= 1.5;
 }
 
-void PixelPi::dragZoom(int newX, int newY) {
+void PixelPi::dragZoom(int newX, int newY)
+{
     zoomX = newX;
     zoomY = newY;
 }
 
-void PixelPi::resetZoom() {
+void PixelPi::resetZoom()
+{
     zoomLevel = 0;
 
-    //zoomX = ...
-    //zoomY = ...
-    //LOGIC SHOULD BE ADDED TO THE PAINT WIDGET THAT GETS THE CENTRE OF THE CANVAS!!
+    // zoomX = ...
+    // zoomY = ...
+    // LOGIC SHOULD BE ADDED TO THE PAINT WIDGET THAT GETS THE CENTRE OF THE CANVAS!!
 }
 
 void PixelPi::updateSpriteWidget(Sprite *newSprite)
@@ -78,13 +89,13 @@ void PixelPi::updateSpriteWidget(Sprite *newSprite)
     ui->previewWidget->setSprite(newSprite);
 }
 
-void PixelPi::updateCurrentPixel(const Pixel& pixel)
+void PixelPi::updateCurrentPixel(const Pixel &pixel)
 {
     // Create a non-const copy to work with
     Pixel newPixel = pixel;
 
     // Create a new pixel with the updated color values
-    Pixel* updatedPixel = new Pixel(newPixel.getRedValue(), newPixel.getGreenValue(),
+    Pixel *updatedPixel = new Pixel(newPixel.getRedValue(), newPixel.getGreenValue(),
                                     newPixel.getBlueValue(), newPixel.getAlphaValue());
 
     // Set the new pixel to the paint widget
@@ -108,7 +119,8 @@ void PixelPi::on_primary_color_button_clicked()
     QColor selectedColor = QColorDialog::getColor(currentColor, this, "Choose Primary Color",
                                                   QColorDialog::ShowAlphaChannel);
 
-    if (selectedColor.isValid()) {
+    if (selectedColor.isValid())
+    {
         // Create Pixel object from selected color
         Pixel pixel(selectedColor.red(), selectedColor.green(), selectedColor.blue(), selectedColor.alpha());
 
@@ -135,7 +147,8 @@ void PixelPi::on_secondary_color_button_clicked()
     QColor selectedColor = QColorDialog::getColor(currentColor, this, "Choose Secondary Color",
                                                   QColorDialog::ShowAlphaChannel);
 
-    if (selectedColor.isValid()) {
+    if (selectedColor.isValid())
+    {
         // Create Pixel object from selected color
         Pixel pixel(selectedColor.red(), selectedColor.green(), selectedColor.blue(), selectedColor.alpha());
 
@@ -156,7 +169,8 @@ void PixelPi::on_secondary_color_button_clicked()
 void PixelPi::keyPressEvent(QKeyEvent *event)
 {
     // Check if the 'x' key was pressed
-    if (event->key() == Qt::Key_X) {
+    if (event->key() == Qt::Key_X)
+    {
         // Emit the switchColors signal to swap primary and secondary colors
         emit switchColors();
 
@@ -171,3 +185,24 @@ void PixelPi::keyPressEvent(QKeyEvent *event)
     // Call the parent class implementation for other keys
     QMainWindow::keyPressEvent(event);
 }
+
+void PixelPi::on_brushRadiusSpinBox_valueChanged(int newRadius)
+{
+    emit newBrushRadius(newRadius);
+}
+
+void PixelPi::showHelpPage(){
+    on_showHelpButton_clicked();
+}
+
+void PixelPi::on_showHelpButton_clicked()
+{
+    helpDialog.show();
+    helpDialog.setModal(false);
+}
+
+void PixelPi::setNewSpriteDimensions(int x, int y){
+    QString dimensionsText = QString("%1 x %2").arg(x).arg(y);
+    ui->dimensionsLabel->setText(dimensionsText);
+}
+

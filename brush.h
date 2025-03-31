@@ -10,10 +10,12 @@ class Brush : public QObject
 public:
     explicit Brush(QObject *parent = nullptr);
     int getRadius();
-    void setRadius(int radius);
     virtual void paintPixel(int x, int y, Pixel& pixel, Sprite& sprite);
+
 private:
     int radius;
+public slots:
+    void setRadius(int radius);
 
 signals:
 };

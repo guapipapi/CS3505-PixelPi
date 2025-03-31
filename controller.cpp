@@ -1,4 +1,5 @@
 #include "controller.h"
+#include <brush.h>
 
 Controller::Controller(QObject *parent, Spritesheet *_currentSheet)
     : QObject{parent}, selectedTool(0), currentFrame(0), currentSheet(_currentSheet)
@@ -71,4 +72,8 @@ void Controller::setTool(int newTool){
  */
 void Controller::toggleDrawing(bool active){
     isDrawing = active;
+}
+
+void Controller::paintedAt(int x, int y, Brush* brush){
+    // TODO
 }

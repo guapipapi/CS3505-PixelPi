@@ -3,13 +3,15 @@
 
 #include <QMainWindow>
 #include <fileDialog.h>
-#include <QKeyEvent>
 #include <newcolordialog.h>
+#include <helpdialog.h>
+#include <QKeyEvent>
 #include <sprite.h>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class PixelPi;
+namespace Ui
+{
+    class PixelPi;
 }
 QT_END_NAMESPACE
 
@@ -18,25 +20,30 @@ class PixelPi : public QMainWindow
     Q_OBJECT
 
 public slots:
-    // void drawCanvas();
-    // void zoomTo(int x, int y, int magnitude);
     void updateSpriteWidget(Sprite *newSprite);
-    void updateCurrentPixel(const Pixel& pixel);
+    void updateCurrentPixel(const Pixel &pixel);
 
 private slots:
     void on_FileButton_clicked();
     void on_primary_color_button_clicked();
     void on_secondary_color_button_clicked();
 
+    void on_brushRadiusSpinBox_valueChanged(int arg1);
+
+    void on_showHelpButton_clicked();
+
+    void setNewSpriteDimensions(int x, int y);
+
 public:
     PixelPi(QWidget *parent = nullptr);
     ~PixelPi();
     void keyPressEvent(QKeyEvent *event);
-
+    void showHelpPage();
 
 private:
     Ui::PixelPi *ui;
     FileDialog fileDialog;
+    HelpDialog helpDialog;
     int zoomLevel;
     int zoomX;
     int zoomY;
@@ -49,7 +56,8 @@ signals:
     void changePrimaryColor(Pixel pixel);
     void changeSecondaryColor(Pixel pixel);
     void switchColors();
-
-
+    void mousePaintedAt(int x, int y);
+    void mouseErasedAt(int x, int y);
+    void newBrushRadius(int newRadius);
 };
 #endif // PIXELPI_H

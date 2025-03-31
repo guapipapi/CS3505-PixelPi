@@ -1,6 +1,7 @@
 #include "sprite.h"
 #include "pixel.h"
 #include <map>
+#include <iostream>
 
 /*
  * Constructor that takes in a widht and height for the sprite.
@@ -63,5 +64,35 @@ void Sprite::fromJson(const QJsonObject& jsonObj) {
         int x, y;
         sscanf(key.toStdString().c_str(), "(%d,%d)", &x, &y);
         backing[{x, y}] = pixel;
+    }
+}
+
+void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel)
+{
+    for(int brushX = -radius/2; brushX <= radius/2; brushX++) {
+        for(int brushY = -radius/2; brushY <= radius/2; brushY++) {
+            int px = x + brushX;
+            int py = y + brushY;
+
+            // Bounds check
+            if (px >= 0 && px < width && py >= 0 && py < height) {
+                addPixel(px, py, newPixel);
+            }
+        }
+    }
+}
+
+void Sprite::eraseAt(int x, int y, int radius)
+{
+    for(int brushX = -radius/2; brushX <= radius/2; brushX++) {
+        for(int brushY = -radius/2; brushY <= radius/2; brushY++) {
+            int px = x + brushX;
+            int py = y + brushY;
+
+            // Bounds check
+            if (px >= 0 && px < width && py >= 0 && py < height) {
+                removePixelAt(px, py);
+            }
+        }
     }
 }

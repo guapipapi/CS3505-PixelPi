@@ -25,6 +25,10 @@ void PaintWidget::setPixel(Pixel *pixel) {
 }
 
 
+/**
+ * @brief PaintWidget::paintEvent
+ * Draws pixels based on sprite object
+ */
 void PaintWidget::paintEvent(QPaintEvent *){
 
     if (sprite == nullptr || brush == nullptr || pixel == nullptr)
@@ -63,18 +67,8 @@ void PaintWidget::mousePressEvent(QMouseEvent *event) {
             int xCoord = (event->pos().x() - offsetX) / pixelSize;
             int yCoord = (event->pos().y() - offsetY) / pixelSize;
 
-            int r = brush->getRadius();
-            for(int x = -r/2; x <= r/2; x++) {
-                for(int y = -r/2; y <= r/2; y++) {
-                    int px = xCoord + x;
-                    int py = yCoord + y;
-
-                    // Bounds check
-                    if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-                        sprite->addPixel(px, py, *pixel);
-                    }
-                }
-            }
+            // Emits the mouse position in sprite coordinates
+            emit mouseClickedAt(xCoord, yCoord);
 
         //If the middle button is being pressed start to drag the canvas
         } else if (event->button() == Qt::MiddleButton) {
@@ -118,40 +112,45 @@ void PaintWidget::mouseMoveEvent(QMouseEvent *event) {
             int xCoord = (event->pos().x() - offsetX) / pixelSize;
             int yCoord = (event->pos().y() - offsetY) / pixelSize;
 
-            int radius = brush->getRadius();
-            int halfRadius = radius / 2;
+            emit erasedAt(xCoord, yCoord);
 
-            for (int dx = -halfRadius; dx <= halfRadius; dx++) {
-                for (int dy = -halfRadius; dy <= halfRadius; dy++) {
-                    int px = xCoord + dx;
-                    int py = yCoord + dy;
+            // int radius = brush->getRadius();
+            // int halfRadius = radius / 2;
 
-                    // bounds check
-                    if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-                        sprite->removePixelAt(px, py);
-                    }
-                }
-            }
+            // for (int dx = -halfRadius; dx <= halfRadius; dx++) {
+            //     for (int dy = -halfRadius; dy <= halfRadius; dy++) {
+            //         int px = xCoord + dx;
+            //         int py = yCoord + dy;
+
+            //         // bounds check
+            //         if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
+            //             sprite->removePixelAt(px, py);
+            //         }
+            //     }
+            // }
         }
         if (event->buttons() &Qt::LeftButton) {
             //pixelSize = this->width() / sprite->width;
             int xCoord = (event->pos().x() - offsetX) / pixelSize;
             int yCoord = (event->pos().y() - offsetY) / pixelSize;
 
-            int radius = brush->getRadius();
-            int halfRadius = radius / 2;
+            emit mouseClickedAt(xCoord, yCoord);
 
-            for (int dx = -halfRadius; dx <= halfRadius; dx++) {
-                for (int dy = -halfRadius; dy <= halfRadius; dy++) {
-                    int px = xCoord + dx;
-                    int py = yCoord + dy;
+            //DRAWING
+            // int radius = brush->getRadius();
+            // int halfRadius = radius / 2;
 
-                    // bounds check
-                    if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-                        sprite->addPixel(px, py, *pixel);
-                    }
-                }
-            }
+            // for (int dx = -halfRadius; dx <= halfRadius; dx++) {
+            //     for (int dy = -halfRadius; dy <= halfRadius; dy++) {
+            //         int px = xCoord + dx;
+            //         int py = yCoord + dy;
+
+            //         // bounds check
+            //         if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
+            //             sprite->addPixel(px, py, *pixel);
+            //         }
+            //     }
+            // }
         }
     }
 

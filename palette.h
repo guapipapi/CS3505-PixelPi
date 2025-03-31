@@ -9,21 +9,22 @@ class Palette : public QObject
 {
     Q_OBJECT
 public:
-    explicit Palette(QObject *parent, Brush& brush);
+    explicit Palette(QObject *parent);
+    Brush* getBrush();
 
 private:
     Pixel currentColor;
     Pixel secondaryColor;
-    Brush& brush;
+    Brush brush;
 
 signals:
-    void currentColorChanged(const Pixel& pixel);
+    void currentColorChanged(const Pixel &pixel);
 
 public slots:
-    void setNewCurrentColor(const Pixel& pixel);
-    void setNewSecondaryColor(const Pixel& pixel);
+    void setNewCurrentColor(const Pixel &pixel);
+    void setNewSecondaryColor(const Pixel &pixel);
     void switchToSecondaryColor();
-    const Pixel& getCurrentColor();
+    Pixel &getCurrentColor();
 };
 
 #endif // PALETTE_H

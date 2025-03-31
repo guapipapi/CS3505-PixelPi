@@ -13,6 +13,7 @@ SOURCES += \
     controller.cpp \
     eraser.cpp \
     fileDialog.cpp \
+    helpdialog.cpp \
     main.cpp \
     newcolordialog.cpp \
     newfiledialog.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     controller.h \
     eraser.h \
     fileDialog.h \
+    helpdialog.h \
     newcolordialog.h \
     newfiledialog.h \
     paintWidget.h \
@@ -43,6 +45,7 @@ HEADERS += \
 
 FORMS += \
     fileDialog.ui \
+    helpdialog.ui \
     newcolordialog.ui \
     newfiledialog.ui \
     pixelpi.ui

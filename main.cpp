@@ -5,35 +5,53 @@
 
 #include <QApplication>
 #include <QMainWindow>
+#include <spritesheet.h>
+#include <brush.h>
+#include <palette.h>
+#include <controller.h>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     PixelPi w;
+    Controller controller;
+
     w.show();
 
     // initialize default project
     Spritesheet spritesheet;
 
-    // Create brush and palette
-    Brush brush;
-    Palette palette(nullptr, brush);
+
 
     // Connects spritesheet to paintWidget
     QObject::connect(&spritesheet, &Spritesheet::currentSpriteUpdated, &w, &PixelPi::updateSpriteWidget);
+
+    // Connects new file button
     QObject::connect(&w, &PixelPi::createNewFile, &spritesheet, &Spritesheet::newProject);
 
-    // Connect color change signals from PixelPi to Palette
-    QObject::connect(&w, &PixelPi::changePrimaryColor, &palette, &Palette::setNewCurrentColor);
-    QObject::connect(&w, &PixelPi::changeSecondaryColor, &palette, &Palette::setNewSecondaryColor);
-    QObject::connect(&w, &PixelPi::switchColors, &palette, &Palette::switchToSecondaryColor);
-
-    QObject::connect(&palette, &Palette::currentColorChanged, &w, &PixelPi::updateCurrentPixel);
 
 
     // Initializes default project as 32 by 32 sprite
-    spritesheet.newProject(32,32);
+    spritesheet.newProject(32, 32);
 
+    // Connect color change signals from PixelPi to Palette
+    QObject::connect(&w, &PixelPi::changePrimaryColor, &spritesheet.getPalette(), &Palette::setNewCurrentColor);
+    QObject::connect(&w, &PixelPi::changeSecondaryColor, &spritesheet.getPalette(), &Palette::setNewSecondaryColor);
+    QObject::connect(&w, &PixelPi::switchColors, &spritesheet.getPalette(), &Palette::switchToSecondaryColor);
+
+    QObject::connect(&spritesheet.getPalette(), &Palette::currentColorChanged, &w, &PixelPi::updateCurrentPixel);
+
+    QObject::connect(&w, &PixelPi::newBrushRadius, spritesheet.getPalette().getBrush(), &Brush::setRadius);
+
+    // Connect painting to spritesheet
+    QObject::connect(&w, &PixelPi::mousePaintedAt, &spritesheet, &Spritesheet::paintedCurrentSpriteAt);
+
+    // Connect erasing to spritesheet
+    QObject::connect(&w, &PixelPi::mouseErasedAt, &spritesheet, &Spritesheet::erasedCurrentSpriteAt);
+
+    // Shows help page on start
+    // TODO: uncomment this. Commented so we aren't bothered while testing
+    //w.showHelpPage();
 
     return a.exec();
 }
