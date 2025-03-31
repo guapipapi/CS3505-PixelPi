@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <newfiledialog.h>
+#include <QString>
 
 namespace Ui {
 class FileDialog;
@@ -19,9 +20,16 @@ public:
 private slots:
     void on_newButton_clicked();
 
+    void on_saveAsButton_clicked();
+
+    void on_loadButton_clicked();
+
 private:
     Ui::FileDialog *ui;
     NewFileDialog newFileDialog;
+
+    QString loadFile;
+    QString saveDirectory;
 signals:
     void createNewFileSignal(int width, int height);
 };
