@@ -34,6 +34,8 @@ private slots:
 
     void setNewSpriteDimensions(int x, int y);
 
+    void on_fpsSpinBox_valueChanged(int arg1);
+
 public:
     PixelPi(QWidget *parent = nullptr);
     ~PixelPi();
@@ -59,5 +61,6 @@ signals:
     void mousePaintedAt(int x, int y);
     void mouseErasedAt(int x, int y);
     void newBrushRadius(int newRadius);
+    void newFPS(int newFramesPerSecond);
 };
 #endif // PIXELPI_H

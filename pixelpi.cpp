@@ -206,3 +206,9 @@ void PixelPi::setNewSpriteDimensions(int x, int y){
     ui->dimensionsLabel->setText(dimensionsText);
 }
 
+
+void PixelPi::on_fpsSpinBox_valueChanged(int newFramesPerSecond)
+{
+    emit newFPS(newFramesPerSecond);
+}
+
