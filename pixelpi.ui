@@ -167,32 +167,6 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>10</y>
-      <width>99</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="fileNameLabel">
-       <property name="text">
-        <string>Unsaved</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="dimensionsLabel">
-       <property name="text">
-        <string>32x32</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QWidget" name="widgetBorder" native="true">
     <property name="geometry">
      <rect>
@@ -255,6 +229,19 @@
      <string>Help</string>
     </property>
    </widget>
+   <widget class="QLabel" name="dimensionsLabel">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>30</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>32x32</string>
+    </property>
+   </widget>
    <zorder>widgetBorder</zorder>
    <zorder>FileButton</zorder>
    <zorder>paintWidget</zorder>
@@ -262,10 +249,10 @@
    <zorder>previewWidget</zorder>
    <zorder>paletteListView</zorder>
    <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
    <zorder>secondary_color_button</zorder>
    <zorder>primary_color_button</zorder>
    <zorder>showHelpButton</zorder>
+   <zorder>dimensionsLabel</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
