@@ -100,7 +100,6 @@ Sprite& Spritesheet::getCurrentSprite() {
 
 void Spritesheet::paintedCurrentSpriteAt(int x, int y)
 {
-    //TODO CHANGE TO PALETTE
     int brushRadius = palette.getBrush()->getRadius();
     getCurrentSprite().paintAt(x, y, brushRadius, palette.getCurrentColor());
 }

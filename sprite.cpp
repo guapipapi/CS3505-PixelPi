@@ -69,12 +69,8 @@ void Sprite::fromJson(const QJsonObject& jsonObj) {
 
 void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel)
 {
-    // TODO : Implement brush and palette
-    int r = 1;
-
-
-    for(int brushX = -r/2; brushX <= r/2; brushX++) {
-        for(int brushY = -r/2; brushY <= r/2; brushY++) {
+    for(int brushX = -radius/2; brushX <= radius/2; brushX++) {
+        for(int brushY = -radius/2; brushY <= radius/2; brushY++) {
             int px = x + brushX;
             int py = y + brushY;
 
