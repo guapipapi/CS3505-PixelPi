@@ -24,7 +24,6 @@ void PaintWidget::setPixel(Pixel *pixel) {
     this->pixel = pixel;
 }
 
-
 /**
  * @brief PaintWidget::paintEvent
  * Draws pixels based on sprite object
@@ -114,43 +113,12 @@ void PaintWidget::mouseMoveEvent(QMouseEvent *event) {
 
             emit erasedAt(xCoord, yCoord);
 
-            // int radius = brush->getRadius();
-            // int halfRadius = radius / 2;
-
-            // for (int dx = -halfRadius; dx <= halfRadius; dx++) {
-            //     for (int dy = -halfRadius; dy <= halfRadius; dy++) {
-            //         int px = xCoord + dx;
-            //         int py = yCoord + dy;
-
-            //         // bounds check
-            //         if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-            //             sprite->removePixelAt(px, py);
-            //         }
-            //     }
-            // }
         }
         if (event->buttons() &Qt::LeftButton) {
-            //pixelSize = this->width() / sprite->width;
             int xCoord = (event->pos().x() - offsetX) / pixelSize;
             int yCoord = (event->pos().y() - offsetY) / pixelSize;
 
             emit mouseClickedAt(xCoord, yCoord);
-
-            //DRAWING
-            // int radius = brush->getRadius();
-            // int halfRadius = radius / 2;
-
-            // for (int dx = -halfRadius; dx <= halfRadius; dx++) {
-            //     for (int dy = -halfRadius; dy <= halfRadius; dy++) {
-            //         int px = xCoord + dx;
-            //         int py = yCoord + dy;
-
-            //         // bounds check
-            //         if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-            //             sprite->addPixel(px, py, *pixel);
-            //         }
-            //     }
-            // }
         }
     }
 
