@@ -114,7 +114,26 @@ void PaintWidget::mouseMoveEvent(QMouseEvent *event) {
 
     } else {
 
-        if (event->buttons() & Qt::LeftButton) {
+        if (event->buttons() &Qt::RightButton) {
+            int xCoord = (event->pos().x() - offsetX) / pixelSize;
+            int yCoord = (event->pos().y() - offsetY) / pixelSize;
+
+            int radius = brush->getRadius();
+            int halfRadius = radius / 2;
+
+            for (int dx = -halfRadius; dx <= halfRadius; dx++) {
+                for (int dy = -halfRadius; dy <= halfRadius; dy++) {
+                    int px = xCoord + dx;
+                    int py = yCoord + dy;
+
+                    // bounds check
+                    if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
+                        sprite->removePixelAt(px, py);
+                    }
+                }
+            }
+        }
+        if (event->buttons() &Qt::LeftButton) {
             //pixelSize = this->width() / sprite->width;
             int xCoord = (event->pos().x() - offsetX) / pixelSize;
             int yCoord = (event->pos().y() - offsetY) / pixelSize;
@@ -140,7 +159,6 @@ void PaintWidget::mouseMoveEvent(QMouseEvent *event) {
 }
 
 void PaintWidget::mouseReleaseEvent(QMouseEvent *event) {
-
     //Set dragging to false if the middle button was released
     if (event->button() == Qt::MiddleButton) {
         wheelDragging = false; //Set dragging to false!
