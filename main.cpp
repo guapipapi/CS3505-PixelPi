@@ -45,7 +45,9 @@ int main(int argc, char *argv[])
 
     QObject::connect(&w, &PixelPi::mousePaintedAt, &spritesheet, &Spritesheet::paintedCurrentSpriteAt);
 
-    w.showHelpPage();
+    // Shows help page on start
+    // TODO: uncomment this. Commented so we aren't bothered while testing
+    //w.showHelpPage();
 
     return a.exec();
 }
