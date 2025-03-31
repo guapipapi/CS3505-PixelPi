@@ -69,14 +69,29 @@ void Sprite::fromJson(const QJsonObject& jsonObj) {
 
 void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel)
 {
-    for(int brushX = -radius/2; brushX <= radius/2; brushX++) {
-        for(int brushY = -radius/2; brushY <= radius/2; brushY++) {
-            int px = x + brushX;
-            int py = y + brushY;
+    if (radius % 2 == 0) {
+        for(int brushX = 0; brushX <= radius; brushX++) {
+            for(int brushY = 0; brushY <= radius; brushY++) {
+                int px = x + brushX/2;
+                int py = y + brushY/2;
 
-            // Bounds check
-            if (px >= 0 && px < width && py >= 0 && py < height) {
-                addPixel(px, py, newPixel);
+                // Bounds check
+                if (px >= 0 && px < width && py >= 0 && py < height) {
+                    addPixel(px, py, newPixel);
+                }
+            }
+        }
+    }
+    else {
+        for(int brushX = -radius/2; brushX <= radius/2; brushX++) {
+            for(int brushY = -radius/2; brushY <= radius/2; brushY++) {
+                int px = x + brushX;
+                int py = y + brushY;
+
+                // Bounds check
+                if (px >= 0 && px < width && py >= 0 && py < height) {
+                    addPixel(px, py, newPixel);
+                }
             }
         }
     }
@@ -84,14 +99,29 @@ void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel)
 
 void Sprite::eraseAt(int x, int y, int radius)
 {
-    for(int brushX = -radius/2; brushX <= radius/2; brushX++) {
-        for(int brushY = -radius/2; brushY <= radius/2; brushY++) {
-            int px = x + brushX;
-            int py = y + brushY;
+    if (radius % 2 == 0) {
+        for(int brushX = 0; brushX <= radius; brushX++) {
+            for(int brushY = 0; brushY <= radius; brushY++) {
+                int px = x + brushX/2;
+                int py = y + brushY/2;
 
-            // Bounds check
-            if (px >= 0 && px < width && py >= 0 && py < height) {
-                removePixelAt(px, py);
+                // Bounds check
+                if (px >= 0 && px < width && py >= 0 && py < height) {
+                    removePixelAt(px, py);
+                }
+            }
+        }
+    }
+    else {
+        for(int brushX = -radius/2; brushX <= radius/2; brushX++) {
+            for(int brushY = -radius/2; brushY <= radius/2; brushY++) {
+                int px = x + brushX;
+                int py = y + brushY;
+
+                // Bounds check
+                if (px >= 0 && px < width && py >= 0 && py < height) {
+                    removePixelAt(px, py);
+                }
             }
         }
     }
