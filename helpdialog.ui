@@ -22,7 +22,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Help - Shows this current help page</string>
+      <string>Help - Shows this  help page</string>
      </property>
     </widget>
    </item>
@@ -94,7 +94,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Palette - Select primary and secondary colors</string>
+      <string>Palette - Select primary and secondary colors (press x to swap)</string>
      </property>
     </widget>
    </item>
