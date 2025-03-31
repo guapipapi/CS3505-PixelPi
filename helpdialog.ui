@@ -46,7 +46,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Tool - Select Brush or Eraser</string>
+      <string>Draw/Erase - Right click to draw, left click to erase</string>
      </property>
     </widget>
    </item>
@@ -94,7 +94,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Palette - Select primary and secondary colors</string>
+      <string>Palette - Select primary and secondary colors (press x to switch)</string>
      </property>
     </widget>
    </item>
