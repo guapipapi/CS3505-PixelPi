@@ -1,7 +1,7 @@
 #include "palette.h"
 #include "pixel.h"
 
-Palette::Palette(QObject *parent, Brush &brush) : QObject{parent}, brush{brush}
+Palette::Palette(QObject *parent) : QObject{parent}
 {
     this->currentColor = Pixel(255, 0, 0, 255);
     this->secondaryColor = Pixel(255, 0, 0, 255);
@@ -24,8 +24,11 @@ void Palette::switchToSecondaryColor()
     emit currentColorChanged(currentColor);
 }
 
-const Pixel &Palette::getCurrentColor()
+Pixel &Palette::getCurrentColor()
 {
     return currentColor;
 }
 
+Brush* Palette::getBrush(){
+    return &brush;
+}

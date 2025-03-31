@@ -67,7 +67,7 @@ void Sprite::fromJson(const QJsonObject& jsonObj) {
     }
 }
 
-void Sprite::paintAt(int x, int y, Pixel& newPixel)
+void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel)
 {
     // TODO : Implement brush and palette
     int r = 1;

@@ -2,11 +2,12 @@
 #define SPRITESHEET_H
 
 #include <QObject>
-#include <timeline.h>
-#include <sprite.h>
 #include <vector>
 #include <string>
+#include <timeline.h>
+#include <sprite.h>
 #include <QJsonArray>
+#include <palette.h>
 
 class Spritesheet : public QObject
 {
@@ -24,6 +25,8 @@ public:
 
     // Creates a new project
     void newProject(int newWidth, int newHeight);
+
+    Palette& getPalette();
 
     //Convert sprite sheet to JSON
     QJsonObject toJson() const {
@@ -44,7 +47,6 @@ public:
     }
 
 private:
-
     int width;
     int height;
     std::string projectName;
@@ -52,6 +54,7 @@ private:
     int currentFrame;
 
     Timeline timeline;
+    Palette palette;
 
     std::vector<Sprite> sprites;
 signals:
