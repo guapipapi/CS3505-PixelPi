@@ -8,8 +8,9 @@
 #include <sprite.h>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class PixelPi;
+namespace Ui
+{
+    class PixelPi;
 }
 QT_END_NAMESPACE
 
@@ -21,18 +22,19 @@ public slots:
     // void drawCanvas();
     // void zoomTo(int x, int y, int magnitude);
     void updateSpriteWidget(Sprite *newSprite);
-    void updateCurrentPixel(const Pixel& pixel);
+    void updateCurrentPixel(const Pixel &pixel);
 
 private slots:
     void on_FileButton_clicked();
     void on_primary_color_button_clicked();
     void on_secondary_color_button_clicked();
 
+    void on_brushRadiusSpinBox_valueChanged(int arg1);
+
 public:
     PixelPi(QWidget *parent = nullptr);
     ~PixelPi();
     void keyPressEvent(QKeyEvent *event);
-
 
 private:
     Ui::PixelPi *ui;
@@ -49,7 +51,7 @@ signals:
     void changePrimaryColor(Pixel pixel);
     void changeSecondaryColor(Pixel pixel);
     void switchColors();
-
-
+    void mousePaintedAt(int x, int y);
+    void newBrushRadius(int newRadius);
 };
 #endif // PIXELPI_H
