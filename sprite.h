@@ -15,6 +15,9 @@ public:
 
     void addPixel(int x, int y, Pixel& newPixel);
     void paintAt(int x, int y, int radius, Pixel& newPixel);
+
+    void eraseAt(int x, int y, int radius);
+
     void removePixelAt(int x, int y);
     Pixel* getPixelAt(int x, int y);
 

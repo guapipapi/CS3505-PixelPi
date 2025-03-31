@@ -47,6 +47,9 @@ PixelPi::PixelPi(QWidget *parent) : QMainWindow(parent), ui(new Ui::PixelPi)
 
     // Connect paint event to signal
     QObject::connect(ui->paintWidget, &PaintWidget::mouseClickedAt, this, &PixelPi::mousePaintedAt);
+
+    // Connect erase event to signal
+    QObject::connect(ui->paintWidget, &PaintWidget::erasedAt, this, &PixelPi::mouseErasedAt);
 }
 
 PixelPi::~PixelPi()

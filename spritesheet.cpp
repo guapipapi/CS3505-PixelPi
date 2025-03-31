@@ -104,6 +104,13 @@ void Spritesheet::paintedCurrentSpriteAt(int x, int y)
     getCurrentSprite().paintAt(x, y, brushRadius, palette.getCurrentColor());
 }
 
+void Spritesheet::erasedCurrentSpriteAt(int x, int y)
+{
+    int brushRadius = palette.getBrush()->getRadius();
+    getCurrentSprite().eraseAt(x, y, brushRadius);
+}
+
+
  Palette& Spritesheet::getPalette()
 {
     return palette;

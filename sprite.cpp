@@ -81,3 +81,18 @@ void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel)
         }
     }
 }
+
+void Sprite::eraseAt(int x, int y, int radius)
+{
+    for(int brushX = -radius/2; brushX <= radius/2; brushX++) {
+        for(int brushY = -radius/2; brushY <= radius/2; brushY++) {
+            int px = x + brushX;
+            int py = y + brushY;
+
+            // Bounds check
+            if (px >= 0 && px < width && py >= 0 && py < height) {
+                removePixelAt(px, py);
+            }
+        }
+    }
+}

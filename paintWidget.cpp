@@ -70,9 +70,6 @@ void PaintWidget::mousePressEvent(QMouseEvent *event) {
             // Emits the mouse position in sprite coordinates
             emit mouseClickedAt(xCoord, yCoord);
 
-            // DRAWING
-
-
         //If the middle button is being pressed start to drag the canvas
         } else if (event->button() == Qt::MiddleButton) {
             wheelDragging = true; //Set dragging to true!
@@ -115,20 +112,22 @@ void PaintWidget::mouseMoveEvent(QMouseEvent *event) {
             int xCoord = (event->pos().x() - offsetX) / pixelSize;
             int yCoord = (event->pos().y() - offsetY) / pixelSize;
 
-            int radius = brush->getRadius();
-            int halfRadius = radius / 2;
+            emit erasedAt(xCoord, yCoord);
 
-            for (int dx = -halfRadius; dx <= halfRadius; dx++) {
-                for (int dy = -halfRadius; dy <= halfRadius; dy++) {
-                    int px = xCoord + dx;
-                    int py = yCoord + dy;
+            // int radius = brush->getRadius();
+            // int halfRadius = radius / 2;
 
-                    // bounds check
-                    if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
-                        sprite->removePixelAt(px, py);
-                    }
-                }
-            }
+            // for (int dx = -halfRadius; dx <= halfRadius; dx++) {
+            //     for (int dy = -halfRadius; dy <= halfRadius; dy++) {
+            //         int px = xCoord + dx;
+            //         int py = yCoord + dy;
+
+            //         // bounds check
+            //         if (px >= 0 && px < sprite->width && py >= 0 && py < sprite->height) {
+            //             sprite->removePixelAt(px, py);
+            //         }
+            //     }
+            // }
         }
         if (event->buttons() &Qt::LeftButton) {
             //pixelSize = this->width() / sprite->width;

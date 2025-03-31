@@ -43,7 +43,11 @@ int main(int argc, char *argv[])
 
     QObject::connect(&w, &PixelPi::newBrushRadius, spritesheet.getPalette().getBrush(), &Brush::setRadius);
 
+    // Connect painting to spritesheet
     QObject::connect(&w, &PixelPi::mousePaintedAt, &spritesheet, &Spritesheet::paintedCurrentSpriteAt);
+
+    // Connect erasing to spritesheet
+    QObject::connect(&w, &PixelPi::mouseErasedAt, &spritesheet, &Spritesheet::erasedCurrentSpriteAt);
 
     // Shows help page on start
     // TODO: uncomment this. Commented so we aren't bothered while testing

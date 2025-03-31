@@ -57,6 +57,7 @@ signals:
     void changeSecondaryColor(Pixel pixel);
     void switchColors();
     void mousePaintedAt(int x, int y);
+    void mouseErasedAt(int x, int y);
     void newBrushRadius(int newRadius);
 };
 #endif // PIXELPI_H
