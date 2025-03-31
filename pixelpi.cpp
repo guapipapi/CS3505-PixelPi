@@ -14,7 +14,7 @@ PixelPi::PixelPi(QWidget *parent) : QMainWindow(parent), ui(new Ui::PixelPi)
     ui->setupUi(this);
 
     QColor primaryColor(255, 0, 0, 255);   // Red
-    QColor secondaryColor(0, 0, 255, 255); // Blue
+    QColor secondaryColor(255, 0, 0, 255); // Red
 
     // Set button background colors
     QString primaryStyleSheet = QString("background-color: rgba(%1, %2, %3, %4);")
