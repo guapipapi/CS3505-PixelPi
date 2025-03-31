@@ -9,6 +9,7 @@
 #include <brush.h>
 #include <palette.h>
 #include <controller.h>
+#include <timeline.h>
 
 int main(int argc, char *argv[])
 {
@@ -48,6 +49,15 @@ int main(int argc, char *argv[])
 
     // Connect erasing to spritesheet
     QObject::connect(&w, &PixelPi::mouseErasedAt, &spritesheet, &Spritesheet::erasedCurrentSpriteAt);
+
+    // Connect fps spinBox
+    QObject::connect(&w, &PixelPi::newFPS, &spritesheet.getTimeline(), &Timeline::changeFPS);
+
+    QObject::connect(&w, &PixelPi::playAnimation, &spritesheet.getTimeline(), &Timeline::playAnimation);
+
+    QObject::connect(&w, &PixelPi::addSprite, &spritesheet.getTimeline(), &Timeline::addSprite);
+
+    QObject::connect(&w, &PixelPi::removeSprite, &spritesheet.getTimeline(), &Timeline::deleteSprite);
 
     // Shows help page on start
     // TODO: uncomment this. Commented so we aren't bothered while testing

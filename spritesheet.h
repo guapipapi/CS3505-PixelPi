@@ -28,6 +28,8 @@ public:
 
     Palette& getPalette();
 
+    Timeline& getTimeline();
+
     //Convert sprite sheet to JSON
     QJsonObject toJson() const {
         QJsonObject jsonObj;

@@ -212,3 +212,21 @@ void PixelPi::on_fpsSpinBox_valueChanged(int newFramesPerSecond)
     emit newFPS(newFramesPerSecond);
 }
 
+
+void PixelPi::on_playAnimationButton_clicked()
+{
+    emit playAnimation();
+}
+
+
+void PixelPi::on_addSpriteButton_clicked()
+{
+    emit addSprite();
+}
+
+
+void PixelPi::on_removeSpriteButton_clicked()
+{
+    emit removeSprite();
+}
+

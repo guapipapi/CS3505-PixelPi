@@ -111,7 +111,11 @@ void Spritesheet::erasedCurrentSpriteAt(int x, int y)
 }
 
 
- Palette& Spritesheet::getPalette()
+Palette& Spritesheet::getPalette()
 {
     return palette;
+}
+
+Timeline& Spritesheet::getTimeline(){
+    return timeline;
 }
