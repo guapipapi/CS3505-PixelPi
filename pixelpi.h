@@ -21,6 +21,7 @@ class PixelPi : public QMainWindow
 public slots:
     void updateSpriteWidget(Sprite *newSprite);
     void updateCurrentPixel(const Pixel &pixel);
+    void updateCurrentSprite(int currentSprite);
 
     void setNewSpriteDimensions(int x, int y);
 
@@ -32,6 +33,14 @@ private slots:
     void on_brushRadiusSpinBox_valueChanged(int arg1);
 
     void on_showHelpButton_clicked();
+
+    void on_fpsSpinBox_valueChanged(int arg1);
+
+    void on_playAnimationButton_clicked();
+
+    void on_addSpriteButton_clicked();
+
+    void on_removeSpriteButton_clicked();
 
 public:
     PixelPi(QWidget *parent = nullptr);
@@ -59,7 +68,12 @@ signals:
     void mouseErasedAt(int x, int y);
     void newBrushRadius(int newRadius);
 
-    void loadFile(QString& file);
-    void saveFile(QString& file);
+    void loadFile(QString &file);
+    void saveFile(QString &file);
+
+    void newFPS(int newFramesPerSecond);
+    void playAnimation();
+    void addSprite();
+    void removeSprite();
 };
 #endif // PIXELPI_H

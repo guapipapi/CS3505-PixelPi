@@ -15,27 +15,29 @@ class Spritesheet : public QObject
 public:
     explicit Spritesheet(QObject *parent = nullptr);
 
-    // You know
-    bool exportToPNG();
     // Returns the current sprite
-    Sprite& getCurrentSprite();
+    Sprite &getCurrentSprite();
 
     // Creates a new project
     void newProject(int newWidth, int newHeight);
 
-    Palette& getPalette();
+    Palette &getPalette();
 
-    //Convert sprite sheet to JSON
-    QJsonObject toJson() const {
+    Timeline &getTimeline();
+
+    // Convert sprite sheet to JSON
+    QJsonObject toJson() const
+    {
         QJsonObject jsonObj;
 
         jsonObj["projectName"] = QString::fromStdString(projectName);
         jsonObj["width"] = width;
         jsonObj["height"] = height;
 
-        //Put all sprites into the JSON array
+        // Put all sprites into the JSON array
         QJsonArray spriteArray;
-        for (const auto& sprite : sprites) {
+        for (const auto &sprite : sprites)
+        {
             spriteArray.append(sprite.toJson());
         }
         jsonObj["sprites"] = spriteArray;
@@ -54,18 +56,25 @@ private:
     Palette palette;
 
     std::vector<Sprite> sprites;
+
 signals:
-    void currentSpriteUpdated(Sprite* currentSprite);
+    void currentSpriteUpdated(Sprite *currentSprite);
+    void currentSpriteID(int spriteID);
+
     void updateSpriteSizeUI(int x, int y);
 public slots:
     void paintedCurrentSpriteAt(int x, int y);
     void erasedCurrentSpriteAt(int x, int y);
 
     // Returns true if operation was a success
-    void saveToJson(QString& file);
+    void saveToJson(QString &file);
 
     // Returns true if operation was a success
-    void loadJson(QString& file);
+    void loadJson(QString &file);
+
+    void goToNextSprite();
+    void addSprite();
+    void removeSprite();
 };
 
 #endif // SPRITESHEET_H

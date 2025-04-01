@@ -10,6 +10,7 @@
 #include <palette.h>
 #include <controller.h>
 #include <QString>
+#include <timeline.h>
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +25,8 @@ int main(int argc, char *argv[])
 
     // Connects spritesheet to paintWidget
     QObject::connect(&spritesheet, &Spritesheet::currentSpriteUpdated, &w, &PixelPi::updateSpriteWidget);
+
+    QObject::connect(&spritesheet, &Spritesheet::currentSpriteID, &w, &PixelPi::updateCurrentSprite);
 
     // Connects new file button
     QObject::connect(&w, &PixelPi::createNewFile, &spritesheet, &Spritesheet::newProject);
@@ -53,9 +56,18 @@ int main(int argc, char *argv[])
     // Connect erasing to spritesheet
     QObject::connect(&w, &PixelPi::mouseErasedAt, &spritesheet, &Spritesheet::erasedCurrentSpriteAt);
 
+    // Connect fps spinBox
+    QObject::connect(&w, &PixelPi::newFPS, &spritesheet.getTimeline(), &Timeline::changeFPS);
+
+    QObject::connect(&w, &PixelPi::playAnimation, &spritesheet.getTimeline(), &Timeline::playAnimation);
+
+    QObject::connect(&w, &PixelPi::addSprite, &spritesheet, &Spritesheet::addSprite);
+
+    QObject::connect(&w, &PixelPi::removeSprite, &spritesheet, &Spritesheet::removeSprite);
+
     // Shows help page on start
     // TODO: uncomment this. Commented so we aren't bothered while testing
-    //w.showHelpPage();
+    // w.showHelpPage();
 
     return a.exec();
 }
