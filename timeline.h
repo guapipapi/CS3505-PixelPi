@@ -2,6 +2,7 @@
 #define TIMELINE_H
 
 #include <QObject>
+#include <QTimer>
 
 class Timeline : public QObject
 {
@@ -19,6 +20,8 @@ public slots:
 private:
     int framesPerSecond;
     bool playing = false;
+    QTimer timer;
+
 
 signals:
 };
