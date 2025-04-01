@@ -37,4 +37,5 @@ void PreviewWidget::paintEvent(QPaintEvent *){
             }
         }
     }
+    update();
 }
