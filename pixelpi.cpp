@@ -253,3 +253,25 @@ void PixelPi::isPlayingAnimation(bool isPlaying){
         ui->playAnimationButton->setText("Play");
     }
 }
+
+void PixelPi::on_previousSpriteButton_clicked()
+{
+    emit goToPreviousSprite();
+}
+
+
+void PixelPi::on_nextSpriteButton_clicked()
+{
+    emit goToNextSprite();
+}
+
+void PixelPi::nextSpriteEnable(bool enable)
+{
+    ui->nextSpriteButton->setEnabled(enable);
+}
+
+void PixelPi::previousSpriteEnable(bool enable)
+{
+    ui->previousSpriteButton->setEnabled(enable);
+}
+

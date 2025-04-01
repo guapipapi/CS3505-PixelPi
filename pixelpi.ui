@@ -51,11 +51,22 @@
     </property>
     <layout class="QHBoxLayout" name="timelineHorizontalLayout">
      <item>
-      <widget class="QListView" name="listView">
-       <property name="verticalScrollBarPolicy">
-        <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QPushButton" name="previousSpriteButton">
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="nextSpriteButton">
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -258,7 +269,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -284,6 +295,7 @@
      </item>
     </layout>
    </widget>
+   <zorder>layoutWidget</zorder>
    <zorder>widgetBorder</zorder>
    <zorder>FileButton</zorder>
    <zorder>paintWidget</zorder>
@@ -296,8 +308,8 @@
    <zorder>showHelpButton</zorder>
    <zorder>dimensionsLabel</zorder>
    <zorder>layoutWidget</zorder>
-   <zorder>frameIDLabel</zorder>
-   <zorder>frameCountLabel</zorder>
+   <zorder>previousSpriteButton</zorder>
+   <zorder>nextSpriteButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -305,7 +317,7 @@
      <x>0</x>
      <y>0</y>
      <width>814</width>
-     <height>16</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

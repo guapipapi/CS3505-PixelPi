@@ -1,8 +1,8 @@
 #include <QCoreApplication>
 #include <QJsonDocument>
 #include <QFile>
-#include <iostream>
 #include "spritesheet.h"
+#include <iostream>
 
 Spritesheet::Spritesheet(QObject *parent)
     : QObject{parent}, currentFrame(0), palette(this)
@@ -73,6 +73,8 @@ void Spritesheet::loadJson(QString &filePath)
     }
 
     emit updateSpriteSizeUI(width, height);
+
+    emitIfNextOrPreviousSprites();
 }
 
 void Spritesheet::newProject(int newWidth, int newHeight)
@@ -90,6 +92,8 @@ void Spritesheet::newProject(int newWidth, int newHeight)
 
     // emits the new sprite
     emit currentSpriteUpdated(&sprites[currentFrame]);
+
+    emitIfNextOrPreviousSprites();
 }
 
 Sprite &Spritesheet::getCurrentSprite()
@@ -118,32 +122,52 @@ Timeline &Spritesheet::getTimeline()
 {
     return timeline;
 }
+
 void Spritesheet::goToNextSprite()
 {
-    currentFrame = (currentFrame + 1) % sprites.size();
+    if (sprites.size() <= 1) return;
+
+    currentFrame++;
+
+    if (currentFrame >= sprites.size()) {
+        currentFrame = 0;
+    }
 
     emit currentSpriteUpdated(&sprites[currentFrame]);
     emit currentSpriteID(currentFrame);
+    emitIfNextOrPreviousSprites();
+}
+
+void Spritesheet::goToPreviousSprite()
+{
+    if (sprites.size() <= 1) return;
+
+    currentFrame--;
+
+    if (currentFrame < 0) {
+        currentFrame = sprites.size() - 1;
+    }
+
+    emit currentSpriteUpdated(&sprites[currentFrame]);
+    emit currentSpriteID(currentFrame);
+    emitIfNextOrPreviousSprites();
 }
 
 void Spritesheet::addSprite()
 {
-    // Add new sprite at the beginning
     sprites.push_back(Sprite(width, height));
 
-    currentFrame = sprites.size() - 1;
-
-    emit canPlayAnimation(true);
+    if (sprites.size() == 2) {
+        emit canPlayAnimation(true);
+    }
 
     timeline.stopAnimation();
-
-    emit currentSpriteID(currentFrame);
-    emit currentSpriteUpdated(&sprites[currentFrame]);
+    emitIfNextOrPreviousSprites();
 }
 
 void Spritesheet::removeSprite()
 {
-    sprites.pop_back();
+    sprites.erase(sprites.begin() + currentFrame);
 
     if (sprites.size() <= 1)
     {
@@ -152,6 +176,7 @@ void Spritesheet::removeSprite()
             addSprite();
         }
 
+        emitIfNextOrPreviousSprites();
         emit canPlayAnimation(false);
     }
 
@@ -163,4 +188,13 @@ void Spritesheet::removeSprite()
 
     emit currentSpriteUpdated(&sprites[currentFrame]);
     emit currentSpriteID(currentFrame);
+}
+
+void Spritesheet::emitIfNextOrPreviousSprites()
+{
+    bool hasPrevious = (currentFrame > 0) && !sprites.empty();
+    bool hasNext = (currentFrame < sprites.size() - 1) && !sprites.empty();
+
+    emit isTherePreviousSprite(hasPrevious);
+    emit isThereNextSprite(hasNext);
 }

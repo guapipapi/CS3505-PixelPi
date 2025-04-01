@@ -26,7 +26,6 @@ void PreviewWidget::paintEvent(QPaintEvent *){
 
     int pixelSize = qMax(1, (this->width() / sprite->width));
 
-
     for(int x = 0; x < sprite->width; x++) {
         for(int y = 0; y < sprite->height; y++) {
             if(sprite->getPixelAt(x, y) != nullptr) {

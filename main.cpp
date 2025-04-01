@@ -72,6 +72,11 @@ int main(int argc, char *argv[])
 
     QObject::connect(&spritesheet, &Spritesheet::canPlayAnimation, &w, &PixelPi::enablePlayButton);
 
+    QObject::connect(&spritesheet, &Spritesheet::isThereNextSprite, &w, &PixelPi::nextSpriteEnable);
+    QObject::connect(&spritesheet, &Spritesheet::isTherePreviousSprite, &w, &PixelPi::previousSpriteEnable);
+
+    QObject::connect(&w, &PixelPi::goToPreviousSprite, &spritesheet, &Spritesheet::goToPreviousSprite);
+    QObject::connect(&w, &PixelPi::goToNextSprite, &spritesheet, &Spritesheet::goToNextSprite);
 
     // Initializes default project as 32 by 32 sprite
     spritesheet.newProject(32, 32);

@@ -57,6 +57,8 @@ private:
 
     std::vector<Sprite> sprites;
 
+    void emitIfNextOrPreviousSprites();
+
 signals:
     void currentSpriteUpdated(Sprite *currentSprite);
     void currentSpriteID(int spriteID);
@@ -64,6 +66,10 @@ signals:
     void updateSpriteSizeUI(int x, int y);
 
     void canPlayAnimation(bool canPlay);
+
+    void isThereNextSprite(bool validNextSprite);
+
+    void isTherePreviousSprite(bool validPreviousSprite);
 
 public slots:
     void paintedCurrentSpriteAt(int x, int y);
@@ -76,6 +82,7 @@ public slots:
     void loadJson(QString &file);
 
     void goToNextSprite();
+    void goToPreviousSprite();
     void addSprite();
     void removeSprite();
 };

@@ -29,6 +29,11 @@ public slots:
 
     void isPlayingAnimation(bool isPlaying);
 
+    void nextSpriteEnable(bool enable);
+
+    void previousSpriteEnable(bool enable);
+
+
 private slots:
     void on_FileButton_clicked();
     void on_primary_color_button_clicked();
@@ -45,6 +50,10 @@ private slots:
     void on_addSpriteButton_clicked();
 
     void on_removeSpriteButton_clicked();
+
+    void on_previousSpriteButton_clicked();
+
+    void on_nextSpriteButton_clicked();
 
 public:
     PixelPi(QWidget *parent = nullptr);
@@ -63,6 +72,7 @@ private:
     void increaseZoom();
     void dragZoom(int newX, int newY);
     void resetZoom();
+
 signals:
     void createNewFile(int width, int height);
     void changePrimaryColor(Pixel pixel);
@@ -79,5 +89,8 @@ signals:
     void playAnimation();
     void addSprite();
     void removeSprite();
+
+    void goToNextSprite();
+    void goToPreviousSprite();
 };
 #endif // PIXELPI_H
