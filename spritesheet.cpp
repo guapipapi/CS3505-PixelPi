@@ -157,12 +157,16 @@ void Spritesheet::addSprite()
 {
     sprites.push_back(Sprite(width, height));
 
+    currentFrame = sprites.size()-1;
+
     if (sprites.size() == 2) {
         emit canPlayAnimation(true);
     }
 
     timeline.stopAnimation();
     emitIfNextOrPreviousSprites();
+    emit currentSpriteUpdated(&sprites[currentFrame]);
+    emit currentSpriteID(currentFrame);
 }
 
 void Spritesheet::removeSprite()
