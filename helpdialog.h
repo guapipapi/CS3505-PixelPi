@@ -1,5 +1,5 @@
 /**
- * @author ?
+ * @author Carlos Alatorre
  *
  * The help page that is shown at the beginning of the screen
  */

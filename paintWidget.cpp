@@ -29,10 +29,6 @@ void PaintWidget::setPixel(Pixel *pixel) {
     this->pixel = pixel;
 }
 
-/**
- * @brief PaintWidget::paintEvent
- * Draws pixels based on sprite object
- */
 void PaintWidget::paintEvent(QPaintEvent *){
 
     if (sprite == nullptr || brush == nullptr || pixel == nullptr)
@@ -200,3 +196,5 @@ void PaintWidget::wheelEvent(QWheelEvent *event) {
         update();
     }
 }
+
+// - Checked by Scott Ceja

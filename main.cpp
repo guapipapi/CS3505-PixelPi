@@ -12,8 +12,7 @@
 #include <QString>
 #include <timeline.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
     PixelPi w;
     Controller controller;
@@ -37,8 +36,6 @@ int main(int argc, char *argv[])
 
     // Connects the load file procedure and size label in the UI
     QObject::connect(&spritesheet, &Spritesheet::updateSpriteSizeUI, &w, &PixelPi::setNewSpriteDimensions);
-
-
 
     // Connect color change signals from PixelPi to Palette
     QObject::connect(&w, &PixelPi::changePrimaryColor, &spritesheet.getPalette(), &Palette::setNewCurrentColor);
@@ -81,9 +78,7 @@ int main(int argc, char *argv[])
     // Initializes default project as 32 by 32 sprite
     spritesheet.newProject(32, 32);
 
-    // Shows help page on start
-    // TODO: uncomment this. Commented so we aren't bothered while testing
-    // w.showHelpPage();
-
     return a.exec();
 }
+
+// Checked by Scott Ceja

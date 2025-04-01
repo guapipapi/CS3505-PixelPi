@@ -11,14 +11,12 @@ void PreviewWidget::setSprite(Sprite *newSprite) {
     this->sprite = newSprite;
 }
 
-void PreviewWidget::draw(){
+void PreviewWidget::draw() {
     update();
 }
 
-void PreviewWidget::paintEvent(QPaintEvent *){
-
-    if (sprite == nullptr)
-        return;
+void PreviewWidget::paintEvent(QPaintEvent *) {
+    if (sprite == nullptr) return;
 
     QPainter painter(this);
 
@@ -39,3 +37,5 @@ void PreviewWidget::paintEvent(QPaintEvent *){
     }
     update();
 }
+
+// - Checked by Carlos Alatorre

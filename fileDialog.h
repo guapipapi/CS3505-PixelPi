@@ -1,5 +1,5 @@
 /**
- * @author ?
+ * @author Carlos Alatorre
  *
  * A class for the file dialog that handels loading, saving, and writing new files to disk
  */

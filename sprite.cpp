@@ -2,18 +2,12 @@
 #include "pixel.h"
 #include <map>
 
-/*
- * Constructor that takes in a widht and height for the sprite.
- */
 Sprite::Sprite(int width, int height) {
     this->width = width;
     this->height = height;
 }
 
-/*
- * Default constructor that makes a 32x32 Sprite.
- */
-Sprite::Sprite(){
+Sprite::Sprite() {
     width = 32;
     height = 32;
 }
@@ -71,8 +65,7 @@ void Sprite::setSize(int width, int height) {
     this->height = height;
 }
 
-void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel)
-{
+void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel) {
     if (radius % 2 == 0) {
         for(int brushX = 0; brushX <= radius; brushX++) {
             for(int brushY = 0; brushY <= radius; brushY++) {
@@ -101,8 +94,7 @@ void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel)
     }
 }
 
-void Sprite::eraseAt(int x, int y, int radius)
-{
+void Sprite::eraseAt(int x, int y, int radius) {
     if (radius % 2 == 0) {
         for(int brushX = 0; brushX <= radius; brushX++) {
             for(int brushY = 0; brushY <= radius; brushY++) {
@@ -130,4 +122,4 @@ void Sprite::eraseAt(int x, int y, int radius)
         }
     }
 }
-// - Checked by ...
+// - Checked by Roland Guerreire

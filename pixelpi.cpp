@@ -9,8 +9,7 @@
 #include "sprite.h"
 #include "fileDialog.h"
 
-PixelPi::PixelPi(QWidget *parent) : QMainWindow(parent), ui(new Ui::PixelPi)
-{
+PixelPi::PixelPi(QWidget *parent) : QMainWindow(parent), ui(new Ui::PixelPi) {
     ui->setupUi(this);
 
     QColor primaryColor(255, 0, 0, 255);   // Red
@@ -32,7 +31,6 @@ PixelPi::PixelPi(QWidget *parent) : QMainWindow(parent), ui(new Ui::PixelPi)
     ui->primary_color_button->setStyleSheet(primaryStyleSheet);
     ui->secondary_color_button->setStyleSheet(secondaryStyleSheet);
 
-    // THIS WILL BE MOVED TO MAIN.CPP here for testing purposes
     Brush *brush = new Brush(ui->paintWidget);
     brush->setRadius(2);
 
@@ -61,10 +59,6 @@ PixelPi::~PixelPi()
     delete ui;
 }
 
-// int zoomLevel;
-// int zoomX;
-// int zoomY;
-
 void PixelPi::increaseZoom()
 {
     zoomLevel *= 1.5;
@@ -79,14 +73,9 @@ void PixelPi::dragZoom(int newX, int newY)
 void PixelPi::resetZoom()
 {
     zoomLevel = 0;
-
-    // zoomX = ...
-    // zoomY = ...
-    // LOGIC SHOULD BE ADDED TO THE PAINT WIDGET THAT GETS THE CENTRE OF THE CANVAS!!
 }
 
-void PixelPi::updateSpriteWidget(Sprite *newSprite)
-{
+void PixelPi::updateSpriteWidget(Sprite *newSprite) {
     ui->paintWidget->setSprite(newSprite);
 
     //Also tie the sprite to the preview!
@@ -109,13 +98,11 @@ void PixelPi::updateCurrentPixel(const Pixel &pixel)
     ui->previewWidget->draw();
 }
 
-void PixelPi::on_FileButton_clicked()
-{
+void PixelPi::on_FileButton_clicked() {
     fileDialog.show();
 }
 
-void PixelPi::on_primary_color_button_clicked()
-{
+void PixelPi::on_primary_color_button_clicked() {
     // Get current button background color as initial color
     QColor currentColor = ui->primary_color_button->palette().color(QPalette::Button);
 
@@ -142,8 +129,7 @@ void PixelPi::on_primary_color_button_clicked()
     }
 }
 
-void PixelPi::on_secondary_color_button_clicked()
-{
+void PixelPi::on_secondary_color_button_clicked() {
     // Get current button background color as initial color
     QColor currentColor = ui->secondary_color_button->palette().color(QPalette::Button);
 
@@ -170,8 +156,7 @@ void PixelPi::on_secondary_color_button_clicked()
     }
 }
 
-void PixelPi::keyPressEvent(QKeyEvent *event)
-{
+void PixelPi::keyPressEvent(QKeyEvent *event) {
     // Check if the 'x' key was pressed
     if (event->key() == Qt::Key_X)
     {
@@ -190,57 +175,49 @@ void PixelPi::keyPressEvent(QKeyEvent *event)
     QMainWindow::keyPressEvent(event);
 }
 
-void PixelPi::on_brushRadiusSpinBox_valueChanged(int newRadius)
-{
+void PixelPi::on_brushRadiusSpinBox_valueChanged(int newRadius) {
     emit newBrushRadius(newRadius);
 }
 
-void PixelPi::showHelpPage(){
+void PixelPi::showHelpPage() {
     on_showHelpButton_clicked();
 }
 
-void PixelPi::on_showHelpButton_clicked()
-{
+void PixelPi::on_showHelpButton_clicked() {
     helpDialog.show();
     helpDialog.setModal(false);
 }
 
-void PixelPi::setNewSpriteDimensions(int x, int y){
+void PixelPi::setNewSpriteDimensions(int x, int y) {
     QString dimensionsText = QString("%1 x %2").arg(x).arg(y);
     ui->dimensionsLabel->setText(dimensionsText);
 }
 
 
-void PixelPi::on_fpsSpinBox_valueChanged(int newFramesPerSecond)
-{
+void PixelPi::on_fpsSpinBox_valueChanged(int newFramesPerSecond) {
     emit newFPS(newFramesPerSecond);
 }
 
 
-void PixelPi::on_playAnimationButton_clicked()
-{
+void PixelPi::on_playAnimationButton_clicked() {
     emit playAnimation();
 }
 
 
-void PixelPi::on_addSpriteButton_clicked()
-{
+void PixelPi::on_addSpriteButton_clicked() {
     emit addSprite();
 }
 
 
-void PixelPi::on_removeSpriteButton_clicked()
-{
+void PixelPi::on_removeSpriteButton_clicked() {
     emit removeSprite();
 }
 
-void PixelPi::updateCurrentSprite(int currentSprite)
-{
+void PixelPi::updateCurrentSprite(int currentSprite) {
     ui->frameCountLabel->setText(QString::number(currentSprite));
 }
 
-void PixelPi::enablePlayButton(bool canPlay)
-{
+void PixelPi::enablePlayButton(bool canPlay) {
     ui->playAnimationButton->setEnabled(canPlay);
 }
 
@@ -254,24 +231,21 @@ void PixelPi::isPlayingAnimation(bool isPlaying){
     }
 }
 
-void PixelPi::on_previousSpriteButton_clicked()
-{
+void PixelPi::on_previousSpriteButton_clicked() {
     emit goToPreviousSprite();
 }
 
 
-void PixelPi::on_nextSpriteButton_clicked()
-{
+void PixelPi::on_nextSpriteButton_clicked() {
     emit goToNextSprite();
 }
 
-void PixelPi::nextSpriteEnable(bool enable)
-{
+void PixelPi::nextSpriteEnable(bool enable) {
     ui->nextSpriteButton->setEnabled(enable);
 }
 
-void PixelPi::previousSpriteEnable(bool enable)
-{
+void PixelPi::previousSpriteEnable(bool enable) {
     ui->previousSpriteButton->setEnabled(enable);
 }
 
+// - Checked by Carlos Alatorre

@@ -39,3 +39,4 @@ void Pixel::setAlphaValue(unsigned char a) {
     this->a = a;
 }
 
+// Checked by Scott Ceja

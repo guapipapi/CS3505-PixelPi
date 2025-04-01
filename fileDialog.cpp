@@ -19,8 +19,7 @@ void FileDialog::on_newButton_clicked() {
     newFileDialog.setModal(true);
 }
 
-void FileDialog::on_saveAsButton_clicked()
-{
+void FileDialog::on_saveAsButton_clicked() {
     saveDirectory = QFileDialog::getSaveFileName(this, "Save File", saveDirectory + "/default_filename.ssp", "Text Files (*.ssp);;All Files (*)");
 
     if (!saveDirectory.isEmpty()) {
@@ -30,8 +29,7 @@ void FileDialog::on_saveAsButton_clicked()
 }
 
 
-void FileDialog::on_loadButton_clicked()
-{
+void FileDialog::on_loadButton_clicked() {
     loadFile = QFileDialog::getOpenFileName(this);
 
     if (!loadFile.isEmpty()) {
