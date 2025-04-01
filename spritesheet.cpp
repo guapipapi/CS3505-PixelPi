@@ -120,9 +120,6 @@ Timeline &Spritesheet::getTimeline()
 }
 void Spritesheet::goToNextSprite()
 {
-    if (sprites.size() <= 1)
-        return;
-
     currentFrame = (currentFrame + 1) % sprites.size();
 
     emit currentSpriteUpdated(&sprites[currentFrame]);

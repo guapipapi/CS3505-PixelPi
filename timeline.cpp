@@ -2,7 +2,7 @@
 #include "QTimer"
 
 Timeline::Timeline(QObject *parent)
-    : QObject{parent}, timer(new QTimer(this))
+    : QObject{parent}, timer(new QTimer(this)), framesPerSecond(1)
 {
     QObject::connect(&timer, &QTimer::timeout, this, &Timeline::switchSprite);
 }
