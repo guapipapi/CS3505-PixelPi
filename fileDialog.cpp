@@ -6,6 +6,7 @@
 FileDialog::FileDialog(QWidget *parent) : QDialog(parent), ui(new Ui::FileDialog) {
     ui->setupUi(this);
 
+    // Connects the new file button to the new file signal
     QObject::connect(&newFileDialog, &NewFileDialog::createNewFile, this, &FileDialog::createNewFileSignal);
 }
 
@@ -17,7 +18,6 @@ void FileDialog::on_newButton_clicked() {
     newFileDialog.show();
     newFileDialog.setModal(true);
 }
-
 
 void FileDialog::on_saveAsButton_clicked()
 {

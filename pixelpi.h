@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <fileDialog.h>
-#include <newcolordialog.h>
 #include <helpdialog.h>
 #include <QKeyEvent>
 #include <sprite.h>
