@@ -235,7 +235,7 @@
      <string>32x32</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -264,6 +264,32 @@
      </item>
     </layout>
    </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>93</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="frameIDLabel">
+       <property name="text">
+        <string>Frame:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="frameCountLabel">
+       <property name="text">
+        <string>1</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <zorder>widgetBorder</zorder>
    <zorder>FileButton</zorder>
    <zorder>paintWidget</zorder>
@@ -275,7 +301,9 @@
    <zorder>primary_color_button</zorder>
    <zorder>showHelpButton</zorder>
    <zorder>dimensionsLabel</zorder>
-   <zorder></zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>frameIDLabel</zorder>
+   <zorder>frameCountLabel</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

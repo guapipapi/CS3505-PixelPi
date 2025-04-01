@@ -10,10 +10,15 @@ PaintWidget::PaintWidget(QWidget *parent) : QWidget{parent} {
 }
 
 void PaintWidget::setSprite(Sprite *newSprite) {
-    this->sprite = newSprite;
+    this->sprite = nullptr;  // Remove reference to the old sprite
+    update();  // Force clear
+
+    this->sprite = newSprite;  // Assign new sprite
     this->zoom = 1;
     this->offsetX = 0;
     this->offsetY = 0;
+
+    update();  // Redraw new sprite
 }
 
 void PaintWidget::setBrush(Brush *brush) {

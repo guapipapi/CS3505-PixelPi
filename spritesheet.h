@@ -35,6 +35,8 @@ public:
     // Gets a reference of current palette
     Palette& getPalette();
 
+    Timeline& getTimeline();
+
     //Convert sprite sheet to JSON
     QJsonObject toJson() const {
         QJsonObject jsonObj;
@@ -67,15 +69,21 @@ private:
     Palette palette;
 
     std::vector<Sprite> sprites;
+
 signals:
     // Updates sprite to the spritesheet
     void currentSpriteUpdated(Sprite* currentSprite);
+    void currentSpriteID(int spriteID);
+
 public slots:
     // Gets location of drawing the sprite
     void paintedCurrentSpriteAt(int x, int y);
 
     // Gets location of erasing the sprite
     void erasedCurrentSpriteAt(int x, int y);
+    void goToNextSprite();
+    void addSprite();
+    void removeSprite();
 };
 #endif // SPRITESHEET_H
 // - Checked by
