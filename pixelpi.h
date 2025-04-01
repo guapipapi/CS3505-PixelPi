@@ -35,8 +35,6 @@ private slots:
 
     void on_showHelpButton_clicked();
 
-    void setNewSpriteDimensions(int x, int y);
-
     void on_fpsSpinBox_valueChanged(int arg1);
 
     void on_playAnimationButton_clicked();

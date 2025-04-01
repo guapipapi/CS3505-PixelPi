@@ -14,10 +14,7 @@ class Spritesheet : public QObject
     Q_OBJECT
 public:
     explicit Spritesheet(QObject *parent = nullptr);
-    // Returns true if operation was a success
-    bool saveToJson(QString &filePath);
-    // Returns true if operation was a success
-    bool loadJson(QString &filePath);
+
     // Returns the current sprite
     Sprite &getCurrentSprite();
 
