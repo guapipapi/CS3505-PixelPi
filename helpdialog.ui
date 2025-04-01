@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>609</width>
-    <height>467</height>
+    <width>696</width>
+    <height>622</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -107,6 +107,42 @@
      </property>
      <property name="text">
       <string>Play - Plays timeline of sprites</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt; and &gt; - Goes between the valid frames in the timeline</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>add sprite - Will add a sprite to the end of the timeline</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_3">
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>remove sprite - Will remove the current sprite</string>
      </property>
     </widget>
    </item>
