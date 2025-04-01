@@ -86,6 +86,8 @@ void Spritesheet::newProject(int newWidth, int newHeight)
 
     currentFrame = 0;
 
+    emit canPlayAnimation(false);
+
     // emits the new sprite
     emit currentSpriteUpdated(&sprites[currentFrame]);
 }
@@ -116,18 +118,12 @@ Timeline &Spritesheet::getTimeline()
 {
     return timeline;
 }
-
 void Spritesheet::goToNextSprite()
 {
-    int max = sprites.size();
-    if (currentFrame < max - 1)
-    {
-        currentFrame++;
-    }
-    else
-    {
-        currentFrame = 0;
-    }
+    if (sprites.size() <= 1)
+        return;
+
+    currentFrame = (currentFrame + 1) % sprites.size();
 
     emit currentSpriteUpdated(&sprites[currentFrame]);
     emit currentSpriteID(currentFrame);
@@ -140,6 +136,10 @@ void Spritesheet::addSprite()
 
     currentFrame = sprites.size() - 1;
 
+    emit canPlayAnimation(true);
+
+    timeline.stopAnimation();
+
     emit currentSpriteID(currentFrame);
     emit currentSpriteUpdated(&sprites[currentFrame]);
 }
@@ -148,8 +148,16 @@ void Spritesheet::removeSprite()
 {
     sprites.pop_back();
 
-    if (sprites.size() < 1)
-        addSprite();
+    if (sprites.size() <= 1)
+    {
+        if (sprites.size() < 1)
+        {
+            addSprite();
+        }
+
+        emit canPlayAnimation(false);
+    }
+
 
     if (currentFrame >= int(sprites.size()))
     {

@@ -239,3 +239,17 @@ void PixelPi::updateCurrentSprite(int currentSprite)
     ui->frameCountLabel->setText(QString::number(currentSprite));
 }
 
+void PixelPi::enablePlayButton(bool canPlay)
+{
+    ui->playAnimationButton->setEnabled(canPlay);
+}
+
+void PixelPi::isPlayingAnimation(bool isPlaying){
+    if (isPlaying)
+    {
+        ui->playAnimationButton->setText("Stop");
+    }else
+    {
+        ui->playAnimationButton->setText("Play");
+    }
+}

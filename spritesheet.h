@@ -62,6 +62,9 @@ signals:
     void currentSpriteID(int spriteID);
 
     void updateSpriteSizeUI(int x, int y);
+
+    void canPlayAnimation(bool canPlay);
+
 public slots:
     void paintedCurrentSpriteAt(int x, int y);
     void erasedCurrentSpriteAt(int x, int y);

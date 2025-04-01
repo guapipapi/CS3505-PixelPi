@@ -17,6 +17,8 @@ void Timeline::changeFPS(int newFPS){
 void Timeline::playAnimation(){
     playing = !playing;
 
+    emit isPlayingAnimation(playing);
+
     if (playing) {
         timer.start(1000 / framesPerSecond);
     } else {
@@ -26,4 +28,9 @@ void Timeline::playAnimation(){
 
 void Timeline::switchSprite(){
     emit goToNextSprite();
+}
+
+void Timeline::stopAnimation(){
+    timer.stop();
+    emit isPlayingAnimation(false);
 }

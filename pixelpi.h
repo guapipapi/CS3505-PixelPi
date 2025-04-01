@@ -26,6 +26,10 @@ public slots:
 
     void setNewSpriteDimensions(int x, int y);
 
+    void enablePlayButton(bool canPlay);
+
+    void isPlayingAnimation(bool isPlaying);
+
 private slots:
     void on_FileButton_clicked();
     void on_primary_color_button_clicked();

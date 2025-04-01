@@ -38,8 +38,7 @@ int main(int argc, char *argv[])
     // Connects the load file procedure and size label in the UI
     QObject::connect(&spritesheet, &Spritesheet::updateSpriteSizeUI, &w, &PixelPi::setNewSpriteDimensions);
 
-    // Initializes default project as 32 by 32 sprite
-    spritesheet.newProject(32, 32);
+
 
     // Connect color change signals from PixelPi to Palette
     QObject::connect(&w, &PixelPi::changePrimaryColor, &spritesheet.getPalette(), &Palette::setNewCurrentColor);
@@ -64,6 +63,18 @@ int main(int argc, char *argv[])
     QObject::connect(&w, &PixelPi::addSprite, &spritesheet, &Spritesheet::addSprite);
 
     QObject::connect(&w, &PixelPi::removeSprite, &spritesheet, &Spritesheet::removeSprite);
+
+    // Connect signals to the stop animation slot
+
+    QObject::connect(&w, &PixelPi::createNewFile, &spritesheet.getTimeline(), &Timeline::stopAnimation);
+
+    QObject::connect(&spritesheet.getTimeline(), &Timeline::isPlayingAnimation, &w, &PixelPi::isPlayingAnimation);
+
+    QObject::connect(&spritesheet, &Spritesheet::canPlayAnimation, &w, &PixelPi::enablePlayButton);
+
+
+    // Initializes default project as 32 by 32 sprite
+    spritesheet.newProject(32, 32);
 
     // Shows help page on start
     // TODO: uncomment this. Commented so we aren't bothered while testing
