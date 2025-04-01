@@ -1,7 +1,6 @@
 #include "sprite.h"
 #include "pixel.h"
 #include <map>
-#include <iostream>
 
 /*
  * Constructor that takes in a widht and height for the sprite.
@@ -96,3 +95,4 @@ void Sprite::eraseAt(int x, int y, int radius)
         }
     }
 }
+// - Checked by ...

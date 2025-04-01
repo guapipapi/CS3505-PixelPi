@@ -1,3 +1,9 @@
+/**
+ * @Authors: ....
+ *
+ * The sprite class is a model that depicts all actions related to when
+ * a sprite is being changed, including the pixel properties of it
+ */
 #ifndef SPRITE_H
 #define SPRITE_H
 
@@ -7,12 +13,15 @@
 class Sprite
 {
 public:
+    // Dimensions of the sprite
     Sprite(int width, int height);
     Sprite();
 
+    // Dimension values
     int width;
     int height;
 
+    //
     void addPixel(int x, int y, Pixel& newPixel);
     void paintAt(int x, int y, int radius, Pixel& newPixel);
 
@@ -34,3 +43,4 @@ private:
 };
 
 #endif // SPRITE_H
+// - Checked by ...
