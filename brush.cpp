@@ -13,3 +13,5 @@ void Brush::setRadius(int radius) {
 void Brush::paintPixel(int x, int y, Pixel& pixel, Sprite& sprite) {
     sprite.addPixel(x, y, pixel);
 }
+
+// Checked by Scott Ceja
