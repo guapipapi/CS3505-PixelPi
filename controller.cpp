@@ -1,9 +1,7 @@
 #include "controller.h"
 #include <brush.h>
 
-Controller::Controller(QObject *parent, Spritesheet *_currentSheet)
-    : QObject{parent}, selectedTool(0), currentFrame(0), currentSheet(_currentSheet)
-{}
+Controller::Controller(QObject *parent, Spritesheet *_currentSheet) : QObject{parent}, currentFrame(0), currentSheet(_currentSheet) {}
 
 void Controller::switchSprite(int spriteID){
     if (spriteID != currentFrame){
@@ -11,10 +9,8 @@ void Controller::switchSprite(int spriteID){
     }
 }
 
-void Controller::setTool(int newTool){
-    selectedTool = newTool;
-}
-
 void Controller::toggleDrawing(bool active){
     isDrawing = active;
 }
+
+// - Checked by Roland Guerriere

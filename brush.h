@@ -35,6 +35,7 @@ public:
     virtual void paintPixel(int x, int y, Pixel& pixel, Sprite& sprite);
 
 private:
+    // The radius of the brush
     int radius;
 
 public slots:
@@ -46,3 +47,5 @@ public slots:
 };
 
 #endif // BRUSH_H
+
+// - Checked by Scott Ceja

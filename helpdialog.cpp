@@ -11,4 +11,4 @@ HelpDialog::~HelpDialog()
     delete ui;
 }
 
-// - Checked by Scott Ceja
+// - Checked by Roland Guerriere

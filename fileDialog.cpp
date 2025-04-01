@@ -39,3 +39,4 @@ void FileDialog::on_loadButton_clicked()
     }
 }
 
+// - Checked by Roland Guerriere
