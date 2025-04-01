@@ -28,16 +28,12 @@ public:
      */
     void switchSprite(int spriteID);
 
-    /**
-     * This method will set the current tool to the newly selected one
-     *
-     * @param newTool - the tool it will be set to
-     */
-    void setTool(int newTool);
 
 private:
-    int selectedTool;
+    // A boolean for keeping track of if the brush is drawing
     bool isDrawing = false;
+
+    // Keeps track of the current frame
     int currentFrame;
 
     /**
@@ -47,6 +43,9 @@ private:
      */
     void toggleDrawing(bool active);
 
+    /**
+     * The current sprite
+     */
     Spritesheet* currentSheet;
 };
 

@@ -33,3 +33,5 @@ private:
 };
 
 #endif // HELPDIALOG_H
+
+// - Checked by Roland Guerriere

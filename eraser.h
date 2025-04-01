@@ -28,3 +28,5 @@ public:
 };
 
 #endif // ERASER_H
+
+// - Checked by Scott Ceja

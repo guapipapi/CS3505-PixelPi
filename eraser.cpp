@@ -7,3 +7,5 @@ void Eraser::paintPixel(int x, int y, Pixel& pixel, Sprite& sprite) {
     if (pixel.getAlphaValue() != 0)
         sprite.removePixelAt(x, y);
 }
+
+// - Checked by Scott Ceja
