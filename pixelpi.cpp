@@ -230,3 +230,8 @@ void PixelPi::on_removeSpriteButton_clicked()
     emit removeSprite();
 }
 
+void PixelPi::updateCurrentSprite(int currentSprite)
+{
+    ui->frameCountLabel->setText(QString::number(currentSprite));
+}
+

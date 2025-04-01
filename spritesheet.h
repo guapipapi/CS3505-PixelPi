@@ -18,8 +18,6 @@ public:
     bool saveToJson(QString& filePath);
     // Returns true if operation was a success
     bool loadJson(QString& filePath);
-    // You know
-    bool exportToPNG();
     // Returns the current sprite
     Sprite& getCurrentSprite();
 
@@ -59,11 +57,17 @@ private:
     Palette palette;
 
     std::vector<Sprite> sprites;
+
 signals:
     void currentSpriteUpdated(Sprite* currentSprite);
+    void currentSpriteID(int spriteID);
+
 public slots:
     void paintedCurrentSpriteAt(int x, int y);
     void erasedCurrentSpriteAt(int x, int y);
+    void goToNextSprite();
+    void addSprite();
+    void removeSprite();
 };
 
 #endif // SPRITESHEET_H

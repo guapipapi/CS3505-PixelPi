@@ -5,8 +5,9 @@
 #include "spritesheet.h"
 
 Spritesheet::Spritesheet(QObject *parent)
-    : QObject{parent}, palette(this)
+    : QObject{parent}, currentFrame(0), palette(this)
 {
+    QObject::connect(&timeline, &Timeline::goToNextSprite, this, &Spritesheet::goToNextSprite);
 }
 
 bool Spritesheet::saveToJson(QString& filePath) {
@@ -75,23 +76,15 @@ void Spritesheet::newProject(int newWidth, int newHeight)
 {
     sprites.clear();
 
-    Sprite* newSprite = new Sprite(newWidth, newHeight);
+    width = newWidth;
+    height = newHeight;
 
-
-    //will be changed to following
-    sprites.push_back(*newSprite); //timeline.addSprite();
+    addSprite();
 
     currentFrame = 0;
 
     // emits the new sprite
     emit currentSpriteUpdated(&sprites[currentFrame]);
-}
-
-bool Spritesheet::exportToPNG() {
-
-    //PNG library needed here l0l
-
-    return false;
 }
 
 Sprite& Spritesheet::getCurrentSprite() {
@@ -118,4 +111,43 @@ Palette& Spritesheet::getPalette()
 
 Timeline& Spritesheet::getTimeline(){
     return timeline;
+}
+
+void Spritesheet::goToNextSprite(){
+    int max = sprites.size();
+    if(currentFrame < max-1){
+        currentFrame++;
+    }
+    else
+    {
+        currentFrame = 0;
+    }
+
+    emit currentSpriteUpdated(&sprites[currentFrame]);
+    emit currentSpriteID(currentFrame);
+}
+
+void Spritesheet::addSprite(){
+    // Add new sprite at the beginning
+    sprites.push_back(Sprite(width, height));
+
+    currentFrame = sprites.size()-1;
+
+    emit currentSpriteID(currentFrame);
+    emit currentSpriteUpdated(&sprites[currentFrame]);
+}
+
+void Spritesheet::removeSprite(){
+    sprites.pop_back();
+
+    if(sprites.size() < 1)
+        addSprite();
+
+    if (currentFrame >= int(sprites.size()))
+    {
+        currentFrame = sprites.size()-1;
+    }
+
+    emit currentSpriteUpdated(&sprites[currentFrame]);
+    emit currentSpriteID(currentFrame);
 }

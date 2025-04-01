@@ -1,6 +1,5 @@
 #include "timeline.h"
 #include "QTimer"
-#include <iostream>
 
 Timeline::Timeline(QObject *parent)
     : QObject{parent}, timer(new QTimer(this))
@@ -11,28 +10,20 @@ Timeline::Timeline(QObject *parent)
 void Timeline::changeFPS(int newFPS){
     framesPerSecond = newFPS;
     if (timer.isActive()) {
-        timer.start(1000 / framesPerSecond);  // Restart timer with new FPS
+        timer.start(1000 / framesPerSecond);
     }
-}
-
-void Timeline::deleteSprite(){
-
 }
 
 void Timeline::playAnimation(){
     playing = !playing;
 
     if (playing) {
-        timer.start(1000 / framesPerSecond); // Start repeating timer
+        timer.start(1000 / framesPerSecond);
     } else {
         timer.stop();
     }
 }
 
-void Timeline::addSprite(){
-
-}
-
 void Timeline::switchSprite(){
-    std::cout << "sprite switched" << std::endl;
+    emit goToNextSprite();
 }

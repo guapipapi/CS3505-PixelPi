@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
     // Connects spritesheet to paintWidget
     QObject::connect(&spritesheet, &Spritesheet::currentSpriteUpdated, &w, &PixelPi::updateSpriteWidget);
 
+     QObject::connect(&spritesheet, &Spritesheet::currentSpriteID, &w, &PixelPi::updateCurrentSprite);
+
     // Connects new file button
     QObject::connect(&w, &PixelPi::createNewFile, &spritesheet, &Spritesheet::newProject);
-
-
 
     // Initializes default project as 32 by 32 sprite
     spritesheet.newProject(32, 32);
@@ -55,9 +55,11 @@ int main(int argc, char *argv[])
 
     QObject::connect(&w, &PixelPi::playAnimation, &spritesheet.getTimeline(), &Timeline::playAnimation);
 
-    QObject::connect(&w, &PixelPi::addSprite, &spritesheet.getTimeline(), &Timeline::addSprite);
+    QObject::connect(&w, &PixelPi::addSprite, &spritesheet, &Spritesheet::addSprite);
 
-    QObject::connect(&w, &PixelPi::removeSprite, &spritesheet.getTimeline(), &Timeline::deleteSprite);
+    QObject::connect(&w, &PixelPi::removeSprite, &spritesheet, &Spritesheet::removeSprite);
+
+
 
     // Shows help page on start
     // TODO: uncomment this. Commented so we aren't bothered while testing

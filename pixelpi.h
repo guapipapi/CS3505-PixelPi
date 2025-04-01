@@ -22,6 +22,7 @@ class PixelPi : public QMainWindow
 public slots:
     void updateSpriteWidget(Sprite *newSprite);
     void updateCurrentPixel(const Pixel &pixel);
+    void updateCurrentSprite(int currentSprite);
 
 private slots:
     void on_FileButton_clicked();

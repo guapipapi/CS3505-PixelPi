@@ -12,9 +12,7 @@ public:
 
 public slots:
     void changeFPS(int newFPS);
-    void deleteSprite();
     void playAnimation();
-    void addSprite();
     void switchSprite();
 
 private:
@@ -24,6 +22,7 @@ private:
 
 
 signals:
+    void goToNextSprite();
 };
 
 #endif // TIMELINE_H
