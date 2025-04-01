@@ -9,32 +9,25 @@ Spritesheet::Spritesheet(QObject *parent)
 {
 }
 
-bool Spritesheet::saveToJson(QString& filePath) {
+void Spritesheet::saveToJson(QString& filePath) {
 
     QJsonDocument jsonDoc(toJson());
     QByteArray jsonData = jsonDoc.toJson(QJsonDocument::Indented);
-
-    //Add actual filename to the path
-    filePath += (projectName + ".spf");
 
     QFile file(filePath);
 
     if (file.open(QIODevice::WriteOnly)) {
         file.write(jsonData);
         file.close();
-
-        return true;
     }
-
-    return false;
 }
 
-bool Spritesheet::loadJson(QString& filePath) {
+void Spritesheet::loadJson(QString& filePath) {
 
     //Check the file at the specified path
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
-        return false;
+        abort();
     }
 
     QByteArray jsonData = file.readAll();
@@ -43,7 +36,7 @@ bool Spritesheet::loadJson(QString& filePath) {
     //Check if the format of the file is correct
     QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData);
     if (jsonDoc.isNull() || !jsonDoc.isObject()) {
-        return false;
+        abort();
     }
 
     QJsonObject jsonObj = jsonDoc.object();
@@ -52,10 +45,12 @@ bool Spritesheet::loadJson(QString& filePath) {
     projectName = jsonObj["projectName"].toString().toStdString();
     width = jsonObj["width"].toInt();
     height = jsonObj["height"].toInt();
-    currentFrame = jsonObj["currentFrame"].toInt();
+
+    //Clear current sprite sheet!
+    sprites.clear();
+    currentFrame = 0;
 
     //Extract sprite data
-    sprites.clear();
     QJsonArray spriteArray = jsonObj["sprites"].toArray();
 
     //Reconstruct each sprite and put it into sprite vector
@@ -65,18 +60,21 @@ bool Spritesheet::loadJson(QString& filePath) {
 
         Sprite sprite;
         sprite.fromJson(spriteObj);
+        sprite.setSize(width, height);
         sprites.push_back(sprite);
     }
 
-    return true;
+    emit updateSpriteSizeUI(width, height);
 }
 
 void Spritesheet::newProject(int newWidth, int newHeight)
 {
     sprites.clear();
 
-    Sprite* newSprite = new Sprite(newWidth, newHeight);
+    width = newWidth;
+    height = newHeight;
 
+    Sprite* newSprite = new Sprite(newWidth, newHeight);
 
     //will be changed to following
     sprites.push_back(*newSprite); //timeline.addSprite();
@@ -85,13 +83,6 @@ void Spritesheet::newProject(int newWidth, int newHeight)
 
     // emits the new sprite
     emit currentSpriteUpdated(&sprites[currentFrame]);
-}
-
-bool Spritesheet::exportToPNG() {
-
-    //PNG library needed here l0l
-
-    return false;
 }
 
 Sprite& Spritesheet::getCurrentSprite() {

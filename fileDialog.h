@@ -32,6 +32,9 @@ private:
     QString saveDirectory;
 signals:
     void createNewFileSignal(int width, int height);
+
+    void loadFileSignal(QString& file);
+    void saveFileSignal(QString& file);
 };
 
 #endif // FILEDIALOG_H

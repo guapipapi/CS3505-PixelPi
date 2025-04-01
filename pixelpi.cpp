@@ -45,6 +45,10 @@ PixelPi::PixelPi(QWidget *parent) : QMainWindow(parent), ui(new Ui::PixelPi)
     QObject::connect(&fileDialog, &FileDialog::createNewFileSignal, this, &PixelPi::createNewFile);
     QObject::connect(&fileDialog, &FileDialog::createNewFileSignal, this, &PixelPi::setNewSpriteDimensions);
 
+    // Connect open and save file signal
+    QObject::connect(&fileDialog, &FileDialog::saveFileSignal, this, &PixelPi::saveFile);
+    QObject::connect(&fileDialog, &FileDialog::loadFileSignal, this, &PixelPi::loadFile);
+
     // Connect paint event to signal
     QObject::connect(ui->paintWidget, &PaintWidget::mouseClickedAt, this, &PixelPi::mousePaintedAt);
 

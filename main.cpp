@@ -9,6 +9,7 @@
 #include <brush.h>
 #include <palette.h>
 #include <controller.h>
+#include <QString>
 
 int main(int argc, char *argv[])
 {
@@ -26,6 +27,13 @@ int main(int argc, char *argv[])
 
     // Connects new file button
     QObject::connect(&w, &PixelPi::createNewFile, &spritesheet, &Spritesheet::newProject);
+
+    // Connects save and open file buttons
+    QObject::connect(&w, &PixelPi::loadFile, &spritesheet, &Spritesheet::loadJson);
+    QObject::connect(&w, &PixelPi::saveFile, &spritesheet, &Spritesheet::saveToJson);
+
+    // Connects the load file procedure and size label in the UI
+    QObject::connect(&spritesheet, &Spritesheet::updateSpriteSizeUI, &w, &PixelPi::setNewSpriteDimensions);
 
     // Initializes default project as 32 by 32 sprite
     spritesheet.newProject(32, 32);

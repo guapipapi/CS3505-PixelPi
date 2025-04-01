@@ -24,8 +24,9 @@ public:
     //Convert sprite data to JSON
     QJsonObject toJson() const;
 
-    //Load Sprite from JSON
+    //Load Sprite from JSON and allow size to manually be set
     void fromJson(const QJsonObject& jsonObj);
+    void setSize(int width, int height);
 
 signals:
     void spriteUpdated();

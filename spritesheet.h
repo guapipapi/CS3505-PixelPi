@@ -14,10 +14,7 @@ class Spritesheet : public QObject
     Q_OBJECT
 public:
     explicit Spritesheet(QObject *parent = nullptr);
-    // Returns true if operation was a success
-    bool saveToJson(QString& filePath);
-    // Returns true if operation was a success
-    bool loadJson(QString& filePath);
+
     // You know
     bool exportToPNG();
     // Returns the current sprite
@@ -31,10 +28,10 @@ public:
     //Convert sprite sheet to JSON
     QJsonObject toJson() const {
         QJsonObject jsonObj;
+
         jsonObj["projectName"] = QString::fromStdString(projectName);
         jsonObj["width"] = width;
         jsonObj["height"] = height;
-        jsonObj["currentFrame"] = currentFrame;
 
         //Put all sprites into the JSON array
         QJsonArray spriteArray;
@@ -59,9 +56,16 @@ private:
     std::vector<Sprite> sprites;
 signals:
     void currentSpriteUpdated(Sprite* currentSprite);
+    void updateSpriteSizeUI(int x, int y);
 public slots:
     void paintedCurrentSpriteAt(int x, int y);
     void erasedCurrentSpriteAt(int x, int y);
+
+    // Returns true if operation was a success
+    void saveToJson(QString& file);
+
+    // Returns true if operation was a success
+    void loadJson(QString& file);
 };
 
 #endif // SPRITESHEET_H

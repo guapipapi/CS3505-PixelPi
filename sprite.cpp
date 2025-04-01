@@ -67,6 +67,11 @@ void Sprite::fromJson(const QJsonObject& jsonObj) {
     }
 }
 
+void Sprite::setSize(int width, int height) {
+    this->width = width;
+    this->height = height;
+}
+
 void Sprite::paintAt(int x, int y, int radius, Pixel& newPixel)
 {
     if (radius % 2 == 0) {

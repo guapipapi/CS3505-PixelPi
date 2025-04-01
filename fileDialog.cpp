@@ -21,12 +21,21 @@ void FileDialog::on_newButton_clicked() {
 
 void FileDialog::on_saveAsButton_clicked()
 {
-    saveDirectory = QFileDialog::getExistingDirectory(this);
+    saveDirectory = QFileDialog::getSaveFileName(this, "Save File", saveDirectory + "/default_filename.ssp", "Text Files (*.ssp);;All Files (*)");
+
+    if (!saveDirectory.isEmpty()) {
+        emit saveFileSignal(saveDirectory);
+    }
+
 }
 
 
 void FileDialog::on_loadButton_clicked()
 {
     loadFile = QFileDialog::getOpenFileName(this);
+
+    if (!loadFile.isEmpty()) {
+        emit loadFileSignal(loadFile);
+    }
 }
 
